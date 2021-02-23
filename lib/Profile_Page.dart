@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:udhaarkaroapp/Constants/colors.dart';
+import 'Constants/heights.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -12,13 +13,13 @@ class ProfilePage extends StatelessWidget {
               Container(
                 padding: EdgeInsets.fromLTRB(20, 20, 20, 40),
                 decoration: BoxDecoration(
-                  color: HexColor("140B4F"), //Color(0x140B4F),
+                  color: color().darkBlueColor,
                 ),
                 child: Column(
                   children: [
-                    Align(child: Icon(Icons.arrow_back,color: Colors.white, size: 30,), alignment: Alignment.centerLeft,),
+                    Align(child: Icon(Icons.arrow_back, color: color().whiteColor, size: 30,), alignment: Alignment.centerLeft,),
 
-                    SizedBox(height: 10,),
+                    Height10,
 
                     Center(
                       child: CircleAvatar(
@@ -26,9 +27,9 @@ class ProfilePage extends StatelessWidget {
                       ),
                     ),
 
-                    SizedBox(height: 10,),
+                    Height10,
 
-                    Center(child: Text("Suyog Amin", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 40),))
+                    Center(child: Text("Suyog Amin", style: TextStyle(fontWeight: FontWeight.bold, color: color().whiteColor, fontSize: 40),))
                   ],
                 ),
               ),
@@ -50,7 +51,8 @@ class ProfilePage extends StatelessWidget {
                       },
                     ),
 
-                    SizedBox(height: 20,),
+                    Height10,
+                    Height10,
 
                     InkWell(
                       onTap: (){
@@ -65,7 +67,8 @@ class ProfilePage extends StatelessWidget {
                       ),
                     ),
 
-                    SizedBox(height: 20,),
+                    Height10,
+                    Height10,
 
                     InkWell(
                       onTap: (){
@@ -80,7 +83,8 @@ class ProfilePage extends StatelessWidget {
                       ),
                     ),
 
-                    SizedBox(height: 20,),
+                    Height10,
+                    Height10,
 
                     InkWell(
                       onTap: (){
@@ -95,7 +99,8 @@ class ProfilePage extends StatelessWidget {
                       ),
                     ),
 
-                    SizedBox(height: 20,),
+                    Height10,
+                    Height10,
 
                     InkWell(
                       onTap: (){
@@ -109,27 +114,26 @@ class ProfilePage extends StatelessWidget {
                         ],
                       ),
                     ),
+
+                    Height10,
+                    Height10,
+
+                    Divider(height: 2, color: color().blackColor,),
+
+                    Height10,
+                    Height10,
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Logout", style: TextStyle(fontSize: 20)),
+                        Icon(Icons.power_settings_new, color: color().redColor),
+                      ],
+                    )
                   ],
                 ),
               ),
 
-              SizedBox(height: 20,),
-
-              Center(
-                child: InkWell(
-                  onTap: (){
-
-                  },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 65, vertical: 10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: HexColor("140B4F"),
-                    ),
-                    child: Text("Logout", style: TextStyle(color: Colors.white, fontSize: 21)),
-                  ),
-                ),
-              )
             ],
           ),
         ),
