@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'file:///D:/flutterProjects/udhaarkaro_app/lib/Pages/About_Us.dart';
-import 'file:///D:/flutterProjects/udhaarkaro_app/lib/Pages/Account_Details.dart';
-import 'file:///D:/flutterProjects/udhaarkaro_app/lib/Pages/Feedback_Form.dart';
-import 'file:///D:/flutterProjects/udhaarkaro_app/lib/Pages/Feedback_Form2.dart';
-import 'file:///D:/flutterProjects/udhaarkaro_app/lib/Pages/Home.dart';
-import 'file:///D:/flutterProjects/udhaarkaro_app/lib/Pages/Privacy_Policy.dart';
-import 'file:///D:/flutterProjects/udhaarkaro_app/lib/Pages/Profile_Page.dart';
-import 'file:///D:/flutterProjects/udhaarkaro_app/lib/Pages/Users_List.dart';
+import 'package:udhaarkaroapp/pages/aboutUs.dart';
+import 'package:udhaarkaroapp/pages/accountDetails.dart';
+import 'package:udhaarkaroapp/pages/feedbackForm.dart';
+import 'package:udhaarkaroapp/pages/feedbackForm2.dart';
+import 'package:udhaarkaroapp/pages/homePage.dart';
+import 'package:udhaarkaroapp/pages/privacyPolicy.dart';
+import 'package:udhaarkaroapp/pages/profilePage.dart';
+import 'package:udhaarkaroapp/pages/userList.dart';
 
 
 void main() {

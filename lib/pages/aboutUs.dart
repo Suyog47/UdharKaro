@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:udhaarkaroapp/Constants/colors.dart';
-import 'package:udhaarkaroapp/Constants/heights.dart';
-import 'package:udhaarkaroapp/Constants/icons.dart';
+import 'package:udhaarkaroapp/constants/colors.dart';
+import 'package:udhaarkaroapp/constants/heights.dart';
+import 'package:udhaarkaroapp/constants/icons.dart';
 
 class AboutUs extends StatelessWidget {
   @override

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:udhaarkaroapp/Constants/colors.dart';
-import 'package:udhaarkaroapp/Constants/heights.dart';
-import 'package:udhaarkaroapp/Constants/icons.dart';
+import 'package:udhaarkaroapp/constants/colors.dart';
+import 'package:udhaarkaroapp/constants/heights.dart';
+import 'package:udhaarkaroapp/constants/icons.dart';
 
 class FeedbackForm extends StatefulWidget {
   @override
@@ -161,14 +161,14 @@ class _FeedbackFormState extends State<FeedbackForm> {
 
                         Height10,
                         Height10,
-                        
+
                         Align(
                           alignment: Alignment.centerRight,
                           child: InkWell(
                             onTap: (){
-                                print(_rate);
-                                print(_rval);
-                                Navigator.pushNamed(context, "/feedbackform2");
+                              print(_rate);
+                              print(_rval);
+                              Navigator.pushNamed(context, "/feedbackform2");
                             },
                             child: Container(
                               padding: EdgeInsets.symmetric(horizontal: 30, vertical: 8),

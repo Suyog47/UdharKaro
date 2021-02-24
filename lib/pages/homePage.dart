@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:slider_button/slider_button.dart';
-import 'package:udhaarkaroapp/Constants/colors.dart';
-import 'package:udhaarkaroapp/Constants/heights.dart';
-import 'package:udhaarkaroapp/Constants/icons.dart';
-import 'package:udhaarkaroapp/Constants/widths.dart';
-import '../Widget/circularAvatar.dart';
+import 'package:udhaarkaroapp/constants/colors.dart';
+import 'package:udhaarkaroapp/constants/heights.dart';
+import 'package:udhaarkaroapp/constants/icons.dart';
+import 'package:udhaarkaroapp/constants/widths.dart';
+import 'package:udhaarkaroapp/widgets/circularAvatar.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -205,7 +205,7 @@ class _HomeState extends State<Home> {
                                         child: Row(
                                           children: [
                                             Text("PAY", style: TextStyle(color: lightBlue),),
-                                            Transform.rotate(angle: 3.142/4,  child: upArrowlightBlueIcon),
+                                            Transform.rotate(angle: 3.142/4,  child: upArrowLightBlueIcon),
                                           ],
                                         ),
                                       ) :
@@ -259,7 +259,7 @@ class _HomeState extends State<Home> {
                     onTap: (){
                       setState(() => _currentIndex = 2);
                       Navigator.pushNamed(context, "/profilepage");
-                      },
+                    },
                     child: (_currentIndex == 2) ?
                     Transform.scale(scale: 1.4, child: Icon(Icons.account_circle, color: redColor,)) :
                     Icon(Icons.account_circle, color: blackColor,)),

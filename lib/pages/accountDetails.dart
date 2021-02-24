@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:udhaarkaroapp/Constants/colors.dart';
-import 'package:udhaarkaroapp/Constants/icons.dart';
-import '../Constants/heights.dart';
-import '../Widget/circularAvatar.dart';
+import 'package:udhaarkaroapp/constants/colors.dart';
+import 'package:udhaarkaroapp/constants/heights.dart';
+import 'package:udhaarkaroapp/constants/icons.dart';
+import 'package:udhaarkaroapp/widgets/circularAvatar.dart';
 
 class AccountDetails extends StatefulWidget {
   @override
@@ -37,10 +37,10 @@ class _AccountDetailsState extends State<AccountDetails> {
                             child: backIcon),
                       ),
 
-                     Height10,
+                      Height10,
 
                       Center(
-                        child: Avatar(img: "assets/profilebg.png", radius: 45,)
+                          child: Avatar(img: "assets/profilebg.png", radius: 45,)
                       ),
 
                       Height10,
@@ -112,24 +112,24 @@ class _AccountDetailsState extends State<AccountDetails> {
                         Height10,
                         Height10,
 
-                      Center(
-                        child: InkWell(
-                          onTap: (){
-                            if(_formkey.currentState.validate()) {
-                              print(_num);
-                              print(_pass);
-                            }
-                          },
-                          child: Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 65, vertical: 10),
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: darkBlueColor,
-                                  ),
-                                  child: Text("Save", style: TextStyle(color: whiteColor, fontSize: 21)),
-                        ),
-                        ),
-                      )
+                        Center(
+                          child: InkWell(
+                            onTap: (){
+                              if(_formkey.currentState.validate()) {
+                                print(_num);
+                                print(_pass);
+                              }
+                            },
+                            child: Container(
+                              padding: EdgeInsets.symmetric(horizontal: 65, vertical: 10),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: darkBlueColor,
+                              ),
+                              child: Text("Save", style: TextStyle(color: whiteColor, fontSize: 21)),
+                            ),
+                          ),
+                        )
                       ],
                     ),
                   ),

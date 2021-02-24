@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:udhaarkaroapp/Constants/colors.dart';
-import '../Constants/dividers.dart';
-import '../Constants/heights.dart';
-import '../Constants/icons.dart';
-import '../Constants/textStyles.dart';
-import '../Widget/circularAvatar.dart';
+import 'package:udhaarkaroapp/constants/colors.dart';
+import 'package:udhaarkaroapp/constants/dividers.dart';
+import 'package:udhaarkaroapp/constants/heights.dart';
+import 'package:udhaarkaroapp/constants/icons.dart';
+import 'package:udhaarkaroapp/constants/textStyles.dart';
+import 'package:udhaarkaroapp/widgets/circularAvatar.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -25,7 +25,7 @@ class ProfilePage extends StatelessWidget {
                     Height10,
 
                     Center(
-                      child: Avatar(img: "assets/profilebg.png", radius: 45,)
+                        child: Avatar(img: "assets/profilebg.png", radius: 45,)
                     ),
 
                     Height10,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:udhaarkaroapp/Constants/colors.dart';
+import 'package:udhaarkaroapp/constants/colors.dart';
 
 TextStyle profileHeaderTextStyle = TextStyle(fontWeight: FontWeight.bold, color: whiteColor, fontSize: 40);
 

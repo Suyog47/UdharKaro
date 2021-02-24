@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
-import 'package:udhaarkaroapp/Constants/colors.dart';
-import 'package:udhaarkaroapp/Constants/icons.dart';
-import '../Constants/dividers.dart';
-import '../Constants/heights.dart';
-import '../Widget/circularAvatar.dart';
+import 'package:udhaarkaroapp/constants/colors.dart';
+import 'package:udhaarkaroapp/constants/dividers.dart';
+import 'package:udhaarkaroapp/constants/heights.dart';
+import 'package:udhaarkaroapp/constants/icons.dart';
+import 'package:udhaarkaroapp/widgets/circularAvatar.dart';
 
 class UsersList extends StatefulWidget {
   @override
@@ -49,21 +48,21 @@ class _UsersListState extends State<UsersList> {
                         shrinkWrap: true,
                         itemCount: 5,
                         itemBuilder: (context, index){
-                        return Column(
-                          children: [
-                            Card(
-                              child: ListTile(
-                                leading: Avatar(img: "assets/profilebg.png", radius: 25,),
-                                title: Text(_str[index], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),),
+                          return Column(
+                            children: [
+                              Card(
+                                child: ListTile(
+                                  leading: Avatar(img: "assets/profilebg.png", radius: 25,),
+                                  title: Text(_str[index], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),),
+                                ),
+                                elevation: 0,
+                                margin: EdgeInsets.symmetric(vertical: 15),
                               ),
-                              elevation: 0,
-                              margin: EdgeInsets.symmetric(vertical: 15),
-                            ),
 
-                            divider,
-                          ],
-                        );
-                    }),
+                              divider,
+                            ],
+                          );
+                        }),
                   ),
                 ),
               )

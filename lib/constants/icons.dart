@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:udhaarkaroapp/Constants/colors.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:udhaarkaroapp/constants/colors.dart';
 
 const Icon profilePageIcon = Icon(
     Icons.keyboard_arrow_right
@@ -22,7 +22,7 @@ const Icon upArrowWhiteIcon = Icon(
     size: 20
 );
 
-const Icon upArrowlightBlueIcon = Icon(
+const Icon upArrowLightBlueIcon = Icon(
     Icons.arrow_upward,
     color: lightBlue,
     size: 20
