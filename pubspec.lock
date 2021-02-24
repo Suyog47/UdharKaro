@@ -69,6 +69,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_dropdown:
+    dependency: "direct main"
+    description:
+      name: flutter_dropdown
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.8"
   flutter_rating_bar:
     dependency: "direct main"
     description:
@@ -86,13 +93,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  hexcolor:
-    dependency: "direct main"
-    description:
-      name: hexcolor
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.6"
   matcher:
     dependency: transitive
     description:
