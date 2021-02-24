@@ -4,6 +4,7 @@ import 'package:udhaarkaroapp/constants/colors.dart';
 import 'package:udhaarkaroapp/constants/heights.dart';
 import 'package:udhaarkaroapp/constants/icons.dart';
 import 'package:udhaarkaroapp/widgets/circularAvatar.dart';
+import 'package:flutter_dropdown/flutter_dropdown.dart';
 
 class AccountDetails extends StatefulWidget {
   @override
@@ -12,9 +13,19 @@ class AccountDetails extends StatefulWidget {
 
 class _AccountDetailsState extends State<AccountDetails> {
 
-  bool _enable = false;
-  String _num = "8879438873", _pass = "sa1147";
+  String _num = "9087564321",
+      _email = "suyogamin11@gmail.com",
+      _pass = "hitman_47",
+      _category = "Personal Account";
+
   final _formkey = GlobalKey<FormState>();
+  bool _obscureText = true;
+
+  void _toggle() {
+    setState(() {
+      _obscureText = !_obscureText;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +36,7 @@ class _AccountDetailsState extends State<AccountDetails> {
             child: Column(
               children: [
                 Container(
-                  padding: EdgeInsets.fromLTRB(20, 20, 20, 40),
+                  padding: EdgeInsets.fromLTRB(20, 5, 20, 20),
                   decoration: BoxDecoration(
                     color: darkBlueColor,
                   ),
@@ -57,59 +68,87 @@ class _AccountDetailsState extends State<AccountDetails> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        TextFormField(
+                          decoration: InputDecoration(
+                              labelText: 'Phone Number',
+                              labelStyle: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18)
+                          ),
+                          inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                          keyboardType: TextInputType.number,
+                          initialValue: _num,
+                          maxLength: 10,
+                          validator: (val) {
+                            if(val.length == 10 && int.parse(val[0]) >= 7 ){
+                              return null;
+                            }
+                            return "Enter valid phone number";
+                          },
+                          cursorColor: redColor,
+                          onChanged: (val) => _num = val,
+                        ),
+
+                        TextFormField(
+                            decoration: InputDecoration(
+                                labelText: 'Email',
+                                labelStyle: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18)
+                            ),
+                            initialValue: _email,
+                            onChanged: (val) => _email = val.trim(),
+                            validator: (val) {
+                              if(val.isNotEmpty && RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(val)){
+                                return null;
+                              }
+                              return "Enter valid username";
+                            }
+                        ),
+
+                        Height10,
+                        Height10,
+
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Phone", style: TextStyle(color: greyColor, fontSize: 16),),
-                            TextFormField(
-                              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                              keyboardType: TextInputType.number,
-                              initialValue: _num,
-                              enabled: _enable,
-                              maxLength: 10,
-                              validator: (val) {
-                                if(val.length == 10 && int.parse(val[0]) >= 7 ){
-                                  return null;
-                                }
-                                return "Enter valid phone number";
+                            Text("Category", style: TextStyle(fontWeight: FontWeight.bold),),
+
+                            DropDown(
+                              items: ["Personal Account", "Business Account"],
+                              initialValue: _category,
+                              onChanged: (val){
+                                setState(() => _category = val);
                               },
-                              cursorColor: redColor,
-                              onChanged: (val) => _num = val,
+                              isExpanded: true,
                             ),
                           ],
                         ),
 
                         Height10,
 
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Category", style: TextStyle(color: greyColor, fontSize: 16),),
-                            Height10,
-                            Text("Business Account", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
-                          ],
-                        ),
-
-                        Height10,
-                        Height10,
-                        Height10,
-
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Password", style: TextStyle(color: greyColor, fontSize: 16),),
-                            TextFormField(
-                              initialValue: _pass,
-                              enabled: _enable,
-                              validator: (val) => val.length < 6 || val.length > 20 ? 'Password should be between 6 to 20 chars.' : null,
-                              cursorColor: Colors.red,
-                              onChanged: (val) => _pass = val,
+                        Stack(
+                          children: <Widget>[
+                            SizedBox(
+                              height: 70.0,
+                              child: new TextFormField(
+                                decoration: InputDecoration(
+                                    labelText: 'Password',
+                                    labelStyle: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18)
+                                ),
+                                initialValue: _pass,
+                                validator: (val) => val.length < 6 || val.length > 20 ? 'Password should be between 6 to 20 chars.' : null,
+                                onChanged: (val) => _pass = val,
+                                obscureText: _obscureText,
+                              ),
                             ),
+                            Align(
+                              alignment: Alignment.centerRight,
+                              child: IconButton(
+                                  color: Colors.black,
+                                  onPressed: _toggle,
+                                  icon: Icon(_obscureText ? Icons.lock_open : Icons.lock)),
+                            )
                           ],
                         ),
 
 
-                        Height10,
                         Height10,
 
                         Center(
