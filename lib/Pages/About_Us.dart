@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:udhaarkaroapp/Constants/colors.dart';
+import 'package:udhaarkaroapp/Constants/heights.dart';
+import 'package:udhaarkaroapp/Constants/icons.dart';
 
 class AboutUs extends StatelessWidget {
   @override
@@ -12,17 +14,17 @@ class AboutUs extends StatelessWidget {
               Container(
                 padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
                 decoration: BoxDecoration(
-                  color: HexColor("140B4F"), //Color(0x140B4F),
+                  color: darkBlueColor,
                 ),
                 child: Column(
                   children: [
                     Align(child: InkWell(
                         onTap: (){Navigator.pop(context);},
-                        child: Icon(Icons.arrow_back,color: Colors.white, size: 30,)), alignment: Alignment.centerLeft,),
+                        child: backIcon), alignment: Alignment.centerLeft,),
 
-                    SizedBox(height: 10,),
+                    Height10,
 
-                    Center(child: Text("About Us", style: TextStyle(color: Colors.white, fontSize: 30),))
+                    Center(child: Text("About Us", style: TextStyle(color: whiteColor, fontSize: 30),))
                   ],
                 ),
               ),

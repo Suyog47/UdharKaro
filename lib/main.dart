@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:udhaarkaroapp/About_Us.dart';
-import 'package:udhaarkaroapp/Account_Details.dart';
-import 'package:udhaarkaroapp/Feedback_Form.dart';
-import 'package:udhaarkaroapp/Feedback_Form2.dart';
-import 'package:udhaarkaroapp/Home.dart';
-import 'package:udhaarkaroapp/Privacy_Policy.dart';
-import 'package:udhaarkaroapp/Profile_Page.dart';
-import 'package:udhaarkaroapp/Users_List.dart';
+import 'file:///D:/flutterProjects/udhaarkaro_app/lib/Pages/About_Us.dart';
+import 'file:///D:/flutterProjects/udhaarkaro_app/lib/Pages/Account_Details.dart';
+import 'file:///D:/flutterProjects/udhaarkaro_app/lib/Pages/Feedback_Form.dart';
+import 'file:///D:/flutterProjects/udhaarkaro_app/lib/Pages/Feedback_Form2.dart';
+import 'file:///D:/flutterProjects/udhaarkaro_app/lib/Pages/Home.dart';
+import 'file:///D:/flutterProjects/udhaarkaro_app/lib/Pages/Privacy_Policy.dart';
+import 'file:///D:/flutterProjects/udhaarkaro_app/lib/Pages/Profile_Page.dart';
+import 'file:///D:/flutterProjects/udhaarkaro_app/lib/Pages/Users_List.dart';
 
 
 void main() {
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: "/profilepage",
+      initialRoute: "/home",
       routes: {
         "/home" : (context) => Home(),
         "/profilepage" : (context) => ProfilePage(),

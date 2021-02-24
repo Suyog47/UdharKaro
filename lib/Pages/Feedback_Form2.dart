@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:udhaarkaroapp/Constants/colors.dart';
+import 'package:udhaarkaroapp/Constants/heights.dart';
+import 'package:udhaarkaroapp/Constants/icons.dart';
 
 class FeedbackForm2 extends StatefulWidget {
   @override
@@ -20,17 +23,17 @@ class _FeedbackForm2State extends State<FeedbackForm2> {
              Container(
                padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
                decoration: BoxDecoration(
-                 color: HexColor("140B4F"), //Color(0x140B4F),
+                 color: darkBlueColor,
                ),
                child: Column(
                  children: [
                    Align(child: InkWell(
                        onTap: (){Navigator.pop(context);},
-                       child: Icon(Icons.arrow_back,color: Colors.white, size: 30,)), alignment: Alignment.centerLeft,),
+                       child: backIcon), alignment: Alignment.centerLeft,),
 
-                   SizedBox(height: 10,),
+                   Height10,
 
-                   Center(child: Text("Feedback Form", style: TextStyle(color: Colors.white, fontSize: 30),))
+                   Center(child: Text("Feedback Form", style: TextStyle(color: whiteColor, fontSize: 30),))
                  ],
                ),
              ),
@@ -43,11 +46,13 @@ class _FeedbackForm2State extends State<FeedbackForm2> {
                      children: [
                        Text("Anything else you would like to share with us about our mobile app", style: TextStyle(fontSize: 18), softWrap: true, textAlign: TextAlign.center,),
 
-                       SizedBox(height: 30,),
+                       Height10,
+                       Height10,
+                       Height10,
 
                        TextFormField(
                          style: TextStyle(fontSize: 18),
-                         cursorColor: Colors.red,
+                         cursorColor: redColor,
                          onChanged: (val) => _msg = val,
                          minLines: 8,
                          maxLines: 12,
@@ -67,9 +72,9 @@ class _FeedbackForm2State extends State<FeedbackForm2> {
                    padding: EdgeInsets.symmetric(horizontal: 65, vertical: 10),
                    decoration: BoxDecoration(
                      borderRadius: BorderRadius.circular(10),
-                     color: HexColor("140B4F"),
+                     color: darkBlueColor,
                    ),
-                   child: Text("Save", style: TextStyle(color: Colors.white, fontSize: 21)),
+                   child: Text("Save", style: TextStyle(color: whiteColor, fontSize: 21)),
                  ),
                ),
              )
