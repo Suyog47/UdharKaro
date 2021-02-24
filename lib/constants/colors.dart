@@ -10,7 +10,8 @@ const Color whiteColor = Colors.white;
 const Color blackColor = Colors.black;
 
 const Color greyColor = Colors.grey;
-Color grey300Color = Colors.grey[300];
+
+final Color grey300Color = Colors.grey[300];
 
 const Color amberColor = Colors.amber;
 
