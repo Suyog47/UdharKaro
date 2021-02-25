@@ -4,6 +4,7 @@ import 'package:udhaarkaroapp/constants/colors.dart';
 import 'package:udhaarkaroapp/constants/heights.dart';
 import 'package:udhaarkaroapp/constants/icons.dart';
 import 'package:udhaarkaroapp/constants/widths.dart';
+import 'package:udhaarkaroapp/widgets/card.dart';
 import 'package:udhaarkaroapp/widgets/circularAvatar.dart';
 
 class Home extends StatefulWidget {
@@ -14,6 +15,24 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   bool status = true;
   int _currentIndex = 0;
+  List str = [{
+    "vendor": "Agarwal Sweets",
+    "price": "1500",
+    "lastTransaction": "2/02/2021",
+    "pic": "assets/profilebg.png",
+  },
+    {
+      "vendor": "TipTop Sweets",
+      "price": "2500",
+      "lastTransaction": "3/02/2021",
+      "pic": "assets/profilebg.png",
+    },
+    {
+      "vendor": "McDonalds",
+      "price": "2300",
+      "lastTransaction": "4/02/2021",
+      "pic": "assets/profilebg.png",
+    }];
 
   @override
   Widget build(BuildContext context) {
@@ -140,90 +159,13 @@ class _HomeState extends State<Home> {
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 10),
                     child: ListView.builder(
-                        itemCount: 8,
+                        itemCount: str.length,
                         shrinkWrap: true,
                         itemBuilder: (context, index){
-                          return Card(
-                            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-                            elevation: 4,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Container(
-                              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
-                              child: Column(
-                                children: [
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Row(
-                                            crossAxisAlignment: CrossAxisAlignment.end,
-                                            children: [
-                                              Text("Rs.", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-                                              Width2,
-                                              Text("1500", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
-                                            ],
-                                          ),
-                                          Height5,
-                                          Text((status) ? "to Agarwal Sweets" : "from Agarwal Sweets", style: TextStyle(fontSize: 12),)
-                                        ],
-                                      ),
-                                      Avatar(img: "assets/profilebg.png", radius: 25,),
-                                    ],
-                                  ),
-
-                                  Height10,
-                                  Height10,
-
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                                              Text("2 January", style: TextStyle(fontWeight: FontWeight.bold),),
-                                              Height5,
-                                              Text("Last Transaction On", style: TextStyle(fontSize: 10),)
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-
-                                      (status) ?
-                                      Container(
-                                        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                                        decoration: BoxDecoration(
-                                          color: whiteColor,
-                                          borderRadius: BorderRadius.circular(15),
-                                          border: Border.all(color: lightBlue, width: 2.0),
-                                        ),
-                                        child: Row(
-                                          children: [
-                                            Text("PAY", style: TextStyle(color: lightBlue),),
-                                            Transform.rotate(angle: 3.142/4,  child: upArrowLightBlueIcon),
-                                          ],
-                                        ),
-                                      ) :
-
-                                      Container(
-                                        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                                        decoration: BoxDecoration(
-                                          color: whiteColor,
-                                          borderRadius: BorderRadius.circular(15),
-                                          border: Border.all(color: lightGreen, width: 2.0),
-                                        ),
-                                        child: Text("ALERT", style: TextStyle(color: lightGreen),),
-                                      )
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ),
+                          return homeCard(
+                            status: status,
+                            str: str,
+                            itemIndex: index,
                           );
                         }),
                   ),

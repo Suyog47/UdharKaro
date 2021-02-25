@@ -3,6 +3,8 @@ import 'package:udhaarkaroapp/constants/colors.dart';
 import 'package:udhaarkaroapp/constants/dividers.dart';
 import 'package:udhaarkaroapp/constants/heights.dart';
 import 'package:udhaarkaroapp/constants/icons.dart';
+import 'package:udhaarkaroapp/constants/textStyles.dart';
+import 'package:udhaarkaroapp/widgets/card.dart';
 import 'package:udhaarkaroapp/widgets/circularAvatar.dart';
 
 class UsersList extends StatefulWidget {
@@ -11,8 +13,13 @@ class UsersList extends StatefulWidget {
 }
 
 class _UsersListState extends State<UsersList> {
-
-  List _str = ["Ayush Singhal", "Babu", "Deepanshu Khanna", "Raj Ranjan", "Suyog Amin"];
+  List _str = [
+    "Ayush Singhal",
+    "Babu",
+    "Deepanshu Khanna",
+    "Raj Ranjan",
+    "Suyog Amin"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -28,17 +35,23 @@ class _UsersListState extends State<UsersList> {
                 ),
                 child: Column(
                   children: [
-                    Align(child: InkWell(
-                        onTap: (){Navigator.pop(context);},
-                        child: backIcon), alignment: Alignment.centerLeft,),
-
+                    Align(
+                      child: InkWell(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: backIcon),
+                      alignment: Alignment.centerLeft,
+                    ),
                     Height10,
-
-                    Center(child: Text("Users List", style: TextStyle(color: whiteColor, fontSize: 30),))
+                    Center(
+                        child: Text(
+                      "Users List",
+                      style: profileHeaderTextStyle,
+                    ))
                   ],
                 ),
               ),
-
               Flexible(
                 child: SingleChildScrollView(
                   child: Container(
@@ -48,22 +61,13 @@ class _UsersListState extends State<UsersList> {
                         shrinkWrap: true,
                         itemCount: 5,
                         itemBuilder: (context, index){
-                          return Column(
-                            children: [
-                              Card(
-                                child: ListTile(
-                                  leading: Avatar(img: "assets/profilebg.png", radius: 25,),
-                                  title: Text(_str[index], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),),
-                                ),
-                                elevation: 0,
-                                margin: EdgeInsets.symmetric(vertical: 15),
-                              ),
-
-                              divider,
-                            ],
+                          return userListCard(
+                            str: _str,
+                            pic: "assets/profilebg.png",
+                            itemIndex: index,
                           );
-                        }),
-                  ),
+                        })
+                  )
                 ),
               )
             ],
@@ -73,3 +77,4 @@ class _UsersListState extends State<UsersList> {
     );
   }
 }
+

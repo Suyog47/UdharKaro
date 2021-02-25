@@ -3,7 +3,9 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:udhaarkaroapp/constants/colors.dart';
 import 'package:udhaarkaroapp/constants/heights.dart';
 import 'package:udhaarkaroapp/constants/icons.dart';
+import 'package:udhaarkaroapp/constants/textStyles.dart';
 
+import '../constants/textStyles.dart';
 class FeedbackForm extends StatefulWidget {
   @override
   _FeedbackFormState createState() => _FeedbackFormState();
@@ -35,7 +37,7 @@ class _FeedbackFormState extends State<FeedbackForm> {
 
                     Height10,
 
-                    Center(child: Text("Feedback Form", style: TextStyle(color: whiteColor, fontSize: 30),))
+                    Center(child: Text("Feedback Form", style: profileHeaderTextStyle,))
                   ],
                 ),
               ),
@@ -45,11 +47,11 @@ class _FeedbackFormState extends State<FeedbackForm> {
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                           children: [
-                            Text("Please provide your valuable rating", style: TextStyle(fontSize: 18),),
+                            Text("Please provide your valuable rating", style: profileBodyTextStyle,),
 
                             Height10,
                             Height10,
@@ -80,7 +82,7 @@ class _FeedbackFormState extends State<FeedbackForm> {
 
                         Column(
                           children: [
-                            Text("How likely you will suggest our app to others", style: TextStyle(fontSize: 18), softWrap: true, textAlign: TextAlign.center,),
+                            Text("How likely you will suggest our app to others", style: profileBodyTextStyle, softWrap: true, textAlign: TextAlign.center,),
 
                             Height10,
                             Height10,
@@ -88,7 +90,7 @@ class _FeedbackFormState extends State<FeedbackForm> {
                             SizedBox(
                               height: 38,
                               child: ListTile(
-                                title: Text(r1, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),),
+                                title: Text(r1, style: radioButtonTextStyle,),
                                 leading: Radio(
                                   value: r1,
                                   groupValue: _rval,
@@ -102,7 +104,8 @@ class _FeedbackFormState extends State<FeedbackForm> {
                             SizedBox(
                               height: 38,
                               child: ListTile(
-                                title: Text(r2, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
+                                title: Text(r2, style: radioButtonTextStyle,
+                                ),
                                 leading: Radio(
                                   value: r2,
                                   groupValue: _rval,
@@ -116,7 +119,8 @@ class _FeedbackFormState extends State<FeedbackForm> {
                             SizedBox(
                               height: 38,
                               child: ListTile(
-                                title: Text(r3, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
+                                title: Text(r3, style: radioButtonTextStyle,
+                                ),
                                 leading: Radio(
                                   value: r3,
                                   groupValue: _rval,
@@ -130,7 +134,8 @@ class _FeedbackFormState extends State<FeedbackForm> {
                             SizedBox(
                               height: 38,
                               child: ListTile(
-                                title: Text(r4, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
+                                title: Text(r4, style: radioButtonTextStyle,
+                                ),
                                 leading: Radio(
                                   value: r4,
                                   groupValue: _rval,
@@ -144,7 +149,8 @@ class _FeedbackFormState extends State<FeedbackForm> {
                             SizedBox(
                               height: 38,
                               child: ListTile(
-                                title: Text(r5, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
+                                title: Text(r5, style: radioButtonTextStyle,
+                                ),
                                 leading: Radio(
                                   value: r5,
                                   groupValue: _rval,

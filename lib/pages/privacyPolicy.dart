@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:udhaarkaroapp/constants/colors.dart';
 import 'package:udhaarkaroapp/constants/heights.dart';
 import 'package:udhaarkaroapp/constants/icons.dart';
+import 'package:udhaarkaroapp/constants/textStyles.dart';
+
+
 
 class PrivacyPolicy extends StatelessWidget {
   @override
@@ -24,7 +27,10 @@ class PrivacyPolicy extends StatelessWidget {
 
                     Height10,
 
-                    Center(child: Text("Privacy Policy", style: TextStyle(color: whiteColor, fontSize: 30),))
+                    Center(child: Text("Privacy Policy",
+                      style:  profileHeaderTextStyle
+                    ),
+                    )
                   ],
                 ),
               ),
