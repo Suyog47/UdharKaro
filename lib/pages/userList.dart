@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:udhaarkaroapp/constants/colors.dart';
-import 'package:udhaarkaroapp/constants/dividers.dart';
 import 'package:udhaarkaroapp/constants/heights.dart';
 import 'package:udhaarkaroapp/constants/icons.dart';
 import 'package:udhaarkaroapp/constants/textStyles.dart';
 import 'package:udhaarkaroapp/widgets/card.dart';
-import 'package:udhaarkaroapp/widgets/circularAvatar.dart';
 
 class UsersList extends StatefulWidget {
   @override
@@ -43,32 +41,28 @@ class _UsersListState extends State<UsersList> {
                           child: backIcon),
                       alignment: Alignment.centerLeft,
                     ),
-                    Height10,
+                    height10,
                     Center(
                         child: Text(
                       "Users List",
-                      style: profileHeaderTextStyle,
+                      style: headerWhiteTextStyle,
                     ))
                   ],
                 ),
               ),
-              Flexible(
-                child: SingleChildScrollView(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: ListView.builder(
-                        scrollDirection: Axis.vertical,
-                        shrinkWrap: true,
-                        itemCount: 5,
-                        itemBuilder: (context, index){
-                          return userListCard(
-                            str: _str,
-                            pic: "assets/profilebg.png",
-                            itemIndex: index,
-                          );
-                        })
-                  )
-                ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    itemCount: 5,
+                    itemBuilder: (context, index){
+                      return userListCard(
+                        str: _str,
+                        pic: "assets/profilebg.png",
+                        itemIndex: index,
+                      );
+                    })
               )
             ],
           ),

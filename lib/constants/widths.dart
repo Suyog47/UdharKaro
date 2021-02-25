@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-const Width1 = SizedBox(width: 1);
+const width1 = SizedBox(width: 1);
 
-const Width2 = SizedBox(width: 2);
+const width2 = SizedBox(width: 2);
 
-const Width5 = SizedBox(width: 5);
+const width5 = SizedBox(width: 5);
 
-const Width10 = SizedBox(width: 10);
+const width10 = SizedBox(width: 10);

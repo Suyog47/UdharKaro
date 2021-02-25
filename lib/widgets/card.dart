@@ -3,8 +3,8 @@ import 'package:udhaarkaroapp/constants/colors.dart';
 import 'package:udhaarkaroapp/constants/dividers.dart';
 import 'package:udhaarkaroapp/constants/heights.dart';
 import 'package:udhaarkaroapp/constants/icons.dart';
+import 'package:udhaarkaroapp/constants/textStyles.dart';
 import 'package:udhaarkaroapp/constants/widths.dart';
-
 import 'circularAvatar.dart';
 
 
@@ -33,9 +33,7 @@ class userListCard extends StatelessWidget {
               ),
               title: Text(
                 str[itemIndex],
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 19),
+                style: profileBodyTextStyle,
               ),
             ),
             elevation: 0,
@@ -51,12 +49,12 @@ class userListCard extends StatelessWidget {
 
 class homeCard extends StatelessWidget {
   final List str;
-  final bool status;
+  final int type;
   final int itemIndex;
 
   homeCard({
     this.str,
-    this.status,
+    this.type,
     this.itemIndex
 });
 
@@ -83,11 +81,11 @@ class homeCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text("Rs.", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-                        Width2,
+                        width2,
                         Text(str[itemIndex]["price"], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
                       ],
                     ),
-                    Height5,
+                    height5,
                     Text(str[itemIndex]["vendor"], style: TextStyle(fontSize: 12),)
                   ],
                 ),
@@ -95,8 +93,8 @@ class homeCard extends StatelessWidget {
               ],
             ),
 
-            Height10,
-            Height10,
+            height10,
+            height10,
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -107,24 +105,24 @@ class homeCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(str[itemIndex]["lastTransaction"], style: TextStyle(fontWeight: FontWeight.bold),),
-                        Height5,
+                        height5,
                         Text("Last Transaction On", style: TextStyle(fontSize: 10),)
                       ],
                     ),
                   ],
                 ),
 
-                (status) ?
+                (type == 1) ?
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 9),
                   decoration: BoxDecoration(
                     color: whiteColor,
                     borderRadius: BorderRadius.circular(15),
-                    border: Border.all(color: lightBlue, width: 2.0),
+                    border: Border.all(color: lightBlueColor, width: 2.0),
                   ),
                   child: Row(
                     children: [
-                      Text("PAY", style: TextStyle(color: lightBlue),),
+                      Text("PAY", style: TextStyle(color: lightBlueColor),),
                       Transform.rotate(angle: 3.142/4,  child: upArrowLightBlueIcon),
                     ],
                   ),
@@ -135,9 +133,9 @@ class homeCard extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: whiteColor,
                     borderRadius: BorderRadius.circular(15),
-                    border: Border.all(color: lightGreen, width: 2.0),
+                    border: Border.all(color: lightGreenColor, width: 2.0),
                   ),
-                  child: Text("ALERT", style: TextStyle(color: lightGreen),),
+                  child: Text("ALERT", style: TextStyle(color: lightGreenColor),),
                 )
               ],
             )
@@ -147,4 +145,46 @@ class homeCard extends StatelessWidget {
     );
   }
 }
+
+
+class notificationCard extends StatelessWidget {
+
+  List str;
+  int itemIndex;
+
+  notificationCard({
+    this.str,
+    this.itemIndex
+    });
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Card(
+        margin: EdgeInsets.symmetric(vertical: 10),
+        elevation: 0,
+        child: ListTile(
+          leading: Avatar(img: str[itemIndex]["pic"], radius: 25,),
+
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              (str[itemIndex]["type"] == 1) ? Text("To", style: TextStyle(fontSize: 14),) : Text("From", style: TextStyle(fontSize: 14),),
+              Text(str[itemIndex]["name"], style: profileBodyTextStyle,),
+              height5,
+            ],),
+
+          subtitle: Text(str[itemIndex]["date"], style: TextStyle(color: greyColor),),
+
+          trailing:
+          (str[itemIndex]["type"] == 1) ?
+          Text("- Rs."+str[itemIndex]["price"].toString(), style: minusPriceTextStyle,) :
+          Text("+ Rs."+str[itemIndex]["price"].toString(), style: plusPriceTextStyle,),
+        ),
+      ),
+    );
+  }
+}
+
 

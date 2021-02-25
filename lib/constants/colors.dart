@@ -15,7 +15,9 @@ final Color grey300Color = Colors.grey[300];
 
 const Color amberColor = Colors.amber;
 
-const Color lightBlue = Color(0xFF00C1FC);
+const Color lightBlueColor = Color(0xFF00C1FC);
 
-const Color lightGreen = Color(0xFF00ECB5);
+const Color lightGreenColor = Color(0xFF00ECB5);
+
+const Color greenColor = Colors.green;
 

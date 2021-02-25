@@ -5,10 +5,11 @@ import 'package:udhaarkaroapp/pages/accountDetails.dart';
 import 'package:udhaarkaroapp/pages/feedbackForm.dart';
 import 'package:udhaarkaroapp/pages/feedbackForm2.dart';
 import 'package:udhaarkaroapp/pages/homePage.dart';
+import 'package:udhaarkaroapp/pages/notifications.dart';
 import 'package:udhaarkaroapp/pages/privacyPolicy.dart';
 import 'package:udhaarkaroapp/pages/profilePage.dart';
+import 'package:udhaarkaroapp/pages/qrCodeScanner.dart';
 import 'package:udhaarkaroapp/pages/userList.dart';
-
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,6 +32,8 @@ class MyApp extends StatelessWidget {
         "/feedbackform" : (context) => FeedbackForm(),
         "/feedbackform2" : (context) => FeedbackForm2(),
         "/userlist" : (context) => UsersList(),
+        "/qrscanner" : (context) => QRCodeScanner(),
+        "/notification" : (context) => Notifications(),
       },
       debugShowCheckedModeBanner: false,
     );

@@ -51,17 +51,17 @@ class _AccountDetailsState extends State<AccountDetails> {
                             },
                             child: backIcon),
                       ),
-                      Height10,
+                      height10,
                       Center(
                           child: Avatar(
                         img: "assets/profilebg.png",
                         radius: 45,
                       )),
-                      Height10,
+                      height10,
                       Center(
                           child: Text(
                         "Suyog Amin",
-                        style: profileHeaderTextStyle,
+                        style: headerWhiteTextStyle,
                       ))
                     ],
                   ),
@@ -108,8 +108,8 @@ class _AccountDetailsState extends State<AccountDetails> {
                               }
                               return "Enter valid username";
                             }),
-                        Height10,
-                        Height10,
+                        height10,
+                        height10,
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -127,7 +127,7 @@ class _AccountDetailsState extends State<AccountDetails> {
                             ),
                           ],
                         ),
-                        Height10,
+                        height10,
                         Stack(
                           children: <Widget>[
                             SizedBox(
@@ -157,7 +157,7 @@ class _AccountDetailsState extends State<AccountDetails> {
                             )
                           ],
                         ),
-                        Height10,
+                        height10,
                         Center(
                           child: InkWell(
                             onTap: () {

@@ -34,11 +34,11 @@ class _FeedbackForm2State extends State<FeedbackForm2> {
                           child: backIcon),
                       alignment: Alignment.centerLeft,
                     ),
-                    Height10,
+                    height10,
                     Center(
                         child: Text(
                       "Feedback Form",
-                      style: profileHeaderTextStyle,
+                      style: headerWhiteTextStyle,
                     ))
                   ],
                 ),
@@ -55,9 +55,9 @@ class _FeedbackForm2State extends State<FeedbackForm2> {
                           softWrap: true,
                           textAlign: TextAlign.center,
                         ),
-                        Height10,
-                        Height10,
-                        Height10,
+                        height10,
+                        height10,
+                        height10,
                         TextFormField(
                           style: TextStyle(fontSize: 18),
                           cursorColor: redColor,
@@ -79,7 +79,7 @@ class _FeedbackForm2State extends State<FeedbackForm2> {
                       borderRadius: BorderRadius.circular(10),
                       color: darkBlueColor,
                     ),
-                    child: Text("Save",
+                    child: Text("Send",
                         style: TextStyle(color: whiteColor, fontSize: 21)),
                   ),
                 ),

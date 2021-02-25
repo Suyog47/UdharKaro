@@ -25,10 +25,10 @@ class PrivacyPolicy extends StatelessWidget {
                         onTap: (){Navigator.pop(context);},
                         child: backIcon), alignment: Alignment.centerLeft,),
 
-                    Height10,
+                    height10,
 
                     Center(child: Text("Privacy Policy",
-                      style:  profileHeaderTextStyle
+                      style:  headerWhiteTextStyle
                     ),
                     )
                   ],

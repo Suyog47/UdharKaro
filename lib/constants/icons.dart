@@ -24,12 +24,12 @@ const Icon upArrowWhiteIcon = Icon(
 
 const Icon upArrowLightBlueIcon = Icon(
     Icons.arrow_upward,
-    color: lightBlue,
-    size: 20
+    color: lightBlueColor,
+    size: 18
 );
 
 const Icon downArrowWhiteIcon = Icon(
   Icons.arrow_downward,
   color: whiteColor,
-  size: 20
+  size: 18
 );

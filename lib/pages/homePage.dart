@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:slider_button/slider_button.dart';
 import 'package:udhaarkaroapp/constants/colors.dart';
 import 'package:udhaarkaroapp/constants/heights.dart';
 import 'package:udhaarkaroapp/constants/icons.dart';
+import 'package:udhaarkaroapp/constants/textStyles.dart';
 import 'package:udhaarkaroapp/constants/widths.dart';
 import 'package:udhaarkaroapp/widgets/card.dart';
-import 'package:udhaarkaroapp/widgets/circularAvatar.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -13,7 +12,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  bool status = true;
+  int type = 1;
   int _currentIndex = 0;
   List str = [{
     "vendor": "Agarwal Sweets",
@@ -54,7 +53,7 @@ class _HomeState extends State<Home> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("UDHAR KARO", style: TextStyle(fontSize: 32,)),
+                          Text("UDHAR KARO", style: headerBlackTextStyle),
 
                           Container(
 
@@ -62,57 +61,62 @@ class _HomeState extends State<Home> {
                         ],
                       ),
 
-                      Height10,
-                      Height10,
+                      height10,
+                      height10,
 
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-                            decoration: BoxDecoration(
-                              color: lightBlue,
-                              borderRadius: BorderRadius.circular(24),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Transform.rotate(angle: 3.142/4,  child: upArrowWhiteIcon),
-                                Height5,
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Text("Rs.", style: TextStyle(color: whiteColor, fontWeight: FontWeight.bold, fontSize: 18),),
-                                    Width2,
-                                    Text("1200", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30, color: whiteColor)),
-                                  ],
-                                ),
-                                Height5,
-                                Text("to send", style: TextStyle(color: whiteColor),),
-                              ],
+                          InkWell(
+                            onTap: (){
+                              Navigator.pushNamed(context, "/qrscanner");
+                            },
+                            child: Container(
+                              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                              decoration: BoxDecoration(
+                                color: lightBlueColor,
+                                borderRadius: BorderRadius.circular(24),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Transform.rotate(angle: 3.142/4,  child: upArrowWhiteIcon),
+                                  height5,
+                                  Row(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Text("Rs.", style: TextStyle(color: whiteColor, fontWeight: FontWeight.bold, fontSize: 18),),
+                                      width2,
+                                      Text("1200", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30, color: whiteColor)),
+                                    ],
+                                  ),
+                                  height5,
+                                  Text("to send", style: TextStyle(color: whiteColor),),
+                                ],
+                              ),
                             ),
                           ),
 
                           Container(
                             padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                             decoration: BoxDecoration(
-                              color: lightGreen,
+                              color: lightGreenColor,
                               borderRadius: BorderRadius.circular(24),
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Transform.rotate(angle: 3.142/4, child: downArrowWhiteIcon),
-                                Height5,
+                                height5,
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
                                     Text("Rs.", style: TextStyle(color: whiteColor, fontWeight: FontWeight.bold, fontSize: 18 )),
-                                    Width2,
+                                    width2,
                                     Text("2500", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30, color: whiteColor)),
                                   ],
                                 ),
-                                Height5,
+                                height5,
                                 Text("to receive", style: TextStyle(color: whiteColor),),
                               ],
                             ),
@@ -120,31 +124,14 @@ class _HomeState extends State<Home> {
                         ],
                       ),
 
-                      Height10,
+                      height10,
 
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
                             children: [
-                              SliderButton(
-                                action: (){
-                                  setState(() => status = !status );
-                                },
-                                label: Text(""),
-                                icon: Icon(Icons.info, size: 10),
-                                backgroundColor: (status) ? lightBlue : lightGreen,
-                                vibrationFlag: false,
-                                dismissible: false,
-                                shimmer: false,
-                                buttonSize: 15,
-                                width: 30,
-                                height: 15,
-                              ),
 
-                              Width5,
-
-                              Text((status) ? "10 User(s)" :  "9 User(s)", style: TextStyle(fontWeight: FontWeight.bold),),
                             ],
                           ),
                           Icon(Icons.unfold_more),
@@ -163,7 +150,7 @@ class _HomeState extends State<Home> {
                         shrinkWrap: true,
                         itemBuilder: (context, index){
                           return homeCard(
-                            status: status,
+                            type: type,
                             str: str,
                             itemIndex: index,
                           );
@@ -185,14 +172,18 @@ class _HomeState extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 InkWell(
-                  onTap: (){ setState(() => _currentIndex = 0); },
+                  onTap: (){
+                    setState(() => _currentIndex = 0);
+                    Navigator.pushNamed(context, "/home");},
                   child: (_currentIndex == 0) ?
                   Transform.scale(scale: 1.4, child: Icon(Icons.home, color: redColor,)) :
                   Icon(Icons.home, color: blackColor,),
                 ),
 
                 InkWell(
-                    onTap: (){ setState(() => _currentIndex = 1); },
+                    onTap: (){
+                      setState(() => _currentIndex = 1);
+                      Navigator.pushNamed(context, "/notification");},
                     child: (_currentIndex == 1) ?
                     Transform.scale(scale: 1.4, child: Icon(Icons.add_alert, color: redColor,)) :
                     Icon(Icons.add_alert, color: blackColor,)),

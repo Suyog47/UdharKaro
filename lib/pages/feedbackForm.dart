@@ -35,9 +35,9 @@ class _FeedbackFormState extends State<FeedbackForm> {
                         onTap: (){Navigator.pop(context);},
                         child: backIcon), alignment: Alignment.centerLeft,),
 
-                    Height10,
+                    height10,
 
-                    Center(child: Text("Feedback Form", style: profileHeaderTextStyle,))
+                    Center(child: Text("Feedback Form", style: headerWhiteTextStyle,))
                   ],
                 ),
               ),
@@ -53,8 +53,8 @@ class _FeedbackFormState extends State<FeedbackForm> {
                           children: [
                             Text("Please provide your valuable rating", style: profileBodyTextStyle,),
 
-                            Height10,
-                            Height10,
+                            height10,
+                            height10,
 
                             RatingBar.builder(
                               initialRating: _rate,
@@ -74,18 +74,18 @@ class _FeedbackFormState extends State<FeedbackForm> {
                           ],
                         ),
 
-                        Height10,
-                        Height10,
-                        Height10,
-                        Height10,
-                        Height10,
+                        height10,
+                        height10,
+                        height10,
+                        height10,
+                        height10,
 
                         Column(
                           children: [
                             Text("How likely you will suggest our app to others", style: profileBodyTextStyle, softWrap: true, textAlign: TextAlign.center,),
 
-                            Height10,
-                            Height10,
+                            height10,
+                            height10,
 
                             SizedBox(
                               height: 38,
@@ -165,8 +165,8 @@ class _FeedbackFormState extends State<FeedbackForm> {
 
 
 
-                        Height10,
-                        Height10,
+                        height10,
+                        height10,
 
                         Align(
                           alignment: Alignment.centerRight,

@@ -21,16 +21,16 @@ class ProfilePage extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    Height10,
-                    Height10,
+                    height10,
+                    height10,
 
                     Center(
                         child: Avatar(img: "assets/profilebg.png", radius: 45,)
                     ),
 
-                    Height10,
+                    height10,
 
-                    Center(child: Text("Suyog Amin", style: profileHeaderTextStyle,))
+                    Center(child: Text("Suyog Amin", style: headerWhiteTextStyle,))
                   ],
                 ),
               ),
@@ -53,8 +53,8 @@ class ProfilePage extends StatelessWidget {
                         },
                       ),
 
-                      Height10,
-                      Height10,
+                      height10,
+                      height10,
 
                       InkWell(
                         onTap: (){
@@ -69,8 +69,8 @@ class ProfilePage extends StatelessWidget {
                         ),
                       ),
 
-                      Height10,
-                      Height10,
+                      height10,
+                      height10,
 
                       InkWell(
                         onTap: (){
@@ -85,8 +85,8 @@ class ProfilePage extends StatelessWidget {
                         ),
                       ),
 
-                      Height10,
-                      Height10,
+                      height10,
+                      height10,
 
                       InkWell(
                         onTap: (){
@@ -101,8 +101,8 @@ class ProfilePage extends StatelessWidget {
                         ),
                       ),
 
-                      Height10,
-                      Height10,
+                      height10,
+                      height10,
 
                       InkWell(
                         onTap: (){
@@ -117,13 +117,13 @@ class ProfilePage extends StatelessWidget {
                         ),
                       ),
 
-                      Height10,
-                      Height10,
+                      height10,
+                      height10,
 
                       divider,
 
-                      Height10,
-                      Height10,
+                      height10,
+                      height10,
 
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
