@@ -3,6 +3,7 @@ import 'package:udhaarkaroapp/constants/colors.dart';
 import 'package:udhaarkaroapp/constants/heights.dart';
 import 'package:udhaarkaroapp/constants/icons.dart';
 import 'package:udhaarkaroapp/constants/textStyles.dart';
+
 class AboutUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
