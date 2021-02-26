@@ -38,7 +38,7 @@ class _FeedbackForm2State extends State<FeedbackForm2> {
                     Center(
                         child: Text(
                       "Feedback Form",
-                      style: headerWhiteTextStyle,
+                      style: h3_Light,
                     ))
                   ],
                 ),
@@ -51,7 +51,7 @@ class _FeedbackForm2State extends State<FeedbackForm2> {
                       children: [
                         Text(
                           "Anything else you would like to share with us about our mobile app",
-                          style: profileBodyTextStyle,
+                          style: t20_Dark,
                           softWrap: true,
                           textAlign: TextAlign.center,
                         ),

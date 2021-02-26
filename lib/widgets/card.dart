@@ -8,13 +8,13 @@ import 'package:udhaarkaroapp/constants/widths.dart';
 import 'circularAvatar.dart';
 
 
-class userListCard extends StatelessWidget {
+class UserListCard extends StatelessWidget {
 
-  List str;
-  String pic;
-  int itemIndex;
+  final List str;
+  final String pic;
+  final int itemIndex;
 
-  userListCard({
+  UserListCard({
     @required this.str,
     @required this.pic,
     @required this.itemIndex,
@@ -33,7 +33,7 @@ class userListCard extends StatelessWidget {
               ),
               title: Text(
                 str[itemIndex],
-                style: profileBodyTextStyle,
+                style: t18_Dark,
               ),
             ),
             elevation: 0,
@@ -47,12 +47,12 @@ class userListCard extends StatelessWidget {
 }
 
 
-class homeCard extends StatelessWidget {
+class HomeCard extends StatelessWidget {
   final List str;
   final int type;
   final int itemIndex;
 
-  homeCard({
+  HomeCard({
     this.str,
     this.type,
     this.itemIndex
@@ -80,13 +80,13 @@ class homeCard extends StatelessWidget {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text("Rs.", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                        Text("Rs.", style: h4_Dark),
                         width2,
-                        Text(str[itemIndex]["price"], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
+                        Text(str[itemIndex]["price"], style: h3_Dark),
                       ],
                     ),
                     height5,
-                    Text(str[itemIndex]["vendor"], style: TextStyle(fontSize: 12),)
+                    Text(str[itemIndex]["vendor"], style: t12_Dark,)
                   ],
                 ),
                 Avatar(img: str[itemIndex]["pic"], radius: 25,),
@@ -104,7 +104,7 @@ class homeCard extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(str[itemIndex]["lastTransaction"], style: TextStyle(fontWeight: FontWeight.bold),),
+                        Text(str[itemIndex]["lastTransaction"], style: t14_Dark,),
                         height5,
                         Text("Last Transaction On", style: TextStyle(fontSize: 10),)
                       ],
@@ -147,12 +147,12 @@ class homeCard extends StatelessWidget {
 }
 
 
-class notificationCard extends StatelessWidget {
+class NotificationCard extends StatelessWidget {
 
-  List str;
-  int itemIndex;
+  final List str;
+  final int itemIndex;
 
-  notificationCard({
+  NotificationCard({
     this.str,
     this.itemIndex
     });
@@ -170,12 +170,12 @@ class notificationCard extends StatelessWidget {
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              (str[itemIndex]["type"] == 1) ? Text("To", style: TextStyle(fontSize: 14),) : Text("From", style: TextStyle(fontSize: 14),),
-              Text(str[itemIndex]["name"], style: profileBodyTextStyle,),
+               Text((str[itemIndex]["type"] == 1) ? "To" : "From", style: t12_Dark,),
+              Text(str[itemIndex]["name"], style: t18_Dark,),
               height5,
             ],),
 
-          subtitle: Text(str[itemIndex]["date"], style: TextStyle(color: greyColor),),
+          subtitle: Text(str[itemIndex]["date"], style: TextStyle(color: greyColor, fontSize: 12),),
 
           trailing:
           (str[itemIndex]["type"] == 1) ?

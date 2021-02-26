@@ -23,6 +23,7 @@ class _UsersListState extends State<UsersList> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: whiteColor,
         body: Container(
           child: Column(
             children: [
@@ -45,7 +46,7 @@ class _UsersListState extends State<UsersList> {
                     Center(
                         child: Text(
                       "Users List",
-                      style: headerWhiteTextStyle,
+                      style: h3_Light,
                     ))
                   ],
                 ),
@@ -57,7 +58,7 @@ class _UsersListState extends State<UsersList> {
                     shrinkWrap: true,
                     itemCount: 5,
                     itemBuilder: (context, index){
-                      return userListCard(
+                      return UserListCard(
                         str: _str,
                         pic: "assets/profilebg.png",
                         itemIndex: index,

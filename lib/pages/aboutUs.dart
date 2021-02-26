@@ -25,7 +25,7 @@ class AboutUs extends StatelessWidget {
                     height10,
 
                     Center(child: Text("About Us",
-                        style: headerWhiteTextStyle),
+                        style: h3_Light),
                     ),
                   ],
                 ),

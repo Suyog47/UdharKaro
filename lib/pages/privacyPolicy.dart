@@ -28,7 +28,7 @@ class PrivacyPolicy extends StatelessWidget {
                     height10,
 
                     Center(child: Text("Privacy Policy",
-                      style:  headerWhiteTextStyle
+                      style:  h3_Light,
                     ),
                     )
                   ],

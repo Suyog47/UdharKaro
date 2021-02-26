@@ -5,6 +5,7 @@ import 'package:udhaarkaroapp/pages/accountDetails.dart';
 import 'package:udhaarkaroapp/pages/feedbackForm.dart';
 import 'package:udhaarkaroapp/pages/feedbackForm2.dart';
 import 'package:udhaarkaroapp/pages/homePage.dart';
+import 'package:udhaarkaroapp/pages/mainScreen.dart';
 import 'package:udhaarkaroapp/pages/notifications.dart';
 import 'package:udhaarkaroapp/pages/privacyPolicy.dart';
 import 'package:udhaarkaroapp/pages/profilePage.dart';
@@ -22,8 +23,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: "/home",
+      initialRoute: "/mainscreen",
       routes: {
+        "/mainscreen" : (context) => MainScreen(),
         "/home" : (context) => Home(),
         "/profilepage" : (context) => ProfilePage(),
         "/accountdetails" : (context) => AccountDetails(),

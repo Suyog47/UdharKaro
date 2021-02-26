@@ -37,7 +37,7 @@ class _FeedbackFormState extends State<FeedbackForm> {
 
                     height10,
 
-                    Center(child: Text("Feedback Form", style: headerWhiteTextStyle,))
+                    Center(child: Text("Feedback Form", style: h3_Light,))
                   ],
                 ),
               ),
@@ -51,7 +51,7 @@ class _FeedbackFormState extends State<FeedbackForm> {
                       children: [
                         Column(
                           children: [
-                            Text("Please provide your valuable rating", style: profileBodyTextStyle,),
+                            Text("Please provide your valuable rating", style: t20_Dark,),
 
                             height10,
                             height10,
@@ -82,7 +82,7 @@ class _FeedbackFormState extends State<FeedbackForm> {
 
                         Column(
                           children: [
-                            Text("How likely you will suggest our app to others", style: profileBodyTextStyle, softWrap: true, textAlign: TextAlign.center,),
+                            Text("How likely you will suggest our app to others", style: t20_Dark, softWrap: true, textAlign: TextAlign.center,),
 
                             height10,
                             height10,
