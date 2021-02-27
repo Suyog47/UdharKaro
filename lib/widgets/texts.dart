@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:udhaarkaroapp/constants/textStyles.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
 
 
 class H1Dark extends StatelessWidget {

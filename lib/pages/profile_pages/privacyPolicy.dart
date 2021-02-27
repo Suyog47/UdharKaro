@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:udhaarkaroapp/constants/colors.dart';
-import 'package:udhaarkaroapp/constants/heights.dart';
-import 'package:udhaarkaroapp/constants/icons.dart';
-import 'package:udhaarkaroapp/constants/textStyles.dart';
-
+import 'package:udhaarkaroapp/constants/constants.dart';
 
 
 class PrivacyPolicy extends StatelessWidget {
@@ -23,7 +19,7 @@ class PrivacyPolicy extends StatelessWidget {
                   children: [
                     Align(child: InkWell(
                         onTap: (){Navigator.pop(context);},
-                        child: backIcon), alignment: Alignment.centerLeft,),
+                        child: backIconLight), alignment: Alignment.centerLeft,),
 
                     height10,
 

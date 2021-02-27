@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:udhaarkaroapp/constants/colors.dart';
-import 'package:udhaarkaroapp/constants/heights.dart';
-import 'package:udhaarkaroapp/constants/icons.dart';
-import 'package:udhaarkaroapp/constants/textStyles.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/widgets/card.dart';
 
 

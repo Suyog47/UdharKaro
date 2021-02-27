@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:udhaarkaroapp/constants/colors.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
 
+const TextStyle h1_Dark =
+    TextStyle(color: blackColor, fontSize: 50, fontWeight: FontWeight.w500);
+const TextStyle h1_Light =
+    TextStyle(color: whiteColor, fontSize: 50, fontWeight: FontWeight.w500);
 
-const TextStyle h1_Dark = TextStyle(color: blackColor, fontSize: 50, fontWeight: FontWeight.w500);
-const TextStyle h1_Light = TextStyle(color: whiteColor, fontSize: 50, fontWeight: FontWeight.w500);
+const TextStyle h2_Dark =
+    TextStyle(color: blackColor, fontSize: 40, fontWeight: FontWeight.w500);
+const TextStyle h2_Light =
+    TextStyle(color: whiteColor, fontSize: 40, fontWeight: FontWeight.w500);
 
-const TextStyle h2_Dark = TextStyle(color: blackColor, fontSize: 40, fontWeight: FontWeight.w500);
-const TextStyle h2_Light = TextStyle(color: whiteColor, fontSize: 40, fontWeight: FontWeight.w500);
+const TextStyle h3_Dark =
+    TextStyle(color: blackColor, fontSize: 30, fontWeight: FontWeight.w500);
+const TextStyle h3_Light =
+    TextStyle(color: whiteColor, fontSize: 30, fontWeight: FontWeight.w500);
 
-const TextStyle h3_Dark = TextStyle(color: blackColor, fontSize: 30, fontWeight: FontWeight.w500);
-const TextStyle h3_Light = TextStyle(color: whiteColor, fontSize: 30, fontWeight: FontWeight.w500);
-
-const TextStyle h4_Dark = TextStyle(color: blackColor, fontSize: 20, fontWeight: FontWeight.w500);
-const TextStyle h4_Light = TextStyle(color: whiteColor, fontSize: 20, fontWeight: FontWeight.w500);
-
+const TextStyle h4_Dark =
+    TextStyle(color: blackColor, fontSize: 20, fontWeight: FontWeight.w500);
+const TextStyle h4_Light =
+    TextStyle(color: whiteColor, fontSize: 20, fontWeight: FontWeight.w500);
 
 const TextStyle t30_Dark = TextStyle(color: blackColor, fontSize: 30);
 const TextStyle t30_Light = TextStyle(color: whiteColor, fontSize: 30);
@@ -51,11 +57,33 @@ const TextStyle hint_Dark =
 const TextStyle hint_Light =
     TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18);
 
-TextStyle radioButtonTextStyle =
+const TextStyle radioButtonTextStyle =
     TextStyle(fontWeight: FontWeight.bold, fontSize: 17);
 
-TextStyle minusPriceTextStyle =
+const TextStyle minusPriceTextStyle =
     TextStyle(color: redColor, fontSize: 18, fontWeight: FontWeight.bold);
 
-TextStyle plusPriceTextStyle =
+const TextStyle plusPriceTextStyle =
     TextStyle(color: greenColor, fontSize: 18, fontWeight: FontWeight.bold);
+
+const TextStyle detailsHeadingTextStyle = TextStyle(
+  fontWeight: FontWeight.w400,
+  fontSize: 25,
+  color: black38,
+);
+
+const TextStyle size25TextStyle = TextStyle(
+  fontSize: 25,
+);
+
+const TextStyle amountDetailsTextStyle =
+    TextStyle(fontWeight: FontWeight.w500, fontSize: 40);
+
+const TextStyle size20TextStyle = TextStyle(fontSize: 20);
+
+const TextStyle amountDetailsNameTextStyle =
+    TextStyle(fontWeight: FontWeight.w500, fontSize: 35, color: whiteColor);
+
+const TextStyle gaveOrTakenTextStyle =
+    TextStyle(fontWeight: FontWeight.w500, fontSize: 18, color: whiteColor);
+

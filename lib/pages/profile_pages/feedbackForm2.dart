@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:udhaarkaroapp/constants/colors.dart';
-import 'package:udhaarkaroapp/constants/heights.dart';
-import 'package:udhaarkaroapp/constants/icons.dart';
-import 'package:udhaarkaroapp/constants/textStyles.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
 
 class FeedbackForm2 extends StatefulWidget {
   @override
@@ -31,7 +28,7 @@ class _FeedbackForm2State extends State<FeedbackForm2> {
                           onTap: () {
                             Navigator.pop(context);
                           },
-                          child: backIcon),
+                          child: backIconLight),
                       alignment: Alignment.centerLeft,
                     ),
                     height10,
@@ -72,7 +69,9 @@ class _FeedbackForm2State extends State<FeedbackForm2> {
               ),
               Center(
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    print(_msg);
+                  },
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 65, vertical: 10),
                     decoration: BoxDecoration(

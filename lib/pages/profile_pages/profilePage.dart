@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:udhaarkaroapp/constants/colors.dart';
-import 'package:udhaarkaroapp/constants/dividers.dart';
-import 'package:udhaarkaroapp/constants/heights.dart';
-import 'package:udhaarkaroapp/constants/icons.dart';
-import 'package:udhaarkaroapp/constants/textStyles.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/widgets/circularAvatar.dart';
 
 class ProfilePage extends StatelessWidget {

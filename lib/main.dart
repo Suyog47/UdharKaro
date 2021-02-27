@@ -1,16 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:udhaarkaroapp/pages/aboutUs.dart';
-import 'package:udhaarkaroapp/pages/accountDetails.dart';
-import 'package:udhaarkaroapp/pages/feedbackForm.dart';
-import 'package:udhaarkaroapp/pages/feedbackForm2.dart';
-import 'package:udhaarkaroapp/pages/homePage.dart';
-import 'package:udhaarkaroapp/pages/mainScreen.dart';
-import 'package:udhaarkaroapp/pages/notifications.dart';
-import 'package:udhaarkaroapp/pages/privacyPolicy.dart';
-import 'package:udhaarkaroapp/pages/profilePage.dart';
-import 'package:udhaarkaroapp/pages/qrCodeScanner.dart';
-import 'package:udhaarkaroapp/pages/userList.dart';
+import 'package:udhaarkaroapp/pages/pages.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -36,6 +26,9 @@ class MyApp extends StatelessWidget {
         "/userlist" : (context) => UsersList(),
         "/qrscanner" : (context) => QRCodeScanner(),
         "/notification" : (context) => Notifications(),
+        "/giveAmount" : (context) => GiveAmount(),
+        "/paidAmountDetails" : (context) => PaidAmountDetails(),
+        "/takenAmountDetails" : (context) => TakenAmountDetails(),
       },
       debugShowCheckedModeBanner: false,
     );

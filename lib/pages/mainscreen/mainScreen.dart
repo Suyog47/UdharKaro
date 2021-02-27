@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:udhaarkaroapp/constants/colors.dart';
-import 'package:udhaarkaroapp/pages/homePage.dart';
-import 'package:udhaarkaroapp/pages/notifications.dart';
-import 'package:udhaarkaroapp/pages/profilePage.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/pages/pages.dart';
 
 class MainScreen extends StatefulWidget {
   @override

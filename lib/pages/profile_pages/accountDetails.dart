@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:udhaarkaroapp/constants/colors.dart';
-import 'package:udhaarkaroapp/constants/heights.dart';
-import 'package:udhaarkaroapp/constants/icons.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/widgets/circularAvatar.dart';
 import 'package:flutter_dropdown/flutter_dropdown.dart';
-import '../constants/textStyles.dart';
 
 class AccountDetails extends StatefulWidget {
   @override
@@ -48,7 +45,7 @@ class _AccountDetailsState extends State<AccountDetails> {
                             onTap: () {
                               Navigator.pop(context);
                             },
-                            child: backIcon),
+                            child: backIconLight),
                       ),
                       height10,
                       Center(

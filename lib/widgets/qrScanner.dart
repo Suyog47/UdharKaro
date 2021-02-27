@@ -1,8 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
-import 'package:udhaarkaroapp/constants/colors.dart';
-import 'package:udhaarkaroapp/constants/heights.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
 
 class QRScanner extends StatefulWidget {
 
@@ -73,7 +72,7 @@ class _QRScannerState extends State<QRScanner> {
     controller.scannedDataStream.listen((scanData) {
         result = scanData;
        if(result != null){
-         Navigator.pushReplacementNamed(context, "/home");
+         Navigator.pushReplacementNamed(context, "/giveAmount");
        }
        return;
     });

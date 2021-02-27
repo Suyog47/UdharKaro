@@ -21,3 +21,6 @@ const Color lightGreenColor = Color(0xFF00ECB5);
 
 const Color greenColor = Colors.green;
 
+const Color black38 = Colors.black38;
+
+
