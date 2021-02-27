@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:udhaarkaroapp/constants/colors.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
 
 const Icon profilePageIcon = Icon(
     Icons.keyboard_arrow_right
@@ -10,9 +10,15 @@ const Icon profilePageLogoutIcon = Icon(
     MdiIcons.logout
 );
 
-const Icon backIcon = Icon(
+const Icon backIconLight = Icon(
   Icons.arrow_back,
   color: whiteColor,
+  size: 30,
+);
+
+const Icon backIconDark = Icon(
+  Icons.arrow_back,
+  color: blackColor,
   size: 30,
 );
 

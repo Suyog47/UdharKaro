@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:udhaarkaroapp/constants/colors.dart';
-import 'package:udhaarkaroapp/constants/heights.dart';
-import 'package:udhaarkaroapp/constants/textStyles.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/widgets/qrScanner.dart';
 
 class QRCodeScanner extends StatefulWidget {
@@ -40,7 +38,7 @@ class _QRCodeScannerState extends State<QRCodeScanner> {
                       height10,
                       height10,
 
-                      Text("Scan any QR Code", style: headerWhiteTextStyle),
+                      Text("Scan any QR Code", style: h3_Light),
 
                       height10,
                       height10,
@@ -50,7 +48,7 @@ class _QRCodeScannerState extends State<QRCodeScanner> {
                           height: 250,
                           width: 300,
                           child: Center(
-                              child: qrScanner())
+                              child: QRScanner())
                       ),
 
                       height5,
@@ -76,7 +74,7 @@ class _QRCodeScannerState extends State<QRCodeScanner> {
                          TextFormField(
                            decoration: InputDecoration(
                              labelText: "Enter Mobile Number",
-                             labelStyle: textFieldHintTextStyle
+                             labelStyle: hint_Dark
                            ),
                            inputFormatters: [
                              FilteringTextInputFormatter.digitsOnly

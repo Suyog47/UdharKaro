@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:udhaarkaroapp/constants/colors.dart';
-import 'package:udhaarkaroapp/constants/dividers.dart';
-import 'package:udhaarkaroapp/constants/heights.dart';
-import 'package:udhaarkaroapp/constants/icons.dart';
-import 'package:udhaarkaroapp/constants/textStyles.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/widgets/circularAvatar.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -15,7 +11,7 @@ class ProfilePage extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.fromLTRB(20, 20, 20, 40),
+                padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
                 decoration: BoxDecoration(
                   color: darkBlueColor,
                 ),
@@ -30,7 +26,7 @@ class ProfilePage extends StatelessWidget {
 
                     height10,
 
-                    Center(child: Text("Suyog Amin", style: headerWhiteTextStyle,))
+                    Center(child: Text("Suyog Amin", style: h2_Light,))
                   ],
                 ),
               ),
@@ -44,7 +40,7 @@ class ProfilePage extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Account Details", style: profileBodyTextStyle,),
+                            Text("Profile Details", style: t20_Dark,),
                             profilePageIcon
                           ],
                         ),
@@ -63,7 +59,7 @@ class ProfilePage extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Privacy Policy", style: profileBodyTextStyle),
+                            Text("Privacy Policy", style: t20_Dark,),
                             profilePageIcon
                           ],
                         ),
@@ -79,7 +75,7 @@ class ProfilePage extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Feedback Form", style: profileBodyTextStyle),
+                            Text("FeedBackForm", style: t20_Dark,),
                             profilePageIcon
                           ],
                         ),
@@ -95,7 +91,7 @@ class ProfilePage extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("My Users List", style: profileBodyTextStyle),
+                            Text("My Users List", style: t20_Dark,),
                             profilePageIcon
                           ],
                         ),
@@ -111,7 +107,7 @@ class ProfilePage extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("About Us", style: profileBodyTextStyle),
+                            Text("About Us", style: t20_Dark,),
                             profilePageIcon,
                           ],
                         ),
@@ -128,7 +124,7 @@ class ProfilePage extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Logout", style: profileBodyTextStyle),
+                          Text("Logout", style: t22_Dark,),
                           profilePageLogoutIcon
                         ],
                       )

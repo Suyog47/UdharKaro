@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:udhaarkaroapp/constants/colors.dart';
-import 'package:udhaarkaroapp/constants/heights.dart';
-import 'package:udhaarkaroapp/constants/icons.dart';
-import 'package:udhaarkaroapp/constants/textStyles.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
 
 class AboutUs extends StatelessWidget {
   @override
@@ -21,12 +18,12 @@ class AboutUs extends StatelessWidget {
                   children: [
                     Align(child: InkWell(
                         onTap: (){Navigator.pop(context);},
-                        child: backIcon), alignment: Alignment.centerLeft,),
+                        child: backIconLight), alignment: Alignment.centerLeft,),
 
                     height10,
 
                     Center(child: Text("About Us",
-                        style: headerWhiteTextStyle),
+                        style: h3_Light),
                     ),
                   ],
                 ),

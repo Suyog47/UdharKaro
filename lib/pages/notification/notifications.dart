@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:udhaarkaroapp/constants/colors.dart';
-import 'package:udhaarkaroapp/constants/heights.dart';
-import 'package:udhaarkaroapp/constants/icons.dart';
-import 'package:udhaarkaroapp/constants/textStyles.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/widgets/card.dart';
 
 
@@ -53,20 +50,14 @@ class _NotificationsState extends State<Notifications> {
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                padding: EdgeInsets.fromLTRB(20, 50, 20, 20),
                 decoration: BoxDecoration(
                   color: darkBlueColor,
                 ),
                 child: Column(
                   children: [
-                    Align(child: InkWell(
-                        onTap: (){Navigator.pop(context);},
-                        child: backIcon), alignment: Alignment.centerLeft,),
-
-                    height10,
-
                     Center(child: Text("Notifications",
-                        style: headerWhiteTextStyle),
+                        style: h3_Light),
                     ),
                   ],
                 ),
@@ -79,7 +70,7 @@ class _NotificationsState extends State<Notifications> {
                     shrinkWrap: true,
                     itemCount: str.length,
                     itemBuilder: (context, index){
-                      return notificationCard(
+                      return NotificationCard(
                         str: str,
                         itemIndex: index,
                       );

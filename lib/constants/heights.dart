@@ -8,7 +8,6 @@ const height5 = SizedBox(height: 5);
 
 const height10 = SizedBox(height: 10);
 
-const Height30 = SizedBox(height: 30);
+const height30 = SizedBox(height: 30);
 
-const Height60 = SizedBox(height: 60);
 

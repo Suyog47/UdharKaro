@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:udhaarkaroapp/constants/colors.dart';
-import 'package:udhaarkaroapp/constants/heights.dart';
-import 'package:udhaarkaroapp/constants/icons.dart';
-import 'package:udhaarkaroapp/constants/textStyles.dart';
-import 'package:udhaarkaroapp/constants/widths.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/widgets/card.dart';
 
 class Home extends StatefulWidget {
@@ -13,7 +9,6 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int type = 1;
-  int _currentIndex = 0;
   List str = [{
     "vendor": "Agarwal Sweets",
     "price": "1500",
@@ -37,7 +32,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          backgroundColor: grey300Color,
+          backgroundColor: lightGreyColor,
           body: Container(
             child: Column(
               children: [
@@ -53,7 +48,7 @@ class _HomeState extends State<Home> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("UDHAR KARO", style: headerBlackTextStyle),
+                          Text("UDHAAR KARO", style: h3_Dark,),
 
                           Container(
 
@@ -85,9 +80,9 @@ class _HomeState extends State<Home> {
                                   Row(
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
-                                      Text("Rs.", style: TextStyle(color: whiteColor, fontWeight: FontWeight.bold, fontSize: 18),),
+                                      Text("Rs.", style: h4_Light,),
                                       width2,
-                                      Text("1200", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30, color: whiteColor)),
+                                      Text("1200", style: h3_Light),
                                     ],
                                   ),
                                   height5,
@@ -111,9 +106,9 @@ class _HomeState extends State<Home> {
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
-                                    Text("Rs.", style: TextStyle(color: whiteColor, fontWeight: FontWeight.bold, fontSize: 18 )),
+                                    Text("Rs.", style: h4_Light),
                                     width2,
-                                    Text("2500", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30, color: whiteColor)),
+                                    Text("2500", style: h3_Light),
                                   ],
                                 ),
                                 height5,
@@ -149,7 +144,7 @@ class _HomeState extends State<Home> {
                         itemCount: str.length,
                         shrinkWrap: true,
                         itemBuilder: (context, index){
-                          return homeCard(
+                          return HomeCard(
                             type: type,
                             str: str,
                             itemIndex: index,
@@ -160,45 +155,6 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
-
-          bottomNavigationBar: Container(
-            padding: EdgeInsets.symmetric(vertical: 15),
-            decoration: BoxDecoration(
-              color: whiteColor,
-              borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-            ),
-            width: MediaQuery.of(context).devicePixelRatio,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                InkWell(
-                  onTap: (){
-                    setState(() => _currentIndex = 0);
-                    Navigator.pushNamed(context, "/home");},
-                  child: (_currentIndex == 0) ?
-                  Transform.scale(scale: 1.4, child: Icon(Icons.home, color: redColor,)) :
-                  Icon(Icons.home, color: blackColor,),
-                ),
-
-                InkWell(
-                    onTap: (){
-                      setState(() => _currentIndex = 1);
-                      Navigator.pushNamed(context, "/notification");},
-                    child: (_currentIndex == 1) ?
-                    Transform.scale(scale: 1.4, child: Icon(Icons.add_alert, color: redColor,)) :
-                    Icon(Icons.add_alert, color: blackColor,)),
-
-                InkWell(
-                    onTap: (){
-                      setState(() => _currentIndex = 2);
-                      Navigator.pushNamed(context, "/profilepage");
-                    },
-                    child: (_currentIndex == 2) ?
-                    Transform.scale(scale: 1.4, child: Icon(Icons.account_circle, color: redColor,)) :
-                    Icon(Icons.account_circle, color: blackColor,)),
-              ],
-            ),
-          )
       ),
     );
   }

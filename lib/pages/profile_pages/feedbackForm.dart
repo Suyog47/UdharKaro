@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:udhaarkaroapp/constants/colors.dart';
-import 'package:udhaarkaroapp/constants/heights.dart';
-import 'package:udhaarkaroapp/constants/icons.dart';
-import 'package:udhaarkaroapp/constants/textStyles.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
 
-import '../constants/textStyles.dart';
+
 class FeedbackForm extends StatefulWidget {
   @override
   _FeedbackFormState createState() => _FeedbackFormState();
@@ -33,11 +30,11 @@ class _FeedbackFormState extends State<FeedbackForm> {
                   children: [
                     Align(child: InkWell(
                         onTap: (){Navigator.pop(context);},
-                        child: backIcon), alignment: Alignment.centerLeft,),
+                        child: backIconLight), alignment: Alignment.centerLeft,),
 
                     height10,
 
-                    Center(child: Text("Feedback Form", style: headerWhiteTextStyle,))
+                    Center(child: Text("Feedback Form", style: h3_Light,))
                   ],
                 ),
               ),
@@ -51,7 +48,7 @@ class _FeedbackFormState extends State<FeedbackForm> {
                       children: [
                         Column(
                           children: [
-                            Text("Please provide your valuable rating", style: profileBodyTextStyle,),
+                            Text("Please provide your valuable rating", style: t20_Dark,),
 
                             height10,
                             height10,
@@ -82,7 +79,7 @@ class _FeedbackFormState extends State<FeedbackForm> {
 
                         Column(
                           children: [
-                            Text("How likely you will suggest our app to others", style: profileBodyTextStyle, softWrap: true, textAlign: TextAlign.center,),
+                            Text("How likely you will suggest our app to others", style: t20_Dark, softWrap: true, textAlign: TextAlign.center,),
 
                             height10,
                             height10,

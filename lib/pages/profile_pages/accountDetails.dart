@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:udhaarkaroapp/constants/colors.dart';
-import 'package:udhaarkaroapp/constants/heights.dart';
-import 'package:udhaarkaroapp/constants/icons.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/widgets/circularAvatar.dart';
 import 'package:flutter_dropdown/flutter_dropdown.dart';
-
-import '../constants/textStyles.dart';
 
 class AccountDetails extends StatefulWidget {
   @override
@@ -49,7 +45,7 @@ class _AccountDetailsState extends State<AccountDetails> {
                             onTap: () {
                               Navigator.pop(context);
                             },
-                            child: backIcon),
+                            child: backIconLight),
                       ),
                       height10,
                       Center(
@@ -58,11 +54,7 @@ class _AccountDetailsState extends State<AccountDetails> {
                         radius: 45,
                       )),
                       height10,
-                      Center(
-                          child: Text(
-                        "Suyog Amin",
-                        style: headerWhiteTextStyle,
-                      ))
+                      Center(child: Text("Suyog Amin", style: h2_Light,))
                     ],
                   ),
                 ),
@@ -76,7 +68,7 @@ class _AccountDetailsState extends State<AccountDetails> {
                         TextFormField(
                           decoration: InputDecoration(
                               labelText: 'Phone Number',
-                              labelStyle: textFieldHintTextStyle,
+                              labelStyle: hint_Dark,
                           ),
                           inputFormatters: [
                             FilteringTextInputFormatter.digitsOnly
@@ -96,7 +88,7 @@ class _AccountDetailsState extends State<AccountDetails> {
                         TextFormField(
                             decoration: InputDecoration(
                                 labelText: 'Email',
-                                labelStyle: textFieldHintTextStyle,
+                                labelStyle: hint_Dark,
                             ),
                             initialValue: _email,
                             onChanged: (val) => _email = val.trim(),
@@ -115,7 +107,7 @@ class _AccountDetailsState extends State<AccountDetails> {
                           children: [
                             Text(
                               "Category",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                             ),
                             DropDown(
                               items: ["Personal Account", "Business Account"],
@@ -135,7 +127,7 @@ class _AccountDetailsState extends State<AccountDetails> {
                               child: new TextFormField(
                                 decoration: InputDecoration(
                                     labelText: 'Password',
-                                    labelStyle: textFieldHintTextStyle,
+                                    labelStyle: hint_Dark,
                                 ),
                                 initialValue: _pass,
                                 validator: (val) => val.length < 6 ||

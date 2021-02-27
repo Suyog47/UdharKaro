@@ -11,7 +11,7 @@ const Color blackColor = Colors.black;
 
 const Color greyColor = Colors.grey;
 
-final Color grey300Color = Colors.grey[300];
+const Color lightGreyColor = Color(0xFFF5F5F5);
 
 const Color amberColor = Colors.amber;
 
