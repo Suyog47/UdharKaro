@@ -87,3 +87,8 @@ const TextStyle amountDetailsNameTextStyle =
 const TextStyle gaveOrTakenTextStyle =
     TextStyle(fontWeight: FontWeight.w500, fontSize: 18, color: whiteColor);
 
+const TextStyle logSignInTextStyle = TextStyle(
+  fontWeight: FontWeight.w400,
+  fontSize: 20,
+  color: black38,
+);
