@@ -1,19 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:udhaarkaroapp/constants/colors.dart';
-import 'package:udhaarkaroapp/constants/containerStyles.dart';
-import 'package:udhaarkaroapp/constants/heights.dart';
-import 'package:udhaarkaroapp/constants/textStyles.dart';
-import 'package:udhaarkaroapp/widgets/customButtons.dart';
-import 'package:udhaarkaroapp/widgets/customizedTextFields.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/widgets/buttons.dart';
+import 'package:udhaarkaroapp/widgets/textInputField.dart';
 
 
-class newPassword extends StatefulWidget {
+class NewPassword extends StatefulWidget {
   @override
-  _newPasswordState createState() => _newPasswordState();
+  _NewPasswordState createState() => _NewPasswordState();
 }
 
-class _newPasswordState extends State<newPassword> {
+class _NewPasswordState extends State<NewPassword> {
+
+  final _formKey = GlobalKey<FormState>();
+  String _pass, _cpass;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,34 +40,61 @@ class _newPasswordState extends State<newPassword> {
               ),
             ),
              height30,
-             Text('Create a new Password',style: TextStyle(
-               fontWeight: FontWeight.w500,fontSize: 30
-              ),
+             Text('Create a new Password',
+               style: h3_Dark
              ),
                 height30,
-                Text("""Please enter the OTP that has been \n      sent on your phone number """,style: TextStyle(
-                    color: black38,fontSize: 15,fontWeight: FontWeight.w500,
+                Text("Please enter the OTP that has been sent on your phone number ",
+                  style: t16_Dark,
+                  textAlign: TextAlign.center,
                 ),
-                ),
-                height10,
-                Container(
-                  decoration: rectDecoration,
-                  child: Padding(
-                    padding: EdgeInsets.only(left:20, right: 20, bottom: 20),
+                height30,
+                Form(
+                  key: _formKey,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                    decoration: rectDecoration,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        otpTextField(),
-                        passwordTextField(label: "Enter new Password",),
-                        passwordTextField(label: "Re-enter Password",),
+                        //otpTextField(),
+                        PasswordTextField(
+                          decoration: inputDecor2.copyWith(labelText: "Enter new Password", labelStyle: t16_Dark),
+                          callable: (value){
+                            setState(() => _pass = value);
+                          },
+                        ),
 
+                        height10,
+
+                        PasswordTextField(
+                          decoration: inputDecor2.copyWith(labelText: "ReEnter new Password", labelStyle: t16_Dark),
+                          callable: (value){
+                            setState(() => _cpass = value);
+                          },
+                        ),
                       ],
                     ),
                   ),
                 ),
                 height30,
                 height5,
-                elevatedButton(buttonText: "Reset Password", onPress: (){}),
+                SubmitButton(
+                  text: "Reset Password",
+                  width: 200,
+                  height: 50,
+                  elevation: 10,
+                  color: lightBlueColor,
+                  formKey: _formKey,
+                  callable: (){
+                    if(_pass == _cpass){
+
+                    }
+                    else{
+                      print("match cancel");
+                    }
+                  },
+                ),
               ]
             ),
           ),

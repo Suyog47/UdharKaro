@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:udhaarkaroapp/constants/colors.dart';
-import 'package:udhaarkaroapp/constants/heights.dart';
-import 'package:udhaarkaroapp/constants/textStyles.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/widgets/buttons.dart';
 
-class verification extends StatefulWidget {
+class Verification extends StatefulWidget {
   @override
-  _verificationState createState() => _verificationState();
+  _VerificationState createState() => _VerificationState();
 }
 
-class _verificationState extends State<verification> {
+class _VerificationState extends State<Verification> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,10 +40,9 @@ class _verificationState extends State<verification> {
                 ),
                 height60,
                 height30,
-                Text("""Enter the verification code we have sent you 
-                on your mobile number.""",style: TextStyle(
-                    fontWeight: FontWeight.w500,fontSize: 17
-                ),
+                Text("Enter the verification code we have sent you on your mobile number.",
+                  style: t18_Dark,
+                  textAlign: TextAlign.center,
                 ),
                 height60,
                 Row(
@@ -54,95 +52,26 @@ class _verificationState extends State<verification> {
                       color: black38,fontSize: 15,fontWeight: FontWeight.w500,
                      ),
                     ),
-                    TextButton(
-                      onPressed: (){
+                    InkWell(
+                      onTap: (){
 
                       },
-                      child: Text('Resend',
-                        style: TextStyle(
-                          color: Colors.red,fontSize: 20,
-                        ),
-                      ),
-                    ),
+                        child: Text(" Resend", style: TextStyle(fontSize: 18, color: redColor),
+
+                    )),
                   ],
                 ),
                 height30,
-                ElevatedButton(
-                  child: Text("Verify",style: size25TextStyle,),
-                  style: ElevatedButton.styleFrom(
-                    onPrimary: Colors.white,
-                    primary: Color(0xFF41C8F3),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(12.0),
-                    ),
-                    side: BorderSide(
-                      color: Color(0xFF41C8F3),
-                    ),
-                    minimumSize: Size(120,50),
-                  ),
-                  //onPressed
-                  onPressed: (){
-                    showDialog(
-                      context: context,
-                      builder: (context){
-                        return Dialog(
-                          backgroundColor: Color(0xFFFCF4F4),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                          child: Container(
-                            height: 400,
-                            child: Padding(
-                              padding: const EdgeInsets.fromLTRB(12, 30, 12, 12),
-                              child: Column(
-                               children: [
-                                 CircleAvatar(
-                                   radius: 70,
-                                   backgroundColor: Color(0xFFCAF8CE),
-                                   child: CircleAvatar(
-                                     radius: 55,
-                                     backgroundColor: Color(0xFF5EE283),
-                                     child: CircleAvatar(
-                                       radius: 50,
-                                       backgroundColor: Color(0xFFFBF2F2),
-                                       child: Icon(Icons.check_outlined,color: Colors.green,
-                                       size: 60,),
-                                     ),
-                                   ),
-                                 ),
-                                 height30,
-                                 Text('Verified Successfully',
-                                   style: size25TextStyle,
-                                 ),
-                                 height60,
-                                 ElevatedButton(
-                                   onPressed: (){
-                                     Navigator.pushNamed(context,"/login");
-                                   },
-                                   child: Text("Go back to login",style: size20TextStyle,),
-                                   style: ElevatedButton.styleFrom(
-                                     onPrimary: Colors.white,
-                                     primary: Color(0xFF41C8F3),
-                                     shape: RoundedRectangleBorder(
-                                       borderRadius: new BorderRadius.circular(12.0),
-                                     ),
-                                     side: BorderSide(
-                                       color: Color(0xFF41C8F3),
-                                     ),
-                                     minimumSize: Size(70,45),
-                                   ),
-                                 ),
-                               ],
-                              ),
-                            ),
-                          ),
-                        );
-                      }
-                    );
+                Button(
+                  width: 120,
+                  height: 45,
+                  text: "Verify",
+                  color: lightBlueColor,
+                  elevation: 0.0,
+                  callable: (){
+
                   },
-
-
-                ),
+                )
               ],
             ),
           ),

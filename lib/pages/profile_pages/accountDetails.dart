@@ -65,14 +65,16 @@ class _AccountDetailsState extends State<AccountDetails> {
                       children: [
                         PhoneTextField(
                           num: _num,
-                          decoration: phoneInputDecoration,
+                          decoration: inputDecor,
+                          label: "Phone Number",
                           callable: (value) {
                             setState(() => _num = value);
                           },
                         ),
                         EmailTextField(
                           email: _email,
-                          decoration: emailInputDecoration,
+                          decoration: inputDecor,
+                          label: "Email",
                           callable: (value) {
                             setState(() => _email = value);
                           },
@@ -82,11 +84,7 @@ class _AccountDetailsState extends State<AccountDetails> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              "Category",
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.bold),
-                            ),
+                            Text("Category", style: t14_Dark),
                             DropDown(
                               items: ["Personal Account", "Business Account"],
                               initialValue: _category,
@@ -98,9 +96,10 @@ class _AccountDetailsState extends State<AccountDetails> {
                           ],
                         ),
                         height10,
-                        PassWordTextFields(
+                        PasswordTextField(
                           pass: _pass,
-                          decoration: passwordInputDecoration,
+                          decoration: inputDecor,
+                          label: "Password",
                           callable: (value) {
                             setState(() => _pass = value);
                           },
@@ -113,12 +112,12 @@ class _AccountDetailsState extends State<AccountDetails> {
                           height: 50,
                           elevation: 0,
                           color: darkBlueColor,
-                              formKey: _formKey,
-                              callable: (){
-                               print(_num);
-                               print(_email);
-                               print(_pass);
-                              },
+                          formKey: _formKey,
+                          callable: () {
+                            print(_num);
+                            print(_email);
+                            print(_pass);
+                          },
                         ))
                       ],
                     ),

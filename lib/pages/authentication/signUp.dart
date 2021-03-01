@@ -1,27 +1,26 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:udhaarkaroapp/constants/colors.dart';
-import 'package:udhaarkaroapp/constants/containerStyles.dart';
-import 'package:udhaarkaroapp/constants/heights.dart';
-import 'package:udhaarkaroapp/constants/textStyles.dart';
-import 'package:udhaarkaroapp/constants/widths.dart';
-import 'package:udhaarkaroapp/widgets/customButtons.dart';
-import 'package:udhaarkaroapp/widgets/customizedTextFields.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/widgets/buttons.dart';
+import 'package:udhaarkaroapp/widgets/textInputField.dart';
 
-class signUp extends StatefulWidget {
+class SignUp extends StatefulWidget {
   @override
-  _signUpState createState() => _signUpState();
+  _SignUpState createState() => _SignUpState();
 }
 
-class _signUpState extends State<signUp> {
+class _SignUpState extends State<SignUp> {
+
+  final _formKey = GlobalKey<FormState>();
+  String _name, _email, _num, _pass, _cpass;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsets.only(left:30, top:80, right:30,bottom:10),
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -32,48 +31,93 @@ class _signUpState extends State<signUp> {
                 // height5,
                 Text(
                   ' Sign Up to get started!',
-                  style: logSignInTextStyle,
+                  style: h4_Dark,
                 ),
                 height30,
                 Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                   decoration: rectDecoration,
-                  child: Padding(
-                    padding: EdgeInsets.only(left:20, right: 20, bottom: 20),
+                  child: Form(
+                    key: _formKey,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        customTextField(nameLabel: "Full Name",),
-                        customTextField(nameLabel: "Phone No.",),
-                        passwordTextField(label: "Password",),
-                        passwordTextField(label: "Confirm Password",),
+                        NameTextField(
+                          decoration: inputDecor2,
+                          label: "Full Name",
+                          callable: (value){
+                            setState(() => _name = value);
+                          },
+                        ),
+
+                        height10,
+                        EmailTextField(
+                          decoration: inputDecor2,
+                          label: "Email",
+                          callable: (value){
+                            setState(() => _email = value);
+                          },
+                        ),
+                        height10,
+                        PhoneTextField(
+                          decoration: inputDecor2,
+                          label: "Phone Number",
+                          callable: (value){
+                            setState(() => _num = value);
+                          },
+                        ),
+
+                        height10,
+                        PasswordTextField(
+                          decoration: inputDecor2,
+                          label: "Password",
+                          callable: (value){
+                            setState(() => _pass = value);
+                          },
+                        ),
+
+                        height10,
+
+                        PasswordTextField(
+                            decoration: inputDecor2,
+                            label: "Confirm Password",
+                            callable: (value){
+                              setState(() => _cpass = value);
+                              },
+                          ),
                       ],
                     ),
                   ),
                 ),
                 height30,
-                elevatedButton(
-                  buttonText:"Sign Up" ,
-                  onPress: (){
-                    Navigator.pushNamed(context,"/verification");
-                  },
+                Center(
+                  child: SubmitButton(
+                    text: "Save",
+                    width: 300,
+                    height: 50,
+                    elevation: 0,
+                    color: lightBlueColor,
+                    formKey: _formKey,
+                    callable: (){
+                      if(_pass == _cpass){
+
+                      }
+                      else{
+                        print("Confirm Password dont match");
+                      }
+                    },
+                  ),
                 ),
-                SizedBox(
-                    height:80
-                ),
+                height30,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text("Already have an account?"),
-                    TextButton(
-                      onPressed: (){
-                        Navigator.pushNamed(context, "/login");
-                      },
-                      child: Text('Login',
-                        style: TextStyle(
-                          color: lightBlueColor,fontSize: 20,
-                        ),
-                      ),
-                    ),
+                    InkWell(
+                        onTap: (){
+
+                        },
+                        child: Text(" Sign-Up", style: TextStyle(fontSize: 18, color: redColor),)),
                   ],
                 ),
               ],
