@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/widgets/card.dart';
+import 'package:udhaarkaroapp/widgets/headers.dart';
 
 
 class Notifications extends StatefulWidget {
@@ -49,19 +50,7 @@ class _NotificationsState extends State<Notifications> {
         body: Container(
           child: Column(
             children: [
-              Container(
-                padding: EdgeInsets.fromLTRB(20, 50, 20, 20),
-                decoration: BoxDecoration(
-                  color: darkBlueColor,
-                ),
-                child: Column(
-                  children: [
-                    Center(child: Text("Notifications",
-                        style: h3_Light),
-                    ),
-                  ],
-                ),
-              ),
+              Header(text: "Notifications"),
 
               Container(
                 color: whiteColor,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/widgets/circularAvatar.dart';
 
@@ -19,18 +20,20 @@ class ProfilePage extends StatelessWidget {
                   children: [
                     height10,
                     height10,
-
                     Center(
-                        child: Avatar(img: "assets/profilebg.png", radius: 45,)
-                    ),
-
+                        child: Avatar(
+                      img: "assets/profilebg.png",
+                      radius: 45,
+                    )),
                     height10,
-
-                    Center(child: Text("Suyog Amin", style: h2_Light,))
+                    Center(
+                        child: Text(
+                      "Suyog Amin",
+                      style: h2_Light,
+                    ))
                   ],
                 ),
               ),
-
               SingleChildScrollView(
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -40,99 +43,104 @@ class ProfilePage extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Profile Details", style: t20_Dark,),
+                            Text(
+                              "Profile Details",
+                              style: t20_Dark,
+                            ),
                             profilePageIcon
                           ],
                         ),
-                        onTap: (){
+                        onTap: () {
                           Navigator.pushNamed(context, "/accountdetails");
                         },
                       ),
-
                       height10,
                       height10,
-
                       InkWell(
-                        onTap: (){
+                        onTap: () {
                           Navigator.pushNamed(context, "/privacypolicy");
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Privacy Policy", style: t20_Dark,),
+                            Text(
+                              "Privacy Policy",
+                              style: t20_Dark,
+                            ),
                             profilePageIcon
                           ],
                         ),
                       ),
-
                       height10,
                       height10,
-
                       InkWell(
-                        onTap: (){
+                        onTap: () {
                           Navigator.pushNamed(context, "/feedbackform");
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("FeedBackForm", style: t20_Dark,),
+                            Text(
+                              "FeedBackForm",
+                              style: t20_Dark,
+                            ),
                             profilePageIcon
                           ],
                         ),
                       ),
-
                       height10,
                       height10,
-
                       InkWell(
-                        onTap: (){
+                        onTap: () {
                           Navigator.pushNamed(context, "/userlist");
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("My Users List", style: t20_Dark,),
+                            Text(
+                              "My Users List",
+                              style: t20_Dark,
+                            ),
                             profilePageIcon
                           ],
                         ),
                       ),
-
                       height10,
                       height10,
-
                       InkWell(
-                        onTap: (){
+                        onTap: () {
                           Navigator.pushNamed(context, "/aboutus");
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("About Us", style: t20_Dark,),
+                            Text(
+                              "About Us",
+                              style: t20_Dark,
+                            ),
                             profilePageIcon,
                           ],
                         ),
                       ),
-
                       height10,
                       height10,
-
                       divider,
-
                       height10,
                       height10,
-
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Logout", style: t22_Dark,),
-                          profilePageLogoutIcon
+                          Text(
+                            "Logout",
+                            style: t22_Dark,
+                          ),
+                          Icon(MdiIcons.logout)
                         ],
                       )
                     ],
                   ),
                 ),
               ),
-
             ],
           ),
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/widgets/headers.dart';
 
 class AboutUs extends StatelessWidget {
   @override
@@ -9,25 +10,7 @@ class AboutUs extends StatelessWidget {
         body: Container(
           child: Column(
             children: [
-              Container(
-                padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
-                decoration: BoxDecoration(
-                  color: darkBlueColor,
-                ),
-                child: Column(
-                  children: [
-                    Align(child: InkWell(
-                        onTap: (){Navigator.pop(context);},
-                        child: backIconLight), alignment: Alignment.centerLeft,),
-
-                    height10,
-
-                    Center(child: Text("About Us",
-                        style: h3_Light),
-                    ),
-                  ],
-                ),
-              ),
+              Header(text: "About us"),
 
               Flexible(
                 child: SingleChildScrollView(

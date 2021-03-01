@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/widgets/buttons.dart';
 import 'package:udhaarkaroapp/widgets/circularAvatar.dart';
 import 'package:flutter_dropdown/flutter_dropdown.dart';
+import 'package:udhaarkaroapp/widgets/textInputField.dart';
 
 class AccountDetails extends StatefulWidget {
   @override
@@ -15,14 +16,7 @@ class _AccountDetailsState extends State<AccountDetails> {
       _pass = "hitman_47",
       _category = "Personal Account";
 
-  final _formkey = GlobalKey<FormState>();
-  bool _obscureText = true;
-
-  void _toggle() {
-    setState(() {
-      _obscureText = !_obscureText;
-    });
-  }
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -54,52 +48,35 @@ class _AccountDetailsState extends State<AccountDetails> {
                         radius: 45,
                       )),
                       height10,
-                      Center(child: Text("Suyog Amin", style: h2_Light,))
+                      Center(
+                          child: Text(
+                        "Suyog Amin",
+                        style: h2_Light,
+                      ))
                     ],
                   ),
                 ),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   child: Form(
-                    key: _formkey,
+                    key: _formKey,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        TextFormField(
-                          decoration: InputDecoration(
-                              labelText: 'Phone Number',
-                              labelStyle: hint_Dark,
-                          ),
-                          inputFormatters: [
-                            FilteringTextInputFormatter.digitsOnly
-                          ],
-                          keyboardType: TextInputType.number,
-                          initialValue: _num,
-                          maxLength: 10,
-                          validator: (val) {
-                            if (val.length == 10 && int.parse(val[0]) >= 7) {
-                              return null;
-                            }
-                            return "Enter valid phone number";
+                        PhoneTextField(
+                          num: _num,
+                          decoration: phoneInputDecoration,
+                          callable: (value) {
+                            setState(() => _num = value);
                           },
-                          cursorColor: redColor,
-                          onChanged: (val) => _num = val,
                         ),
-                        TextFormField(
-                            decoration: InputDecoration(
-                                labelText: 'Email',
-                                labelStyle: hint_Dark,
-                            ),
-                            initialValue: _email,
-                            onChanged: (val) => _email = val.trim(),
-                            validator: (val) {
-                              if (val.isNotEmpty &&
-                                  RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                                      .hasMatch(val)) {
-                                return null;
-                              }
-                              return "Enter valid username";
-                            }),
+                        EmailTextField(
+                          email: _email,
+                          decoration: emailInputDecoration,
+                          callable: (value) {
+                            setState(() => _email = value);
+                          },
+                        ),
                         height10,
                         height10,
                         Column(
@@ -107,7 +84,8 @@ class _AccountDetailsState extends State<AccountDetails> {
                           children: [
                             Text(
                               "Category",
-                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
                             ),
                             DropDown(
                               items: ["Personal Account", "Business Account"],
@@ -120,57 +98,28 @@ class _AccountDetailsState extends State<AccountDetails> {
                           ],
                         ),
                         height10,
-                        Stack(
-                          children: <Widget>[
-                            SizedBox(
-                              height: 70.0,
-                              child: new TextFormField(
-                                decoration: InputDecoration(
-                                    labelText: 'Password',
-                                    labelStyle: hint_Dark,
-                                ),
-                                initialValue: _pass,
-                                validator: (val) => val.length < 6 ||
-                                        val.length > 20
-                                    ? 'Password should be between 6 to 20 chars.'
-                                    : null,
-                                onChanged: (val) => _pass = val,
-                                obscureText: _obscureText,
-                              ),
-                            ),
-                            Align(
-                              alignment: Alignment.centerRight,
-                              child: IconButton(
-                                  color: Colors.black,
-                                  onPressed: _toggle,
-                                  icon: Icon(_obscureText
-                                      ? Icons.lock_open
-                                      : Icons.lock)),
-                            )
-                          ],
+                        PassWordTextFields(
+                          pass: _pass,
+                          decoration: passwordInputDecoration,
+                          callable: (value) {
+                            setState(() => _pass = value);
+                          },
                         ),
                         height10,
                         Center(
-                          child: InkWell(
-                            onTap: () {
-                              if (_formkey.currentState.validate()) {
-                                print(_num);
-                                print(_pass);
-                              }
-                            },
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 65, vertical: 10),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: darkBlueColor,
-                              ),
-                              child: Text("Save",
-                                  style: TextStyle(
-                                      color: whiteColor, fontSize: 21)),
-                            ),
-                          ),
-                        )
+                            child: SubmitButton(
+                          text: "Save",
+                          width: 300,
+                          height: 50,
+                          elevation: 0,
+                          color: darkBlueColor,
+                              formKey: _formKey,
+                              callable: (){
+                               print(_num);
+                               print(_email);
+                               print(_pass);
+                              },
+                        ))
                       ],
                     ),
                   ),

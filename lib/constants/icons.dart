@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
 
 const Icon profilePageIcon = Icon(
     Icons.keyboard_arrow_right
-);
-
-const Icon profilePageLogoutIcon = Icon(
-    MdiIcons.logout
 );
 
 const Icon backIconLight = Icon(
