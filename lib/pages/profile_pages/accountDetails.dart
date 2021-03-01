@@ -67,7 +67,7 @@ class _AccountDetailsState extends State<AccountDetails> {
                           num: _num,
                           decoration: inputDecor,
                           label: "Phone Number",
-                          callable: (value) {
+                          callback: (value) {
                             setState(() => _num = value);
                           },
                         ),
@@ -75,7 +75,7 @@ class _AccountDetailsState extends State<AccountDetails> {
                           email: _email,
                           decoration: inputDecor,
                           label: "Email",
-                          callable: (value) {
+                          callback: (value) {
                             setState(() => _email = value);
                           },
                         ),
@@ -100,7 +100,7 @@ class _AccountDetailsState extends State<AccountDetails> {
                           pass: _pass,
                           decoration: inputDecor,
                           label: "Password",
-                          callable: (value) {
+                          callback: (value) {
                             setState(() => _pass = value);
                           },
                         ),

@@ -5,10 +5,10 @@ import 'package:udhaarkaroapp/constants/constants.dart';
 class NameTextField extends StatelessWidget {
   final String name;
   final String label;
-  final Function callable;
+  final Function callback;
   final InputDecoration decoration;
 
-  NameTextField({this.name, this.label, this.callable, this.decoration});
+  NameTextField({this.name, this.label, this.callback, this.decoration});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class NameTextField extends StatelessWidget {
       initialValue: name,
       validator: (val) => val.isEmpty ? "This field is required" : null,
       onChanged: (val) {
-        callable(val);
+        callback(val);
       },
     );
   }
@@ -26,10 +26,10 @@ class NameTextField extends StatelessWidget {
 class PhoneTextField extends StatelessWidget {
   final String num;
   final String label;
-  final Function callable;
+  final Function callback;
   final InputDecoration decoration;
 
-  PhoneTextField({this.num, this.label, this.callable, this.decoration});
+  PhoneTextField({this.num, this.label, this.callback, this.decoration});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ class PhoneTextField extends StatelessWidget {
       },
       cursorColor: redColor,
       onChanged: (val) {
-        callable(val);
+        callback(val);
       },
     );
   }
@@ -56,10 +56,10 @@ class PhoneTextField extends StatelessWidget {
 class EmailTextField extends StatelessWidget {
   final String email;
   final String label;
-  final Function callable;
+  final Function callback;
   final InputDecoration decoration;
 
-  EmailTextField({this.email, this.label, this.callable, this.decoration});
+  EmailTextField({this.email, this.label, this.callback, this.decoration});
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +75,7 @@ class EmailTextField extends StatelessWidget {
         return "Enter valid email";
       },
       onChanged: (val) {
-        callable(val);
+        callback(val);
       },
     );
   }
@@ -84,10 +84,10 @@ class EmailTextField extends StatelessWidget {
 class PasswordTextField extends StatefulWidget {
   final String pass;
   final String label;
-  final Function callable;
+  final Function callback;
   final InputDecoration decoration;
 
-  PasswordTextField({this.pass, this.label, this.callable, this.decoration});
+  PasswordTextField({this.pass, this.label, this.callback, this.decoration});
 
   @override
   _PasswordTextFieldState createState() => _PasswordTextFieldState();
@@ -117,7 +117,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
           ? 'Password should be between 6 to 20 chars.'
           : null,
       onChanged: (val) {
-        widget.callable(val);
+        widget.callback(val);
       },
       obscureText: _obscureText,
     );

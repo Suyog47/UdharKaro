@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/widgets/buttons.dart';
 import 'package:udhaarkaroapp/widgets/card.dart';
-import 'package:udhaarkaroapp/widgets/tabBar.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -137,7 +136,6 @@ class _HomeState extends State<Home> {
                 Text("Given", style: TextStyle(color: lightGreenColor, fontSize: 20),),
               ],
               indicatorColor: redColor,
-              indicatorWeight: 3.0,
             ),
           ),
           body: TabBarView(

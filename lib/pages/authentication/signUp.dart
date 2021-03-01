@@ -45,7 +45,7 @@ class _SignUpState extends State<SignUp> {
                         NameTextField(
                           decoration: inputDecor2,
                           label: "Full Name",
-                          callable: (value){
+                          callback: (value){
                             setState(() => _name = value);
                           },
                         ),
@@ -54,7 +54,7 @@ class _SignUpState extends State<SignUp> {
                         EmailTextField(
                           decoration: inputDecor2,
                           label: "Email",
-                          callable: (value){
+                          callback: (value){
                             setState(() => _email = value);
                           },
                         ),
@@ -62,7 +62,7 @@ class _SignUpState extends State<SignUp> {
                         PhoneTextField(
                           decoration: inputDecor2,
                           label: "Phone Number",
-                          callable: (value){
+                          callback: (value){
                             setState(() => _num = value);
                           },
                         ),
@@ -71,7 +71,7 @@ class _SignUpState extends State<SignUp> {
                         PasswordTextField(
                           decoration: inputDecor2,
                           label: "Password",
-                          callable: (value){
+                          callback: (value){
                             setState(() => _pass = value);
                           },
                         ),
@@ -81,7 +81,7 @@ class _SignUpState extends State<SignUp> {
                         PasswordTextField(
                             decoration: inputDecor2,
                             label: "Confirm Password",
-                            callable: (value){
+                          callback: (value){
                               setState(() => _cpass = value);
                               },
                           ),
