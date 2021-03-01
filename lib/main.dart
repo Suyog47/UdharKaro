@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:udhaarkaroapp/pages/authentication/forgotPassword.dart';
+import 'package:udhaarkaroapp/pages/authentication/login.dart';
+import 'package:udhaarkaroapp/pages/authentication/newPassword.dart';
+import 'package:udhaarkaroapp/pages/authentication/signUp.dart';
+import 'package:udhaarkaroapp/pages/authentication/verification.dart';
 import 'package:udhaarkaroapp/pages/pages.dart';
 
 void main() {
@@ -29,6 +34,11 @@ class MyApp extends StatelessWidget {
         "/giveAmount" : (context) => GiveAmount(),
         "/paidAmountDetails" : (context) => PaidAmountDetails(),
         "/takenAmountDetails" : (context) => TakenAmountDetails(),
+        "/signUp" : (context) => signUp(),
+        "/login" : (context) => login(),
+        "/forgotPassword" : (context) => forgotPassword(),
+        "/newPassword" : (context) => newPassword(),
+        "/verification" : (context) => verification(),
       },
       debugShowCheckedModeBanner: false,
     );
