@@ -61,7 +61,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       children: [
                         PhoneTextField(
                           decoration: inputDecor2.copyWith(labelText: "Phone Number", labelStyle: t16_Dark),
-                          callable: (value){
+                          callback: (value){
                           setState(() => _num = value);
                           },
                         ),

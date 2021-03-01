@@ -45,7 +45,7 @@ class _LoginState extends State<Login> {
                       children: [
                         PhoneTextField(
                           decoration: inputDecor2.copyWith(labelText: "Phone Number", labelStyle: t16_Dark),
-                          callable: (value){
+                          callback: (value){
                            setState(() => num = value);
                           },
                         ),
@@ -54,7 +54,7 @@ class _LoginState extends State<Login> {
 
                         PasswordTextField(
                           decoration: inputDecor2.copyWith(labelText: "Password", labelStyle: t16_Dark),
-                          callable: (value){
+                          callback: (value){
                             setState(() => pass = value);
                           },
                         ),

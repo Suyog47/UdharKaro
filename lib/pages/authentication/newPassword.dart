@@ -60,7 +60,7 @@ class _NewPasswordState extends State<NewPassword> {
                         //otpTextField(),
                         PasswordTextField(
                           decoration: inputDecor2.copyWith(labelText: "Enter new Password", labelStyle: t16_Dark),
-                          callable: (value){
+                          callback: (value){
                             setState(() => _pass = value);
                           },
                         ),
@@ -69,7 +69,7 @@ class _NewPasswordState extends State<NewPassword> {
 
                         PasswordTextField(
                           decoration: inputDecor2.copyWith(labelText: "ReEnter new Password", labelStyle: t16_Dark),
-                          callable: (value){
+                          callback: (value){
                             setState(() => _cpass = value);
                           },
                         ),
