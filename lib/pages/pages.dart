@@ -12,3 +12,8 @@ export 'package:udhaarkaroapp/pages/profile_pages/feedbackForm2.dart';
 export 'package:udhaarkaroapp/pages/profile_pages/privacyPolicy.dart';
 export 'package:udhaarkaroapp/pages/profile_pages/profilePage.dart';
 export 'package:udhaarkaroapp/pages/profile_pages/userList.dart';
+export 'package:udhaarkaroapp/pages/authentication/forgotPassword.dart';
+export 'package:udhaarkaroapp/pages/authentication/login.dart';
+export 'package:udhaarkaroapp/pages/authentication/signUp.dart';
+export 'package:udhaarkaroapp/pages/authentication/verification.dart';
+export 'package:udhaarkaroapp/pages/authentication/newPassword.dart';

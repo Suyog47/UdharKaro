@@ -68,27 +68,9 @@ const TextStyle plusPriceTextStyle =
 
 const TextStyle detailsHeadingTextStyle = TextStyle(
   fontWeight: FontWeight.w400,
-  fontSize: 25,
-  color: black38,
-);
-
-const TextStyle size25TextStyle = TextStyle(
-  fontSize: 25,
-);
-
-const TextStyle amountDetailsTextStyle =
-    TextStyle(fontWeight: FontWeight.w500, fontSize: 40);
-
-const TextStyle size20TextStyle = TextStyle(fontSize: 20);
-
-const TextStyle amountDetailsNameTextStyle =
-    TextStyle(fontWeight: FontWeight.w500, fontSize: 35, color: whiteColor);
-
-const TextStyle gaveOrTakenTextStyle =
-    TextStyle(fontWeight: FontWeight.w500, fontSize: 18, color: whiteColor);
-
-const TextStyle logSignInTextStyle = TextStyle(
-  fontWeight: FontWeight.w400,
   fontSize: 20,
   color: black38,
 );
+
+const TextStyle gaveOrTakenTextStyle =
+    TextStyle(fontWeight: FontWeight.w500, fontSize: 18, color: whiteColor);

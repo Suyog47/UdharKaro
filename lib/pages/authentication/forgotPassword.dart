@@ -1,20 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:udhaarkaroapp/constants/colors.dart';
-import 'package:udhaarkaroapp/constants/heights.dart';
-import 'package:udhaarkaroapp/constants/icons.dart';
-import 'package:udhaarkaroapp/constants/textStyles.dart';
-import 'package:udhaarkaroapp/constants/widths.dart';
-import 'package:udhaarkaroapp/widgets/customizedTextFields.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/widgets/buttons.dart';
+import 'package:udhaarkaroapp/widgets/textInputField.dart';
 
 
-class forgotPassword extends StatefulWidget {
+class ForgotPassword extends StatefulWidget {
   @override
-  _forgotPasswordState createState() => _forgotPasswordState();
+  _ForgotPasswordState createState() => _ForgotPasswordState();
 }
 
-class _forgotPasswordState extends State<forgotPassword> {
+class _ForgotPasswordState extends State<ForgotPassword> {
+
+  final _formKey = GlobalKey<FormState>();
+  String _num;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,34 +46,42 @@ class _forgotPasswordState extends State<forgotPassword> {
                 height30,
                 Text(
                   'Forgot Password?',
-                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 30),
+                  style: h3_Dark,
                 ),
                 height10,
-                Text
-                  (
-                    """Enter your registered mobile number\n   so that we can send OTP to reset  
-                 your password. """,style: size20TextStyle,),
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: customTextField(nameLabel: "Phone No.",),
-                ),
-                ElevatedButton(
-                  onPressed: (){
-                    Navigator.pushNamed(context,"/newPassword");
-                  },
-                  child: Text("Continue",style: size20TextStyle,),
-                  style: ElevatedButton.styleFrom(
-                    onPrimary: Colors.white,
-                    primary: Color(0xFF41C8F3),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(12.0),
+                Text("Enter your Registered mobile number so that we can send OTP to reset your password",
+                  style: t18_Dark,
+                  textAlign: TextAlign.center,),
+                height30,
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Form(
+                    key: _formKey,
+                    child: Column(
+                      children: [
+                        PhoneTextField(
+                          decoration: inputDecor2.copyWith(labelText: "Phone Number", labelStyle: t16_Dark),
+                          callable: (value){
+                          setState(() => _num = value);
+                          },
+                        ),
+                        height10,
+                        SubmitButton(
+                          text: "Continue",
+                          width: 120,
+                          height: 40,
+                          elevation: 10,
+                          color: lightBlueColor,
+                          formKey: _formKey,
+                          callable: (){
+                            print(_num);
+                          },
+                        ),
+                      ],
                     ),
-                    side: BorderSide(
-                      color: Color(0xFF41C8F3),
-                    ),
-                    minimumSize: Size(70,45),
+                  ),
                 ),
-                ),
+
               ],
             ),
 

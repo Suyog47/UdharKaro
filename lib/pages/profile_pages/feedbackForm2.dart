@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/widgets/buttons.dart';
+import 'package:udhaarkaroapp/widgets/headers.dart';
 
 class FeedbackForm2 extends StatefulWidget {
   @override
@@ -8,38 +10,18 @@ class FeedbackForm2 extends StatefulWidget {
 
 class _FeedbackForm2State extends State<FeedbackForm2> {
   String _msg = "";
+  Map data = {};
 
   @override
   Widget build(BuildContext context) {
+
+    data = ModalRoute.of(context).settings.arguments;
     return SafeArea(
       child: Scaffold(
         body: Container(
           child: Column(
             children: [
-              Container(
-                padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
-                decoration: BoxDecoration(
-                  color: darkBlueColor,
-                ),
-                child: Column(
-                  children: [
-                    Align(
-                      child: InkWell(
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
-                          child: backIconLight),
-                      alignment: Alignment.centerLeft,
-                    ),
-                    height10,
-                    Center(
-                        child: Text(
-                      "Feedback Form",
-                      style: h3_Light,
-                    ))
-                  ],
-                ),
-              ),
+              Header(text: "Feedback Form"),
               Flexible(
                 child: SingleChildScrollView(
                   child: Container(
@@ -68,20 +50,16 @@ class _FeedbackForm2State extends State<FeedbackForm2> {
                 ),
               ),
               Center(
-                child: InkWell(
-                  onTap: () {
-                    print(_msg);
+                child: Button(
+                  width: 180,
+                  height: 50,
+                  text: "Send",
+                  elevation: 0,
+                  color: darkBlueColor,
+                  callable: (){
+                   print(data);
                   },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 65, vertical: 10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: darkBlueColor,
-                    ),
-                    child: Text("Send",
-                        style: TextStyle(color: whiteColor, fontSize: 21)),
-                  ),
-                ),
+                )
               )
             ],
           ),

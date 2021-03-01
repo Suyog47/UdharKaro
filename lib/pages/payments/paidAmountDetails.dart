@@ -31,10 +31,7 @@ class PaidAmountDetails extends StatelessWidget {
                           onTap: () {
                             Navigator.pop(context);
                           },
-                          child: Icon(
-                            Icons.arrow_back,
-                            color: blackColor,
-                          ),
+                          child: backIconDark
                         ),
                       ),
                       height30,
@@ -44,15 +41,16 @@ class PaidAmountDetails extends StatelessWidget {
                           radius: 45,
                         ),
                       ),
-                      height30,
-                      Text(
-                        'Amount gave to',
-                        style: gaveOrTakenTextStyle,
-                      ),
+                      height10,
                       height10,
                       Text(
+                        'Amount gave to',
+                        style: t20_Light,
+                      ),
+                      height5,
+                      Text(
                         'Suyog Amin',
-                        style: amountDetailsNameTextStyle,
+                        style: h3_Light,
                       ),
                       height10,
                     ],
@@ -72,33 +70,33 @@ class PaidAmountDetails extends StatelessWidget {
                         children: [
                           Text(
                             '1200',
-                            style: amountDetailsTextStyle,
+                            style: h2_Dark,
                           ),
                           Text(
                             'rs.',
-                            style:size20TextStyle,
+                            style: t20_Dark,
                           ),
                         ],
                       ),
                       height30,
-                      height30,
+                      height10,
                       Text(
                           'Date',
                           style: detailsHeadingTextStyle
                       ),
                       Text(
                           '20/02/2021-12:30',
-                          style: size25TextStyle
+                          style: t20_Dark
                       ),
                       height30,
-                      height30,
+                      height10,
                       Text(
                         'Transaction ID',
                         style: detailsHeadingTextStyle,
                       ),
                       Text(
                         '123456789101112',
-                        style: size25TextStyle,
+                        style: t20_Dark,
                       ),
                     ],
                   ),

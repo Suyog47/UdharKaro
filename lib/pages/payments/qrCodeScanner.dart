@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/widgets/buttons.dart';
 import 'package:udhaarkaroapp/widgets/qrScanner.dart';
 
 class QRCodeScanner extends StatefulWidget {
@@ -94,22 +95,17 @@ class _QRCodeScannerState extends State<QRCodeScanner> {
                          height5,
 
                          Center(
-                           child: InkWell(
-                             onTap: () {
-                               if(_formkey.currentState.validate()){
-                                 print(_num);
-                               }
+                           child: SubmitButton(
+                             text: "Proceed",
+                             width: 200,
+                             height: 50,
+                             color: lightBlueColor,
+                             elevation: 10,
+                             formKey: _formkey,
+                             callable: (){
+                               print(_num);
                              },
-                             child: Container(
-                               padding: EdgeInsets.symmetric(horizontal: 65, vertical: 10),
-                               decoration: BoxDecoration(
-                                 borderRadius: BorderRadius.circular(10),
-                                 color: darkBlueColor,
-                               ),
-                               child: Text("Proceed",
-                                   style: TextStyle(color: whiteColor, fontSize: 21)),
-                             ),
-                           ),
+                           )
                          )
                        ],
                      ),

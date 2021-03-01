@@ -9,6 +9,8 @@ const Color whiteColor = Colors.white;
 
 const Color blackColor = Colors.black;
 
+const Color blueColor = Colors.blue;
+
 const Color greyColor = Colors.grey;
 
 const Color lightGreyColor = Color(0xFFF5F5F5);

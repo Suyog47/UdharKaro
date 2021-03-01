@@ -81,7 +81,7 @@ class HomeCard extends StatelessWidget {
                       ],
                     ),
                     height5,
-                    Text(str[itemIndex]["vendor"], style: t12_Dark,)
+                    Text(((type == 1) ? "to " : "from ") + str[itemIndex]["vendor"], style: t12_Dark,)
                   ],
                 ),
                 Avatar(img: str[itemIndex]["pic"], radius: 25,),

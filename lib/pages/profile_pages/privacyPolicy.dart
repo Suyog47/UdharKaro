@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/widgets/headers.dart';
 
 
 class PrivacyPolicy extends StatelessWidget {
@@ -10,26 +10,7 @@ class PrivacyPolicy extends StatelessWidget {
         body: Container(
           child: Column(
             children: [
-              Container(
-                padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
-                decoration: BoxDecoration(
-                  color: darkBlueColor,
-                ),
-                child: Column(
-                  children: [
-                    Align(child: InkWell(
-                        onTap: (){Navigator.pop(context);},
-                        child: backIconLight), alignment: Alignment.centerLeft,),
-
-                    height10,
-
-                    Center(child: Text("Privacy Policy",
-                      style:  h3_Light,
-                    ),
-                    )
-                  ],
-                ),
-              ),
+              Header(text: "Privacy Policy"),
 
               Flexible(
                 child: SingleChildScrollView(

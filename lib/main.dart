@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:udhaarkaroapp/pages/authentication/forgotPassword.dart';
-import 'package:udhaarkaroapp/pages/authentication/login.dart';
-import 'package:udhaarkaroapp/pages/authentication/newPassword.dart';
-import 'package:udhaarkaroapp/pages/authentication/signUp.dart';
-import 'package:udhaarkaroapp/pages/authentication/verification.dart';
 import 'package:udhaarkaroapp/pages/pages.dart';
 
 void main() {
@@ -18,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: "/mainscreen",
+      initialRoute: "/signup",
       routes: {
         "/mainscreen" : (context) => MainScreen(),
         "/home" : (context) => Home(),
@@ -34,11 +29,11 @@ class MyApp extends StatelessWidget {
         "/giveAmount" : (context) => GiveAmount(),
         "/paidAmountDetails" : (context) => PaidAmountDetails(),
         "/takenAmountDetails" : (context) => TakenAmountDetails(),
-        "/signUp" : (context) => signUp(),
-        "/login" : (context) => login(),
-        "/forgotPassword" : (context) => forgotPassword(),
-        "/newPassword" : (context) => newPassword(),
-        "/verification" : (context) => verification(),
+        "/signup" : (context) => SignUp(),
+        "/login" : (context) => Login(),
+        "/forgotpassword" : (context) => ForgotPassword(),
+        "/newpassword" : (context) => NewPassword(),
+        "/verification" : (context) => Verification(),
       },
       debugShowCheckedModeBanner: false,
     );
