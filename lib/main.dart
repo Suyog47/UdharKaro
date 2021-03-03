@@ -13,29 +13,30 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: "/signup",
+      initialRoute: "/mainscreen",
       routes: {
-        "/mainscreen" : (context) => MainScreen(),
-        "/home" : (context) => Home(),
-        "/profilepage" : (context) => ProfilePage(),
-        "/accountdetails" : (context) => AccountDetails(),
-        "/privacypolicy" : (context) => PrivacyPolicy(),
-        "/aboutus" : (context) => AboutUs(),
-        "/feedbackform" : (context) => FeedbackForm(),
-        "/feedbackform2" : (context) => FeedbackForm2(),
-        "/userlist" : (context) => UsersList(),
-        "/qrscanner" : (context) => QRCodeScanner(),
-        "/notification" : (context) => Notifications(),
-        "/giveAmount" : (context) => GiveAmount(),
-        "/paidAmountDetails" : (context) => PaidAmountDetails(),
-        "/takenAmountDetails" : (context) => TakenAmountDetails(),
-        "/signup" : (context) => SignUp(),
-        "/login" : (context) => Login(),
-        "/forgotpassword" : (context) => ForgotPassword(),
-        "/newpassword" : (context) => NewPassword(),
-        "/verification" : (context) => Verification(),
+        "/mainscreen" : (context) => MainScreen(),   //MainScreen
+        "/home" : (context) => Home(), //Home
+        "/userdetails" : (context) => UserDetails(), //UserDetails
+        "/signup" : (context) => SignUp(), //SignUp
+        "/login" : (context) => Login(), //Login
+        "/forgotpassword" : (context) => ForgotPassword(),  //ForgotPassword
+        "/newpassword" : (context) => NewPassword(), //New Password
+        "/verification" : (context) => Verification(), //Verification
+        "/qrscanner" : (context) => QRCodeScanner(), //QRScanner
+        "/enteramount" : (context) => EnterAmount(),//Enter Amount
+        "/givenamountdetails" : (context) => PaidAmountDetails(), //GivenAmountDetails
+        "/takenamountdetails" : (context) => TakenAmountDetails(), // TakenAmountDetails
+        "/notification" : (context) => Notifications(), //Notifications
+        "/profilepage" : (context) => ProfilePage(), //ProfilePage
+        "/accountdetails" : (context) => AccountDetails(), //AccountDetails
+        "/privacypolicy" : (context) => PrivacyPolicy(), //PrivacyPolicy
+        "/aboutus" : (context) => AboutUs(), //AboutUs
+        "/feedbackform" : (context) => FeedbackForm(),//FeedbackForm
+        "/feedbackform2" : (context) => FeedbackForm2(),//FeedbackForm2
+        "/userlist" : (context) => UsersList(),//UserList
       },
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,  //Disable debug label
     );
   }
 }

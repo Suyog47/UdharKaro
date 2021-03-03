@@ -1,6 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
 
+
+//h1_Dark
+//h1_Light
+//h2_Dark
+//h2_Light
+//h3_Dark
+//h3_Light
+//h4_Dark
+//h4_Light
+
+//t30_Dark
+//t30_Light
+//t28_Dark
+//t28_Light
+//t26_Dark
+//t26_Light
+//t24_Dark
+//t24_Light
+//t22_Dark
+//t22_Light
+//t20_Dark
+//t20_Light
+//t18_Dark
+//t18_Light
+//t16_Dark
+//t16_Light
+//t14_Dark
+//t14_Light
+//t12_Dark
+//t12_Light
+
+//radioButtonTextStyle
+//minusPriceTextStyle
+//plusPriceTextStyle
+//detailsHeadingTextStyle
+
 const TextStyle h1_Dark =
     TextStyle(color: blackColor, fontSize: 50, fontWeight: FontWeight.w500);
 const TextStyle h1_Light =
@@ -51,12 +87,6 @@ const TextStyle t14_Light = TextStyle(color: whiteColor, fontSize: 14);
 const TextStyle t12_Dark = TextStyle(color: blackColor, fontSize: 12);
 const TextStyle t12_Light = TextStyle(color: whiteColor, fontSize: 12);
 
-const TextStyle hint_Dark =
-    TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20);
-
-const TextStyle hint_Light =
-    TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18);
-
 const TextStyle radioButtonTextStyle =
     TextStyle(fontWeight: FontWeight.bold, fontSize: 17);
 
@@ -71,6 +101,3 @@ const TextStyle detailsHeadingTextStyle = TextStyle(
   fontSize: 20,
   color: black38,
 );
-
-const TextStyle gaveOrTakenTextStyle =
-    TextStyle(fontWeight: FontWeight.w500, fontSize: 18, color: whiteColor);

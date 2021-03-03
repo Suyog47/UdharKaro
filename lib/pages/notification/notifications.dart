@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/widgets/card.dart';
 import 'package:udhaarkaroapp/widgets/headers.dart';
 
@@ -12,12 +11,12 @@ class Notifications extends StatefulWidget {
 
 class _NotificationsState extends State<Notifications> {
 
-  List str = [
+  List _str = [
     {
       "type" : 1,
       "price" : 250,
       "name" : "Suyog Amin",
-      "date" : "16/02/2021, 7:40 PM",
+      "date" : "16/02/2021 - 7:40 PM",
       "pic" : "assets/profilebg.png"
     },
     {
@@ -50,17 +49,16 @@ class _NotificationsState extends State<Notifications> {
         body: Container(
           child: Column(
             children: [
-              Header(text: "Notifications"),
+              Header(text: "Notifications", backIcon: false),
 
-              Container(
-                color: whiteColor,
+              Flexible(
                 child: ListView.builder(
                     scrollDirection: Axis.vertical,
                     shrinkWrap: true,
-                    itemCount: str.length,
+                    itemCount: _str.length,
                     itemBuilder: (context, index){
                       return NotificationCard(
-                        str: str,
+                        str: _str,
                         itemIndex: index,
                       );
                     }),

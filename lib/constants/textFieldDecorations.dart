@@ -3,12 +3,13 @@ import 'constants.dart';
 
 
 const inputDecor = InputDecoration(
-  labelStyle: hint_Dark,
+  labelStyle: t16_Dark,
 );
 
 const inputDecor2 = InputDecoration(
   fillColor: whiteColor,
   filled: true,
+  labelStyle: t16_Dark,
   enabledBorder: OutlineInputBorder(
     borderSide:BorderSide(
         color: lightBlueColor, width: 1

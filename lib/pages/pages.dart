@@ -1,7 +1,7 @@
 export 'package:udhaarkaroapp/pages/home/homePage.dart';
 export 'package:udhaarkaroapp/pages/mainscreen/mainScreen.dart';
 export 'package:udhaarkaroapp/pages/notification/notifications.dart';
-export 'package:udhaarkaroapp/pages/payments/giveAmount.dart';
+export 'package:udhaarkaroapp/pages/payments/enterAmount.dart';
 export 'package:udhaarkaroapp/pages/payments/paidAmountDetails.dart';
 export 'package:udhaarkaroapp/pages/payments/qrCodeScanner.dart';
 export 'package:udhaarkaroapp/pages/payments/takenAmountDetails.dart';
@@ -17,3 +17,4 @@ export 'package:udhaarkaroapp/pages/authentication/login.dart';
 export 'package:udhaarkaroapp/pages/authentication/signUp.dart';
 export 'package:udhaarkaroapp/pages/authentication/verification.dart';
 export 'package:udhaarkaroapp/pages/authentication/newPassword.dart';
+export 'package:udhaarkaroapp/pages/home/userDetails.dart';

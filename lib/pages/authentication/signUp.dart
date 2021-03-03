@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/customClass/navigations.dart';
 import 'package:udhaarkaroapp/widgets/buttons.dart';
 import 'package:udhaarkaroapp/widgets/textInputField.dart';
 
@@ -30,7 +32,7 @@ class _SignUpState extends State<SignUp> {
                 ),
                 // height5,
                 Text(
-                  ' Sign Up to get started!',
+                  'Sign Up to get started!',
                   style: h4_Dark,
                 ),
                 height30,
@@ -92,18 +94,26 @@ class _SignUpState extends State<SignUp> {
                 height30,
                 Center(
                   child: SubmitButton(
-                    text: "Save",
-                    width: 300,
+                    text: "Sign Up",
+                    width: 200,
                     height: 50,
                     elevation: 0,
                     color: lightBlueColor,
                     formKey: _formKey,
-                    callable: (){
+                    callback: (){
                       if(_pass == _cpass){
-
+                       Navigate().toVerification(context);
                       }
                       else{
-                        print("Confirm Password dont match");
+                        Fluttertoast.showToast(
+                            msg: "Confirm Password dont match with Password field",
+                            toastLength: Toast.LENGTH_LONG,
+                            gravity: ToastGravity.BOTTOM,
+                            timeInSecForIosWeb: 1,
+                            backgroundColor: Colors.red,
+                            textColor: Colors.white,
+                            fontSize: 16.0
+                        );
                       }
                     },
                   ),
@@ -115,9 +125,9 @@ class _SignUpState extends State<SignUp> {
                     Text("Already have an account?"),
                     InkWell(
                         onTap: (){
-
+                          Navigate().toLogin(context);
                         },
-                        child: Text(" Sign-Up", style: TextStyle(fontSize: 18, color: redColor),)),
+                        child: Text(" Login", style: TextStyle(fontSize: 18, color: redColor),)),
                   ],
                 ),
               ],

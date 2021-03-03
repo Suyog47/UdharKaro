@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/pages/pages.dart';
-import 'package:udhaarkaroapp/widgets/buttons.dart';
 
 class MainScreen extends StatefulWidget {
   @override

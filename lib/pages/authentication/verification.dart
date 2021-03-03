@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/customClass/navigations.dart';
 import 'package:udhaarkaroapp/widgets/buttons.dart';
+import 'package:otp_text_field/otp_field.dart';
+import 'package:otp_text_field/style.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Verification extends StatefulWidget {
   @override
@@ -9,6 +13,9 @@ class Verification extends StatefulWidget {
 }
 
 class _VerificationState extends State<Verification> {
+
+  TextEditingController textEditingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +51,30 @@ class _VerificationState extends State<Verification> {
                   style: t18_Dark,
                   textAlign: TextAlign.center,
                 ),
-                height60,
+                height30,
+
+                OTPTextField(
+                  length: 4,
+                  width: MediaQuery.of(context).size.width,
+                  fieldWidth: 50,
+                  style: TextStyle(
+                      fontSize: 17
+                  ),
+                  textFieldAlignment: MainAxisAlignment.spaceAround,
+                  fieldStyle: FieldStyle.underline,
+                  onCompleted: (pin) {
+                    Fluttertoast.showToast(
+                        msg: pin,
+                        toastLength: Toast
+                            .LENGTH_SHORT,
+                        gravity: ToastGravity.BOTTOM,
+                        backgroundColor: Colors.red,
+                        textColor: Colors.white,
+                        fontSize: 17);
+                  },
+                ),
+
+                height30,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -68,8 +98,8 @@ class _VerificationState extends State<Verification> {
                   text: "Verify",
                   color: lightBlueColor,
                   elevation: 0.0,
-                  callable: (){
-
+                  callback: (){
+                    Navigate().toHome(context);
                   },
                 )
               ],

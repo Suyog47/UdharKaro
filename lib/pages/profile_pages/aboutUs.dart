@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/widgets/headers.dart';
 
 class AboutUs extends StatelessWidget {
@@ -10,7 +9,7 @@ class AboutUs extends StatelessWidget {
         body: Container(
           child: Column(
             children: [
-              Header(text: "About us"),
+              Header(text: "About us", backIcon: true),
 
               Flexible(
                 child: SingleChildScrollView(

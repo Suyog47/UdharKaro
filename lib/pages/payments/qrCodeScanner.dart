@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/customClass/navigations.dart';
 import 'package:udhaarkaroapp/widgets/buttons.dart';
 import 'package:udhaarkaroapp/widgets/qrScanner.dart';
+import 'package:udhaarkaroapp/widgets/textInputField.dart';
 
 class QRCodeScanner extends StatefulWidget {
   @override
@@ -10,12 +11,14 @@ class QRCodeScanner extends StatefulWidget {
 }
 
 class _QRCodeScannerState extends State<QRCodeScanner> {
-
   String _num;
-  final _formkey = GlobalKey<FormState>();
+  Map _data = {};
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
+    _data = ModalRoute.of(context).settings.arguments;
+
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
@@ -30,85 +33,76 @@ class _QRCodeScannerState extends State<QRCodeScanner> {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: InkWell(
-                            onTap:(){
+                            onTap: () {
                               Navigator.pop(context);
                             },
-                            child: Icon(Icons.cancel, color: whiteColor, size: 30,)),
+                            child: Icon(
+                              Icons.cancel,
+                              color: whiteColor,
+                              size: 30,
+                            )),
                       ),
-
                       height10,
                       height10,
-
                       Text("Scan any QR Code", style: h3_Light),
-
                       height10,
                       height10,
                       height10,
-
                       Container(
                           height: 250,
                           width: 300,
-                          child: Center(
-                              child: QRScanner())
-                      ),
-
+                          child: Center(child: QRScanner(
+                            callback: () {
+                              Navigate().toEnterAmount(
+                                  context, {"type": _data["type"]});
+                            },
+                          ))),
                       height5,
-
-                      Text("Place the QR code inside Scanner Area", style: TextStyle(color: lightBlueColor), softWrap: true, textAlign: TextAlign.center,),
+                      Text(
+                        "Place the QR code inside Scanner Area",
+                        style: TextStyle(color: lightBlueColor),
+                        softWrap: true,
+                        textAlign: TextAlign.center,
+                      ),
                       height5,
                     ],
                   ),
                 ),
-
                 height10,
-
                 Form(
-                  key: _formkey,
+                  key: _formKey,
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 20),
-                     child: Column(
-                       children: [
-                         Text("OR", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-
-                         height10,
-
-                         TextFormField(
-                           decoration: InputDecoration(
-                             labelText: "Enter Mobile Number",
-                             labelStyle: hint_Dark
-                           ),
-                           inputFormatters: [
-                             FilteringTextInputFormatter.digitsOnly
-                           ],
-                           keyboardType: TextInputType.number,
-                           maxLength: 10,
-                           validator: (val) {
-                             if (val.length == 10 && int.parse(val[0]) >= 7) {
-                               return null;
-                             }
-                             return "Enter valid phone number";
-                           },
-                           cursorColor: redColor,
-                           onChanged: (val) => _num = val,
-                         ),
-
-                         height5,
-
-                         Center(
-                           child: SubmitButton(
-                             text: "Proceed",
-                             width: 200,
-                             height: 50,
-                             color: lightBlueColor,
-                             elevation: 10,
-                             formKey: _formkey,
-                             callable: (){
-                               print(_num);
-                             },
-                           )
-                         )
-                       ],
-                     ),
+                    child: Column(
+                      children: [
+                        Text("OR",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 20)),
+                        height10,
+                        PhoneTextField(
+                          decoration: inputDecor2,
+                          label: "Enter Phone Number",
+                          callback: (value) {
+                            setState(() => _num = value);
+                          },
+                        ),
+                        height10,
+                        height10,
+                        Center(
+                            child: SubmitButton(
+                          text: "Proceed",
+                          width: 200,
+                          height: 50,
+                          color: lightBlueColor,
+                          elevation: 10,
+                          formKey: _formKey,
+                          callback: () {
+                            Navigate().toEnterAmount(
+                                context, {"type": _data["type"]});
+                          },
+                        ))
+                      ],
+                    ),
                   ),
                 ),
               ],

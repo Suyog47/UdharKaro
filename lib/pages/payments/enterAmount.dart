@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/customClass/navigations.dart';
 import 'package:udhaarkaroapp/widgets/circularAvatar.dart';
 
 
@@ -12,12 +12,12 @@ class EnterAmount extends StatefulWidget {
 
 class _EnterAmountState extends State<EnterAmount> {
 
-  Map data = {};
+  Map _data = {};
 
   @override
   Widget build(BuildContext context) {
 
-    data = ModalRoute.of(context).settings.arguments;
+    _data = ModalRoute.of(context).settings.arguments;
 
     return SafeArea(
       child: Scaffold(
@@ -44,7 +44,7 @@ class _EnterAmountState extends State<EnterAmount> {
                 height10,
                 height10,
                 Text(
-                  (data["type"] == 1) ? "Taking from" : "Giving to",
+                  (_data["type"] == 1) ? "Taking from" : "Giving to",
                   style: h4_Dark,
                 ),
                 Text(
@@ -63,15 +63,14 @@ class _EnterAmountState extends State<EnterAmount> {
                   child: TextFormField(
                     textAlign: TextAlign.center,
                     inputFormatters: [
-                      FilteringTextInputFormatter.digitsOnly
+                      FilteringTextInputFormatter.digitsOnly,
+                      LengthLimitingTextInputFormatter(4)
                     ],
                     keyboardType: TextInputType.number,
                     style: h1_Dark,
-                    maxLength: 4,
                   ),
                 ),
-                height10,
-                height10,
+                height30,
                 Container(
                   width: 220,
                   height: 80,
@@ -99,10 +98,10 @@ class _EnterAmountState extends State<EnterAmount> {
                 height30,
                 InkWell(
                     onTap: () {
-                      (data["type"] == 1) ?
-                      Navigator.pushReplacementNamed(context, "/takenAmountDetails")
+                      (_data["type"] == 1) ?
+                      Navigate().toPaidAmount(context)
                       :
-                      Navigator.pushReplacementNamed(context, "/givenAmountDetails");
+                      Navigate().toGivenAmount(context);
                     },
                     child: Container(
                       padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),

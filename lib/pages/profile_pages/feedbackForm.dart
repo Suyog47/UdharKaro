@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/customClass/navigations.dart';
 import 'package:udhaarkaroapp/widgets/buttons.dart';
 import 'package:udhaarkaroapp/widgets/headers.dart';
 import 'package:udhaarkaroapp/widgets/radioButtons.dart';
@@ -11,7 +12,7 @@ class FeedbackForm extends StatefulWidget {
 }
 
 class _FeedbackFormState extends State<FeedbackForm> {
-  List str = [
+  List _str = [
     "Most Likely",
     "More Likely",
     "Somewhat",
@@ -29,7 +30,7 @@ class _FeedbackFormState extends State<FeedbackForm> {
           child: Container(
             child: Column(
               children: [
-                Header(text: "Feedback Form"),
+                Header(text: "Feedback Form", backIcon: true),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                   child: Column(
@@ -76,13 +77,7 @@ class _FeedbackFormState extends State<FeedbackForm> {
                           height10,
                           height10,
                           RadioButton(
-                            str: [
-                              "Most Likely",
-                              "More Likely",
-                              "Somewhat",
-                              "Less Likely",
-                              "Not Likely"
-                            ],
+                            str: _str,
                             callback: (value) {
                               setState(() => _radioval = value);
                             },
@@ -99,12 +94,11 @@ class _FeedbackFormState extends State<FeedbackForm> {
                           height: 40,
                           elevation: 0,
                           color: darkBlueColor,
-                          callable: () {
-                            Navigator.pushNamed(context, "/feedbackform2",
-                                arguments: {
-                                  "rating": _rate,
-                                  "radioval": _radioval
-                                });
+                          callback: () {
+                            Navigate().toFeedback2(context, {
+                              "rating": _rate,
+                              "radioval": _radioval
+                            });
                           },
                         ),
                       )

@@ -10,18 +10,18 @@ class FeedbackForm2 extends StatefulWidget {
 
 class _FeedbackForm2State extends State<FeedbackForm2> {
   String _msg = "";
-  Map data = {};
+  Map _data = {};
 
   @override
   Widget build(BuildContext context) {
 
-    data = ModalRoute.of(context).settings.arguments;
+    _data = ModalRoute.of(context).settings.arguments;
     return SafeArea(
       child: Scaffold(
         body: Container(
           child: Column(
             children: [
-              Header(text: "Feedback Form"),
+              Header(text: "Feedback Form", backIcon: true),
               Flexible(
                 child: SingleChildScrollView(
                   child: Container(
@@ -56,8 +56,8 @@ class _FeedbackForm2State extends State<FeedbackForm2> {
                   text: "Send",
                   elevation: 0,
                   color: darkBlueColor,
-                  callable: (){
-                   print(data);
+                  callback: (){
+                   print(_data);
                   },
                 )
               )
