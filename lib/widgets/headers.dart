@@ -3,8 +3,9 @@ import 'package:udhaarkaroapp/constants/constants.dart';
 
 class Header extends StatelessWidget {
   final String text;
+  final bool backIcon;
 
-  Header({this.text});
+  Header({this.text, this.backIcon});
 
   @override
   Widget build(BuildContext context) {
@@ -15,14 +16,16 @@ class Header extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Align(
-            child: InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: backIconLight),
-            alignment: Alignment.centerLeft,
-          ),
+          (backIcon)
+              ? Align(
+                  child: InkWell(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: backIconLight),
+                  alignment: Alignment.centerLeft,
+                )
+              : Text(""),
           height10,
           Center(
             child: Text(

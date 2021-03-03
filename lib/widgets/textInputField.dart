@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
 
+
+//NameTextField
+//PhoneTextField
+//EmailTextField
+//PasswordTextField
 class NameTextField extends StatelessWidget {
   final String name;
   final String label;
@@ -13,7 +18,7 @@ class NameTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      decoration: decoration.copyWith(labelText: label, labelStyle: t16_Dark),
+      decoration: decoration.copyWith(labelText: label),
       initialValue: name,
       validator: (val) => val.isEmpty ? "This field is required" : null,
       onChanged: (val) {
@@ -34,11 +39,10 @@ class PhoneTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      decoration: decoration.copyWith(labelText: label, labelStyle: t16_Dark),
-      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+      decoration: decoration.copyWith(labelText: label),
+      inputFormatters: [FilteringTextInputFormatter.digitsOnly, LengthLimitingTextInputFormatter(10)],
       keyboardType: TextInputType.number,
       initialValue: num,
-      maxLength: 10,
       validator: (val) {
         if (val.length == 10 && int.parse(val[0]) >= 7) {
           return null;
@@ -64,7 +68,7 @@ class EmailTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      decoration: decoration.copyWith(labelText: label, labelStyle: t16_Dark),
+      decoration: decoration.copyWith(labelText: label),
       initialValue: email,
       validator: (val) {
         if (val.isNotEmpty &&
@@ -110,8 +114,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
               color: blackColor,
               onPressed: _toggle,
               icon: Icon(_obscureText ? Icons.lock_open : Icons.lock)),
-          labelText: widget.label,
-          labelStyle: t16_Dark),
+          labelText: widget.label,),
       initialValue: widget.pass,
       validator: (val) => val.length < 6 || val.length > 20
           ? 'Password should be between 6 to 20 chars.'

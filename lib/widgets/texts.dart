@@ -2,6 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
 
 
+//H1_Dark
+//H1_Light
+//H2_Dark
+//H2_Light
+//H3_Dark
+//H3_Light
+//H4_Dark
+//H4_Light
+
+//T30_Dark
+//T30_Light
+//T28_Dark
+//T28_Light
+//T26_Dark
+//T26_Light
+//T24_Dark
+//T24_Light
+//T22_Dark
+//T22_Light
+//T20_Dark
+//T20_Light
+//T18_Dark
+//T18_Light
+//T16_Dark
+//T16_Light
+//T14_Dark
+//T14_Light
+//T12_Dark
+//T12_Light
+
 class H1Dark extends StatelessWidget {
 
   final String txt;
@@ -335,30 +365,6 @@ class T12Light extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(txt, style: t12_Light,);
-  }
-}
-
-class HintDark extends StatelessWidget {
-
-  final String txt;
-
-  HintDark({ @required this.txt});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(txt, style: hint_Dark,);
-  }
-}
-
-class HintLight extends StatelessWidget {
-
-  final String txt;
-
-  HintLight({ @required this.txt});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(txt, style: hint_Light,);
   }
 }
 

@@ -10,7 +10,7 @@ class PrivacyPolicy extends StatelessWidget {
         body: Container(
           child: Column(
             children: [
-              Header(text: "Privacy Policy"),
+              Header(text: "Privacy Policy", backIcon: true,),
 
               Flexible(
                 child: SingleChildScrollView(

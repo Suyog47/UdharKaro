@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/customClass/navigations.dart';
 import 'package:udhaarkaroapp/widgets/buttons.dart';
 import 'package:udhaarkaroapp/widgets/textInputField.dart';
 
@@ -68,13 +69,13 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         height10,
                         SubmitButton(
                           text: "Continue",
-                          width: 120,
+                          width: 140,
                           height: 40,
                           elevation: 10,
                           color: lightBlueColor,
                           formKey: _formKey,
-                          callable: (){
-                            print(_num);
+                          callback: (){
+                            Navigate().toNewPassword(context);
                           },
                         ),
                       ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/customClass/navigations.dart';
 import 'package:udhaarkaroapp/widgets/buttons.dart';
 import 'package:udhaarkaroapp/widgets/card.dart';
 
@@ -9,8 +10,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int type = 1;
-  List str = [
+  int _type = 1;
+  List _str = [
     {
       "vendor": "Agarwal Sweets",
       "price": "1500",
@@ -142,23 +143,23 @@ class _HomeState extends State<Home> {
               children: [
                 ListView.builder(
                     scrollDirection: Axis.vertical,
-                    itemCount: str.length,
+                    itemCount: _str.length,
                     shrinkWrap: true,
                     itemBuilder: (context, index) {
                       return HomeCard(
                         type: 1,
-                        str: str,
+                        str: _str,
                         itemIndex: index,
                       );
                     }),
                 ListView.builder(
                     scrollDirection: Axis.vertical,
-                    itemCount: str.length,
+                    itemCount: _str.length,
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
                   return HomeCard(
                     type: 2,
-                    str: str,
+                    str: _str,
                     itemIndex: index,
                   );
                 }),
@@ -168,13 +169,13 @@ class _HomeState extends State<Home> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               TakeFloatingButton(
-                callable: (){
-                  print("take");
+                callback: (){
+                 Navigate().toQRScanner(context, {"type" : 1});
                 },
               ),
               GaveFloatingButton(
-                callable: (){
-                  print("gave");
+                callback: (){
+                  Navigate().toQRScanner(context, {"type" : 2});
                 },
               )
             ],

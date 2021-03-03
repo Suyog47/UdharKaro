@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/widgets/buttons.dart';
 import 'package:udhaarkaroapp/widgets/textInputField.dart';
@@ -86,12 +87,20 @@ class _NewPasswordState extends State<NewPassword> {
                   elevation: 10,
                   color: lightBlueColor,
                   formKey: _formKey,
-                  callable: (){
+                  callback: (){
                     if(_pass == _cpass){
 
                     }
                     else{
-                      print("match cancel");
+                      Fluttertoast.showToast(
+                          msg: "Re-Entered Password dont match with Password field",
+                          toastLength: Toast.LENGTH_LONG,
+                          gravity: ToastGravity.BOTTOM,
+                          timeInSecForIosWeb: 1,
+                          backgroundColor: Colors.red,
+                          textColor: Colors.white,
+                          fontSize: 16.0
+                      );
                     }
                   },
                 ),

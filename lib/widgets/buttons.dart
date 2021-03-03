@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
 
+
+//SubmitButton
+//Button
+//TakeFloatingButton
+//GaveFloatingButton
+//SmallButton
+
 class SubmitButton extends StatelessWidget {
   final String text;
   final double width;
@@ -8,10 +15,10 @@ class SubmitButton extends StatelessWidget {
   final double elevation;
   final Color color;
   final formKey;
-  final Function callable;
+  final Function callback;
 
   SubmitButton(
-      {this.text, this.width, this.height, this.elevation, this.color, this.formKey, this.callable});
+      {this.text, this.width, this.height, this.elevation, this.color, this.formKey, this.callback});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +34,7 @@ class SubmitButton extends StatelessWidget {
         child: Text(text, style: h4_Light),
         onPressed: () {
           if (formKey.currentState.validate()) {
-            callable();
+            callback();
           }
         },
       ),
@@ -41,9 +48,9 @@ class Button extends StatelessWidget {
   final double height;
   final double elevation;
   final Color color;
-  final Function callable;
+  final Function callback;
 
-  Button({this.text, this.width, this.height, this.elevation, this.color, this.callable});
+  Button({this.text, this.width, this.height, this.elevation, this.color, this.callback});
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +65,7 @@ class Button extends StatelessWidget {
         elevation: elevation,
         child: Text(text, style: h4_Light),
         onPressed: () {
-          callable();
+          callback();
         },
       ),
     );
@@ -66,15 +73,15 @@ class Button extends StatelessWidget {
 }
 
 class TakeFloatingButton extends StatelessWidget {
-  final Function callable;
+  final Function callback;
 
-  TakeFloatingButton({this.callable});
+  TakeFloatingButton({this.callback});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        callable();
+        callback();
       },
       child: Container(
         height: 60,
@@ -98,15 +105,15 @@ class TakeFloatingButton extends StatelessWidget {
 }
 
 class GaveFloatingButton extends StatelessWidget {
-  final Function callable;
+  final Function callback;
 
-  GaveFloatingButton({this.callable});
+  GaveFloatingButton({this.callback});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        callable();
+        callback();
       },
       child: Container(
         height: 60,
@@ -123,6 +130,32 @@ class GaveFloatingButton extends StatelessWidget {
               style: h4_Light,
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class SmallButton extends StatelessWidget {
+  final String text;
+  final Color border;
+  final Function callback;
+
+  SmallButton({this.text, this.border, this.callback});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: (){
+        callback();
+      },
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+        child: Text(text, style: t14_Dark),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          border: Border.all(color: border, width: 5),
+          color: lightGreyColor,
         ),
       ),
     );

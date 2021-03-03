@@ -5,6 +5,10 @@ import 'package:udhaarkaroapp/constants/constants.dart';
 
 class QRScanner extends StatefulWidget {
 
+  final Function callback;
+
+  QRScanner({this.callback});
+
   @override
   _QRScannerState createState() => _QRScannerState();
 }
@@ -70,9 +74,9 @@ class _QRScannerState extends State<QRScanner> {
   void _onQRViewCreated(QRViewController controller) {
     this.controller = controller;
     controller.scannedDataStream.listen((scanData) {
-        result = scanData;
-       if(result != null){
-         Navigator.pushReplacementNamed(context, "/giveAmount");
+       if(scanData != null){
+         controller.pauseCamera();
+         widget.callback();
        }
        return;
     });

@@ -14,7 +14,7 @@ class _UsersListState extends State<UsersList> {
     "Babu",
     "Deepanshu Khanna",
     "Raj Ranjan",
-    "Suyog Amin"
+    "Suyog Amin",
   ];
 
   @override
@@ -25,20 +25,23 @@ class _UsersListState extends State<UsersList> {
         body: Container(
           child: Column(
             children: [
-              Header(text: "User List"),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 10),
-                child: ListView.builder(
-                    scrollDirection: Axis.vertical,
-                    shrinkWrap: true,
-                    itemCount: 5,
-                    itemBuilder: (context, index){
-                      return UserListCard(
-                        str: _str,
-                        pic: "assets/profilebg.png",
-                        itemIndex: index,
-                      );
-                    })
+              Header(text: "User List", backIcon: true),
+
+              Flexible(
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  child: ListView.builder(
+                      //scrollDirection: Axis.vertical,
+                      shrinkWrap: true,
+                      itemCount: _str.length,
+                      itemBuilder: (context, index){
+                        return UserListCard(
+                          str: _str,
+                          pic: "assets/profilebg.png",
+                          itemIndex: index,
+                        );
+                      }),
+                ),
               )
             ],
           ),

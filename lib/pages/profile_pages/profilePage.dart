@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/customClass/navigations.dart';
 import 'package:udhaarkaroapp/widgets/circularAvatar.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -51,7 +52,7 @@ class ProfilePage extends StatelessWidget {
                           ],
                         ),
                         onTap: () {
-                          Navigator.pushNamed(context, "/accountdetails");
+                          Navigate().toAccountDetails(context);
                         },
                       ),
                       height10,
@@ -75,7 +76,7 @@ class ProfilePage extends StatelessWidget {
                       height10,
                       InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, "/feedbackform");
+                          Navigate().toFeedback(context);
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -92,7 +93,7 @@ class ProfilePage extends StatelessWidget {
                       height10,
                       InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, "/userlist");
+                          Navigate().toUserList(context);
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -109,7 +110,7 @@ class ProfilePage extends StatelessWidget {
                       height10,
                       InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, "/aboutus");
+                          Navigate().toAboutUs(context);
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -130,9 +131,14 @@ class ProfilePage extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            "Logout",
-                            style: t22_Dark,
+                          InkWell(
+                            child: Text(
+                              "Logout",
+                              style: t22_Dark,
+                            ),
+                            onTap: (){
+
+                            },
                           ),
                           Icon(MdiIcons.logout)
                         ],
