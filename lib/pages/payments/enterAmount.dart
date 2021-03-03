@@ -4,9 +4,21 @@ import 'package:flutter/services.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/widgets/circularAvatar.dart';
 
-class GiveAmount extends StatelessWidget {
+
+class EnterAmount extends StatefulWidget {
+  @override
+  _EnterAmountState createState() => _EnterAmountState();
+}
+
+class _EnterAmountState extends State<EnterAmount> {
+
+  Map data = {};
+
   @override
   Widget build(BuildContext context) {
+
+    data = ModalRoute.of(context).settings.arguments;
+
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
@@ -18,10 +30,10 @@ class GiveAmount extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: InkWell(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: backIconDark
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: backIconDark
                   ),
                 ),
                 height30,
@@ -32,16 +44,16 @@ class GiveAmount extends StatelessWidget {
                 height10,
                 height10,
                 Text(
-                  'Giving to',
+                  (data["type"] == 1) ? "Taking from" : "Giving to",
                   style: h4_Dark,
                 ),
                 Text(
-                  'Suyog Amin',
+                  "Suyog Amin",
                   style: h3_Dark,
                 ),
                 height30,
                 Text(
-                  'Rs.',
+                  "Rs.",
                   style: h3_Dark,
                 ),
 
@@ -86,17 +98,20 @@ class GiveAmount extends StatelessWidget {
                 height30,
                 height30,
                 InkWell(
-                  onTap: () {
-                    Navigator.pushReplacementNamed(context, "/paidAmountDetails");
-                  },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                    decoration: BoxDecoration(
-                      color: lightBlueColor,
-                      borderRadius: BorderRadius.circular(50)
-                    ),
-                    child: Icon(Icons.arrow_forward, color: whiteColor,),
-                  )
+                    onTap: () {
+                      (data["type"] == 1) ?
+                      Navigator.pushReplacementNamed(context, "/takenAmountDetails")
+                      :
+                      Navigator.pushReplacementNamed(context, "/givenAmountDetails");
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                      decoration: BoxDecoration(
+                          color: lightBlueColor,
+                          borderRadius: BorderRadius.circular(50)
+                      ),
+                      child: Icon(Icons.arrow_forward, color: whiteColor,),
+                    )
                 )
               ],
             ),
@@ -106,3 +121,4 @@ class GiveAmount extends StatelessWidget {
     );
   }
 }
+
