@@ -39,9 +39,10 @@ class _FeedbackForm2State extends State<FeedbackForm2> {
                         height10,
                         TextFormField(
                           style: TextStyle(fontSize: 18),
+                          decoration: inputDecor2.copyWith(hintText: "Write Something"),
                           cursorColor: redColor,
                           onChanged: (val) => _msg = val,
-                          minLines: 8,
+                          minLines: 10,
                           maxLines: 12,
                         ),
                       ],
