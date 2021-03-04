@@ -94,7 +94,7 @@ class _QRCodeScannerState extends State<QRCodeScanner> {
                           width: 200,
                           height: 50,
                           color: lightBlueColor,
-                          elevation: 10,
+                          elevation: 5,
                           formKey: _formKey,
                           callback: () {
                             Navigate().toEnterAmount(
