@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/customClass/navigations.dart';
+import 'package:udhaarkaroapp/widgets/buttons.dart';
 import 'package:udhaarkaroapp/widgets/card.dart';
 import 'package:udhaarkaroapp/widgets/circularAvatar.dart';
 import 'package:udhaarkaroapp/widgets/expandableContainer.dart';
@@ -115,6 +117,24 @@ class _UserDetailsState extends State<UserDetails> {
             ],
           ),
         ),
+
+        floatingActionButton: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            TakeFloatingButton(
+              callback: (){
+                Navigate().toQRScanner(context, {"type" : 1});
+              },
+            ),
+            GaveFloatingButton(
+              callback: (){
+                Navigate().toQRScanner(context, {"type" : 2});
+              },
+            )
+          ],
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
       ),
     );
   }

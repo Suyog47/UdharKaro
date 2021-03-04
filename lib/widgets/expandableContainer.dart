@@ -6,7 +6,7 @@ class ExpandableContainer extends StatefulWidget {
 
   final Function callback;
 
-  ExpandableContainer({this.callback});
+  ExpandableContainer({ @required this.callback});
 
   @override
   _ExpandableContainerState createState() => _ExpandableContainerState();
@@ -59,7 +59,8 @@ class _ExpandableContainerState extends State<ExpandableContainer> {
               children: [
                 SmallButton(
                   text: "Sent",
-                  border: (index != 0) ? greyColor : greenColor,
+                  borderColor: (index != 0) ? greyColor : greenColor,
+                  borderWidth: 5,
                   callback: () {
                     setState(() => index = 0);
                     widget.callback(index);
@@ -68,7 +69,8 @@ class _ExpandableContainerState extends State<ExpandableContainer> {
                 ),
                 SmallButton(
                   text: "Received",
-                  border: (index != 1) ? greyColor : greenColor,
+                  borderColor: (index != 1) ? greyColor : greenColor,
+                  borderWidth: 5,
                   callback: () {
                     setState(() => index = 1);
                     widget.callback(index);
@@ -77,7 +79,8 @@ class _ExpandableContainerState extends State<ExpandableContainer> {
                 ),
                 SmallButton(
                   text: "All",
-                  border: (index != 2) ? greyColor : greenColor,
+                  borderColor: (index != 2) ? greyColor : greenColor,
+                  borderWidth: 5,
                   callback: () {
                     setState(() => index = 2);
                     widget.callback(index);

@@ -9,7 +9,7 @@ class AboutUs extends StatelessWidget {
         body: Container(
           child: Column(
             children: [
-              Header(text: "About us", backIcon: true),
+              Header(text: "About us"),
 
               Flexible(
                 child: SingleChildScrollView(

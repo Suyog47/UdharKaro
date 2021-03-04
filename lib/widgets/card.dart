@@ -3,7 +3,6 @@ import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/customClass/navigations.dart';
 import 'circularAvatar.dart';
 
-
 //UserListCard
 //HomeCard
 //UserDetails
@@ -11,12 +10,10 @@ import 'circularAvatar.dart';
 
 class UserListCard extends StatelessWidget {
   final List str;
-  final String pic;
   final int itemIndex;
 
   UserListCard({
     @required this.str,
-    @required this.pic,
     @required this.itemIndex,
   });
 
@@ -27,11 +24,11 @@ class UserListCard extends StatelessWidget {
         Card(
           child: ListTile(
             leading: Avatar(
-              img: pic,
+              img: str[itemIndex]["pic"],
               radius: 25,
             ),
             title: Text(
-              str[itemIndex],
+              str[itemIndex]["name"],
               style: t18_Dark,
             ),
           ),
@@ -49,13 +46,14 @@ class HomeCard extends StatelessWidget {
   final int type;
   final int itemIndex;
 
-  HomeCard({this.str, this.type, this.itemIndex});
+  HomeCard({@required this.str, @required this.type, @required this.itemIndex});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-        Navigate().toUserDetails(context, {"name": str[itemIndex]["vendor"], "type": type});
+      onTap: () {
+        Navigate().toUserDetails(
+            context, {"name": str[itemIndex]["vendor"], "type": type});
       },
       child: Card(
         margin: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
@@ -83,7 +81,7 @@ class HomeCard extends StatelessWidget {
                       ),
                       height5,
                       Text(
-                        ((type == 1) ? "to " : "from ")+
+                        ((type == 1) ? "to " : "from ") +
                             str[itemIndex]["vendor"],
                         style: t12_Dark,
                       )
@@ -125,7 +123,8 @@ class HomeCard extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: whiteColor,
                             borderRadius: BorderRadius.circular(15),
-                            border: Border.all(color: lightBlueColor, width: 2.0),
+                            border:
+                                Border.all(color: lightBlueColor, width: 2.0),
                           ),
                           child: Row(
                             children: [
@@ -134,13 +133,14 @@ class HomeCard extends StatelessWidget {
                                 style: TextStyle(color: lightBlueColor),
                               ),
                               Transform.rotate(
-                                  angle: 3.142 / 4, child: upArrowLightBlueIcon),
+                                  angle: 3.142 / 4,
+                                  child: upArrowLightBlueIcon),
                             ],
                           ),
                         )
                       : Container(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 10),
                           decoration: BoxDecoration(
                             color: whiteColor,
                             borderRadius: BorderRadius.circular(15),
@@ -166,39 +166,39 @@ class UserDetailCard extends StatelessWidget {
   final List str;
   final int itemIndex;
 
-  UserDetailCard({this.str, this.itemIndex});
+  UserDetailCard({@required this.str, @required this.itemIndex});
 
   @override
   Widget build(BuildContext context) {
     return Container(
         child: Card(
-          elevation: 0,
-          margin: EdgeInsets.symmetric(vertical: 5),
-          child: ListTile(
-            leading: Avatar(
-              img: str[itemIndex]["pic"],
-              radius: 25,
+      elevation: 0,
+      margin: EdgeInsets.symmetric(vertical: 5),
+      child: ListTile(
+        leading: Avatar(
+          img: str[itemIndex]["pic"],
+          radius: 25,
+        ),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              (str[itemIndex]["type"] == 1) ? "Send" : "Received",
+              style: h4_Dark,
             ),
-            title: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  (str[itemIndex]["type"] == 1) ? "Send" : "Received",
-                  style: h4_Dark,
-                ) ,
-                height5,
-              ],
-            ),
-            subtitle: Text(
-              str[itemIndex]["date"],
-              style: TextStyle(color: greyColor, fontSize: 12),
-            ),
-            trailing: (str[itemIndex]["type"] == 1)
-                ? Text(
+            height5,
+          ],
+        ),
+        subtitle: Text(
+          str[itemIndex]["date"],
+          style: TextStyle(color: greyColor, fontSize: 12),
+        ),
+        trailing: (str[itemIndex]["type"] == 1)
+            ? Text(
                 "- Rs." + str[itemIndex]["price"].toString(),
                 style: minusPriceTextStyle,
-            )
-                : Text(
+              )
+            : Text(
                 "+ Rs." + str[itemIndex]["price"].toString(),
                 style: plusPriceTextStyle,
               ),
@@ -211,7 +211,7 @@ class NotificationCard extends StatelessWidget {
   final List str;
   final int itemIndex;
 
-  NotificationCard({this.str, this.itemIndex});
+  NotificationCard({@required this.str, @required this.itemIndex});
 
   @override
   Widget build(BuildContext context) {

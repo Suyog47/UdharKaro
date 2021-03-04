@@ -64,15 +64,16 @@ class _AccountDetailsState extends State<AccountDetails> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         PhoneTextField(
-                          num: _num,
+                          value: _num,
                           decoration: inputDecor,
                           label: "Phone Number",
                           callback: (value) {
                             setState(() => _num = value);
                           },
                         ),
+                        height10,
                         EmailTextField(
-                          email: _email,
+                          value: _email,
                           decoration: inputDecor,
                           label: "Email",
                           callback: (value) {
@@ -97,14 +98,14 @@ class _AccountDetailsState extends State<AccountDetails> {
                         ),
                         height10,
                         PasswordTextField(
-                          pass: _pass,
+                          value: _pass,
                           decoration: inputDecor,
                           label: "Password",
                           callback: (value) {
                             setState(() => _pass = value);
                           },
                         ),
-                        height10,
+                        height30,
                         Center(
                             child: SubmitButton(
                           text: "Save",
