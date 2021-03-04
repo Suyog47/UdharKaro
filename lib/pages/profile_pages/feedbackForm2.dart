@@ -22,31 +22,26 @@ class _FeedbackForm2State extends State<FeedbackForm2> {
           child: Column(
             children: [
               Header(text: "Feedback Form"),
-              Flexible(
-                child: SingleChildScrollView(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 60),
-                    child: Column(
-                      children: [
-                        Text(
-                          "Anything else you would like to share with us about our mobile app",
-                          style: t20_Dark,
-                          softWrap: true,
-                          textAlign: TextAlign.center,
-                        ),
-                        height10,
-                        height10,
-                        height10,
-                        TextFormField(
-                          style: TextStyle(fontSize: 18),
-                          cursorColor: redColor,
-                          onChanged: (val) => _msg = val,
-                          minLines: 8,
-                          maxLines: 12,
-                        ),
-                      ],
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+                child: Column(
+                  children: [
+                    Text(
+                      "Anything else you would like to share with us about our mobile app",
+                      style: t20_Dark,
+                      softWrap: true,
+                      textAlign: TextAlign.center,
                     ),
-                  ),
+                    height30,
+                    TextFormField(
+                      style: TextStyle(fontSize: 18),
+                      decoration: inputDecor2.copyWith(hintText: "Write Something"),
+                      cursorColor: redColor,
+                      onChanged: (val) => _msg = val,
+                      minLines: 10,
+                      maxLines: 12,
+                    ),
+                  ],
                 ),
               ),
               Center(
