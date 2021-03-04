@@ -4,10 +4,9 @@ import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
 
 class QRScanner extends StatefulWidget {
-
   final Function callback;
 
-  QRScanner({this.callback});
+  QRScanner({@required this.callback});
 
   @override
   _QRScannerState createState() => _QRScannerState();
@@ -39,33 +38,38 @@ class _QRScannerState extends State<QRScanner> {
           child: QRView(
             key: qrKey,
             overlay: QrScannerOverlayShape(
-              borderRadius: 10,
-              borderColor: lightBlueColor,
-              borderWidth: 10,
-              borderLength: 30,
-              cutOutSize: 250
-            ),
+                borderRadius: 10,
+                borderColor: lightBlueColor,
+                borderWidth: 10,
+                borderLength: 30,
+                cutOutSize: 250),
             onQRViewCreated: _onQRViewCreated,
           ),
         ),
-
         height10,
-
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             InkWell(
-                onTap: (){
+                onTap: () {
                   _toggleFlash(controller);
-            },
-                child: (!status) ? Icon(Icons.flash_on, color: whiteColor,) : Icon(Icons.flash_off, color: whiteColor,))
+                },
+                child: (!status)
+                    ? Icon(
+                        Icons.flash_on,
+                        color: whiteColor,
+                      )
+                    : Icon(
+                        Icons.flash_off,
+                        color: whiteColor,
+                      ))
           ],
         )
       ],
     );
   }
 
-  void _toggleFlash(QRViewController controller){
+  void _toggleFlash(QRViewController controller) {
     this.controller = controller;
     controller.toggleFlash();
     setState(() => status = !status);
@@ -74,12 +78,11 @@ class _QRScannerState extends State<QRScanner> {
   void _onQRViewCreated(QRViewController controller) {
     this.controller = controller;
     controller.scannedDataStream.listen((scanData) {
-       if(scanData != null){
-         controller.pauseCamera();
-         widget.callback();
-       }
-       return;
+      if (scanData != null) {
+        controller.pauseCamera();
+        widget.callback();
+      }
+      return;
     });
   }
 }
-

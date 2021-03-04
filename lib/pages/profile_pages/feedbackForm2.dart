@@ -21,7 +21,7 @@ class _FeedbackForm2State extends State<FeedbackForm2> {
         body: Container(
           child: Column(
             children: [
-              Header(text: "Feedback Form", backIcon: true),
+              Header(text: "Feedback Form"),
               Flexible(
                 child: SingleChildScrollView(
                   child: Container(

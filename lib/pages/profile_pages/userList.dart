@@ -10,11 +10,11 @@ class UsersList extends StatefulWidget {
 
 class _UsersListState extends State<UsersList> {
   List _str = [
-    "Ayush Singhal",
-    "Babu",
-    "Deepanshu Khanna",
-    "Raj Ranjan",
-    "Suyog Amin",
+    {"name" : "Ayush Singhal", "pic" : "assets/profilebg.png"},
+    {"name" : "Babu", "pic" : "assets/profilebg.png"},
+    {"name" : "Deepanshu Khanna", "pic" : "assets/profilebg.png"},
+    {"name" : "Raj Ranjan", "pic" : "assets/profilebg.png"},
+    {"name" : "Suyog Amin", "pic" : "assets/profilebg.png"}
   ];
 
   @override
@@ -25,7 +25,7 @@ class _UsersListState extends State<UsersList> {
         body: Container(
           child: Column(
             children: [
-              Header(text: "User List", backIcon: true),
+              Header(text: "User List"),
 
               Flexible(
                 child: Container(
@@ -37,7 +37,6 @@ class _UsersListState extends State<UsersList> {
                       itemBuilder: (context, index){
                         return UserListCard(
                           str: _str,
-                          pic: "assets/profilebg.png",
                           itemIndex: index,
                         );
                       }),

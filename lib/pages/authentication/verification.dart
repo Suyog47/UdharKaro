@@ -29,16 +29,12 @@ class _VerificationState extends State<Verification> {
               children: [
                 Align(
                   alignment: Alignment.topLeft,
-                  child: IconButton(
-                    onPressed: (){
+                  child:InkWell(
+                    child: backIconDark,
+                    onTap: (){
                       Navigator.pop(context);
                     },
-                    icon: Icon(
-                      Icons.arrow_back,
-                      color: blackColor,
-                      size: 30,
-                    ),
-                  ),
+                  )
                 ),
                 height30,
                 Text('Verification',style: TextStyle(

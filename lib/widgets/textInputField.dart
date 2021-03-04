@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
 
-
 //NameTextField
 //PhoneTextField
 //EmailTextField
@@ -13,7 +12,11 @@ class NameTextField extends StatelessWidget {
   final Function callback;
   final InputDecoration decoration;
 
-  NameTextField({this.name, this.label, this.callback, this.decoration});
+  const NameTextField(
+      {this.name,
+      @required this.label,
+      @required this.callback,
+      @required this.decoration});
 
   @override
   Widget build(BuildContext context) {
@@ -29,20 +32,26 @@ class NameTextField extends StatelessWidget {
 }
 
 class PhoneTextField extends StatelessWidget {
-  final String num;
+  final String value;
   final String label;
   final Function callback;
   final InputDecoration decoration;
 
-  PhoneTextField({this.num, this.label, this.callback, this.decoration});
+  PhoneTextField(
+      {this.value, this.label, @required this.callback, this.decoration});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      decoration: decoration.copyWith(labelText: label),
-      inputFormatters: [FilteringTextInputFormatter.digitsOnly, LengthLimitingTextInputFormatter(10)],
+      decoration: (decoration != null)
+          ? decoration.copyWith(labelText: label)
+          : InputDecoration(labelText: label),
+      inputFormatters: [
+        FilteringTextInputFormatter.digitsOnly,
+        LengthLimitingTextInputFormatter(10)
+      ],
       keyboardType: TextInputType.number,
-      initialValue: num,
+      initialValue: value,
       validator: (val) {
         if (val.length == 10 && int.parse(val[0]) >= 7) {
           return null;
@@ -58,18 +67,21 @@ class PhoneTextField extends StatelessWidget {
 }
 
 class EmailTextField extends StatelessWidget {
-  final String email;
+  final String value;
   final String label;
   final Function callback;
   final InputDecoration decoration;
 
-  EmailTextField({this.email, this.label, this.callback, this.decoration});
+  EmailTextField(
+      {this.value, this.label, @required this.callback, this.decoration});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      decoration: decoration.copyWith(labelText: label),
-      initialValue: email,
+      decoration: (decoration != null)
+          ? decoration.copyWith(labelText: label)
+          : InputDecoration(labelText: label),
+      initialValue: value,
       validator: (val) {
         if (val.isNotEmpty &&
             RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
@@ -86,12 +98,13 @@ class EmailTextField extends StatelessWidget {
 }
 
 class PasswordTextField extends StatefulWidget {
-  final String pass;
+  final String value;
   final String label;
   final Function callback;
   final InputDecoration decoration;
 
-  PasswordTextField({this.pass, this.label, this.callback, this.decoration});
+  PasswordTextField(
+      {this.value, this.label, @required this.callback, this.decoration});
 
   @override
   _PasswordTextFieldState createState() => _PasswordTextFieldState();
@@ -109,13 +122,21 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      decoration: widget.decoration.copyWith(
-          suffixIcon: IconButton(
-              color: blackColor,
-              onPressed: _toggle,
-              icon: Icon(_obscureText ? Icons.lock_open : Icons.lock)),
-          labelText: widget.label,),
-      initialValue: widget.pass,
+      decoration: (widget.decoration != null)
+          ? widget.decoration.copyWith(
+              suffixIcon: IconButton(
+                  color: blackColor,
+                  onPressed: _toggle,
+                  icon: Icon(_obscureText ? Icons.lock_open : Icons.lock)),
+              labelText: widget.label,
+            )
+          : InputDecoration(
+              suffixIcon: IconButton(
+                  color: blackColor,
+                  onPressed: _toggle,
+                  icon: Icon(_obscureText ? Icons.lock_open : Icons.lock)),
+              labelText: widget.label,),
+      initialValue: widget.value,
       validator: (val) => val.length < 6 || val.length > 20
           ? 'Password should be between 6 to 20 chars.'
           : null,
@@ -126,3 +147,37 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
     );
   }
 }
+
+class OTPTextField extends StatelessWidget {
+
+  final String label;
+  final Function callback;
+  final InputDecoration decoration;
+
+  OTPTextField(
+      {this.label, @required this.callback, this.decoration});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      decoration: (decoration != null)
+          ? decoration.copyWith(labelText: label)
+          : InputDecoration(labelText: label),
+      inputFormatters: [
+        FilteringTextInputFormatter.digitsOnly,
+        LengthLimitingTextInputFormatter(10)
+      ],
+    validator: (val) {
+      if (val.length == 4) {
+        return null;
+      }
+      return "Enter 4 digit otp number";
+    },
+      keyboardType: TextInputType.number,
+      onChanged: (val){
+        callback(val);
+      },
+    );
+  }
+}
+

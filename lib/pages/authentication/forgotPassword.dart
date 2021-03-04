@@ -30,16 +30,12 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               children: [
               Align(
                 alignment: Alignment.topLeft,
-                child: IconButton(
-                  onPressed: (){
+                child: InkWell(
+                  child: backIconDark,
+                  onTap: (){
                     Navigator.pop(context);
                   },
-                icon: Icon(
-                  Icons.arrow_back,
-                  color: blackColor,
-                  size: 30,
-                ),
-            ),
+                )
               ),
 
                 Icon(MdiIcons.lockQuestion,color: Color(0xFF41C8F3),size: 250,
@@ -61,7 +57,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     child: Column(
                       children: [
                         PhoneTextField(
-                          decoration: inputDecor2.copyWith(labelText: "Phone Number", labelStyle: t16_Dark),
+                          label: "Phone Number",
+                          decoration: inputDecor2,
                           callback: (value){
                           setState(() => _num = value);
                           },
