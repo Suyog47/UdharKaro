@@ -1,13 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:udhaarkaroapp/api/user-api.dart';
-import 'package:udhaarkaroapp/apiClass/user.dart';
-import 'package:udhaarkaroapp/constants/colors.dart';
-import 'package:udhaarkaroapp/constants/heights.dart';
-import 'package:udhaarkaroapp/constants/icons.dart';
-import 'package:udhaarkaroapp/constants/textStyles.dart';
+import 'package:udhaarkaroapp/api/user.dart';
+import 'package:udhaarkaroapp/apiClass/user-api.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/widgets/card.dart';
+import 'package:udhaarkaroapp/widgets/headers.dart';
 
 class UsersList extends StatefulWidget {
   @override
@@ -17,7 +15,7 @@ class UsersList extends StatefulWidget {
 class _UsersListState extends State<UsersList> {
 
   List<user> _users;
-  List _str;
+  // List _str;
   Timer timer;
 
   @override
@@ -38,7 +36,7 @@ class _UsersListState extends State<UsersList> {
     UserApi.getUsers().then((usersAll) {
       setState(() {
         _users = usersAll;
-        _str = _users.map((e) => e.name).toList();
+        // _str = _users.map((e) => e.name).toList();
       });
     });
   }
@@ -47,45 +45,38 @@ class _UsersListState extends State<UsersList> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: whiteColor,
         body: Container(
           child: Column(
             children: [
-              Container(
-                padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
-                decoration: BoxDecoration(
-                  color: darkBlueColor,
-                ),
-                child: Column(
-                  children: [
-                    Align(
-                      child: InkWell(
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
-                          child: backIcon),
-                      alignment: Alignment.centerLeft,
-                    ),
-                    Height10,
-                    Center(
-                        child: Text(
-                          "Users List",
-                          style: profileHeaderTextStyle,
-                        ))
-                  ],
-                ),
-              ),
+              Header(text: "User List"),
 
-              _str!=null? Expanded(
+              // Flexible(
+              //   child: Container(
+              //     padding: EdgeInsets.symmetric(horizontal: 10),
+              //     child: ListView.builder(
+              //       //scrollDirection: Axis.vertical,
+              //         shrinkWrap: true,
+              //         itemCount: _users.length,
+              //         itemBuilder: (context, index){
+              //           return UserListCard(
+              //             str: _users,
+              //             itemIndex: index,
+              //           );
+              //         }),
+              //   ),
+              // ),
+
+              _users!=null? Expanded(
                 child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 10),
                     child: ListView.builder(
                         scrollDirection: Axis.vertical,
                         shrinkWrap: true,
-                        itemCount: _str.length,
+                        itemCount: _users.length,
                         itemBuilder: (context, index){
-                          return userListCard(
-                            pic: "assets/profilebg.png",
-                            str: _str,
+                          return UserListCard(
+                            str: _users,
                             itemIndex: index,
                           );
                         })
@@ -98,4 +89,3 @@ class _UsersListState extends State<UsersList> {
     );
   }
 }
-

@@ -79,7 +79,6 @@ class _LoginState extends State<Login> {
                     text: "Login",
                     width: 150,
                     height: 40,
-                    elevation: 10,
                     color: lightBlueColor,
                     formKey: _formKey,
                     callback: (){

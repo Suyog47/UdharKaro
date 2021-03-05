@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
 
-
 //SubmitButton
 //Button
 //TakeFloatingButton
@@ -18,7 +17,13 @@ class SubmitButton extends StatelessWidget {
   final Function callback;
 
   SubmitButton(
-      {this.text, this.width, this.height, this.elevation, this.color, this.formKey, this.callback});
+      {this.text = "",
+      this.width = 100,
+      this.height = 50,
+      this.elevation = 0.0,
+      this.color = greyColor,
+      @required this.formKey,
+      @required this.callback});
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +33,15 @@ class SubmitButton extends StatelessWidget {
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+              color: Colors.grey,
+              offset: Offset(0.0, elevation),
+              blurRadius: (elevation == 0) ? 0 : 20 //(x,y)
+              ),
+        ],
       ),
       child: RawMaterialButton(
-        elevation: elevation,
         child: Text(text, style: h4_Light),
         onPressed: () {
           if (formKey.currentState.validate()) {
@@ -50,7 +61,13 @@ class Button extends StatelessWidget {
   final Color color;
   final Function callback;
 
-  Button({this.text, this.width, this.height, this.elevation, this.color, this.callback});
+  Button(
+      {this.text = "",
+      this.width = 100,
+      this.height = 50,
+      this.elevation = 0.0,
+      this.color = greyColor,
+      @required this.callback});
 
   @override
   Widget build(BuildContext context) {
@@ -60,6 +77,13 @@ class Button extends StatelessWidget {
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+              color: Colors.grey,
+              offset: Offset(0.0, elevation),
+              blurRadius: (elevation == 0) ? 0 : 20 //(x,y)
+              ),
+        ],
       ),
       child: RawMaterialButton(
         elevation: elevation,
@@ -75,7 +99,7 @@ class Button extends StatelessWidget {
 class TakeFloatingButton extends StatelessWidget {
   final Function callback;
 
-  TakeFloatingButton({this.callback});
+  TakeFloatingButton({@required this.callback});
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +131,7 @@ class TakeFloatingButton extends StatelessWidget {
 class GaveFloatingButton extends StatelessWidget {
   final Function callback;
 
-  GaveFloatingButton({this.callback});
+  GaveFloatingButton({@required this.callback});
 
   @override
   Widget build(BuildContext context) {
@@ -138,15 +162,20 @@ class GaveFloatingButton extends StatelessWidget {
 
 class SmallButton extends StatelessWidget {
   final String text;
-  final Color border;
+  final Color borderColor;
+  final double borderWidth;
   final Function callback;
 
-  SmallButton({this.text, this.border, this.callback});
+  SmallButton(
+      {this.text = "",
+      this.borderColor = redColor,
+      this.borderWidth = 3,
+      @required this.callback});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onTap: () {
         callback();
       },
       child: Container(
@@ -154,7 +183,7 @@ class SmallButton extends StatelessWidget {
         child: Text(text, style: t14_Dark),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
-          border: Border.all(color: border, width: 5),
+          border: Border.all(color: borderColor, width: borderWidth),
           color: lightGreyColor,
         ),
       ),

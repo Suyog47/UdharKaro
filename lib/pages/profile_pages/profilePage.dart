@@ -24,7 +24,7 @@ class ProfilePage extends StatelessWidget {
                     Center(
                         child: Avatar(
                       img: "assets/profilebg.png",
-                      radius: 45,
+                          radius: 45,
                     )),
                     height10,
                     Center(

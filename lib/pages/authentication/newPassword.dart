@@ -14,7 +14,7 @@ class NewPassword extends StatefulWidget {
 class _NewPasswordState extends State<NewPassword> {
 
   final _formKey = GlobalKey<FormState>();
-  String _pass, _cpass;
+  String _otp, _pass, _cpass;
 
   @override
   Widget build(BuildContext context) {
@@ -29,23 +29,19 @@ class _NewPasswordState extends State<NewPassword> {
               children: [
               Align(
               alignment: Alignment.topLeft,
-              child: IconButton(
-                onPressed: (){
+              child: InkWell(
+                child: backIconDark,
+                onTap: (){
                   Navigator.pop(context);
                 },
-                icon: Icon(
-                  Icons.arrow_back,
-                  color: blackColor,
-                  size: 30,
-                ),
-              ),
+              )
             ),
              height30,
              Text('Create a new Password',
                style: h3_Dark
              ),
                 height30,
-                Text("Please enter the OTP that has been sent on your phone number ",
+                Text("Please enter the OTP that has been sent on your mobile number",
                   style: t16_Dark,
                   textAlign: TextAlign.center,
                 ),
@@ -58,7 +54,16 @@ class _NewPasswordState extends State<NewPassword> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        //otpTextField(),
+                        OTPTextField(
+                          decoration: inputDecor2,
+                          label: "OTP",
+                          callback: (val){
+                            setState(() => _otp = val);
+                          },
+                        ),
+
+                        height10,
+
                         PasswordTextField(
                           decoration: inputDecor2.copyWith(labelText: "Enter new Password", labelStyle: t16_Dark),
                           callback: (value){

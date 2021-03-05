@@ -1,6 +1,6 @@
 import 'dart:convert';
+import 'package:udhaarkaroapp/api/user.dart';
 import 'package:http/http.dart' as http;
-import 'package:udhaarkaroapp/apiClass/user.dart';
 
 class UserApi {
   static const ROOT = 'https://www.pinsoutinnovation.com/udhaarkaro/pinsoutUdharKaro.php';

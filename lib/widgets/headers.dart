@@ -5,7 +5,9 @@ class Header extends StatelessWidget {
   final String text;
   final bool backIcon;
 
-  Header({this.text, this.backIcon});
+  Header({
+    @required this.text,
+    this.backIcon = true});
 
   @override
   Widget build(BuildContext context) {

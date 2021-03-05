@@ -6,7 +6,7 @@ class Avatar extends StatelessWidget {
   final double radius;
   Avatar({
     @required this.img,
-    @required this.radius});
+    this.radius = 30});
 
   @override
   Widget build(BuildContext context) {

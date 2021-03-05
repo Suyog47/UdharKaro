@@ -19,7 +19,7 @@ class _FeedbackFormState extends State<FeedbackForm> {
     "Less Likely",
     "Not Likely"
   ];
-  String _radioval = "Somewhat";
+  String _radioVal = "Somewhat";
   double _rate = 3.0;
 
   @override
@@ -30,7 +30,7 @@ class _FeedbackFormState extends State<FeedbackForm> {
           child: Container(
             child: Column(
               children: [
-                Header(text: "Feedback Form", backIcon: true),
+                Header(text: "Feedback Form"),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                   child: Column(
@@ -79,7 +79,7 @@ class _FeedbackFormState extends State<FeedbackForm> {
                           RadioButton(
                             str: _str,
                             callback: (value) {
-                              setState(() => _radioval = value);
+                              setState(() => _radioVal = value);
                             },
                           ),
                         ],
@@ -97,7 +97,7 @@ class _FeedbackFormState extends State<FeedbackForm> {
                           callback: () {
                             Navigate().toFeedback2(context, {
                               "rating": _rate,
-                              "radioval": _radioval
+                              "radioval": _radioVal
                             });
                           },
                         ),
