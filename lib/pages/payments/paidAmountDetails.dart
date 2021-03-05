@@ -44,7 +44,7 @@ class PaidAmountDetails extends StatelessWidget {
                       height10,
                       height10,
                       Text(
-                        'Amount gave to',
+                        'Amount given to',
                         style: t20_Light,
                       ),
                       height5,

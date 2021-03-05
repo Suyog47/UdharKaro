@@ -60,101 +60,148 @@ class _HomeState extends State<Home> {
                   ),
                   height10,
                   height10,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 25, vertical: 10),
-                        decoration: BoxDecoration(
-                          color: lightBlueColor,
-                          borderRadius: BorderRadius.circular(24),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Transform.rotate(
-                                angle: 3.142 / 4, child: upArrowWhiteIcon),
-                            height5,
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Text(
-                                  "Rs.",
-                                  style: h4_Light,
-                                ),
-                                width2,
-                                Text("1200", style: h3_Light),
-                              ],
-                            ),
-                            height5,
-                            Text(
-                              "to send",
-                              style: TextStyle(color: whiteColor),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 25, vertical: 10),
-                        decoration: BoxDecoration(
-                          color: lightGreenColor,
-                          borderRadius: BorderRadius.circular(24),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Transform.rotate(
-                                angle: 3.142 / 4, child: downArrowWhiteIcon),
-                            height5,
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Text("Rs.", style: h4_Light),
-                                width2,
-                                Text("2500", style: h3_Light),
-                              ],
-                            ),
-                            height5,
-                            Text(
-                              "to receive",
-                              style: TextStyle(color: whiteColor),
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                  height10,
-                  height10,
                 ],
               ),
             ),
             bottom: TabBar(
               tabs: [
-                Text("Taken", style: TextStyle(color: lightBlueColor, fontSize: 20),),
-                Text("Given", style: TextStyle(color: lightGreenColor, fontSize: 20),),
+                Column(
+                  children: [
+                    Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 23, vertical: 10),
+                      decoration: BoxDecoration(
+                        color: lightBlueColor,
+                        borderRadius: BorderRadius.circular(24),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Transform.rotate(
+                              angle: 3.142 / 4, child: upArrowWhiteIcon),
+                          height5,
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(
+                                "Rs.",
+                                style: h4_Light,
+                              ),
+                              width2,
+                              Text("1200", style: h3_Light),
+                            ],
+                          ),
+                          height5,
+                          Text(
+                            "to send",
+                            style: TextStyle(color: whiteColor),
+                          ),
+                        ],
+                      ),
+                    ),
+                    height10,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Taken",
+                          style: TextStyle(color: lightBlueColor, fontSize: 20),
+                        ),
+                        width5,
+                        Container(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                          decoration: BoxDecoration(
+                            color: lightBlueColor,
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: Text(
+                            "11",
+                            style: t12_Light,
+                            textAlign: TextAlign.center,
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 23, vertical: 10),
+                      decoration: BoxDecoration(
+                        color: lightOrangeColor,
+                        borderRadius: BorderRadius.circular(24),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Transform.rotate(
+                              angle: 3.142 / 4, child: downArrowWhiteIcon),
+                          height5,
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text("Rs.", style: h4_Light),
+                              width2,
+                              Text("2500", style: h3_Light),
+                            ],
+                          ),
+                          height5,
+                          Text(
+                            "to receive",
+                            style: TextStyle(color: whiteColor),
+                          ),
+                        ],
+                      ),
+                    ),
+                    height10,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Given",
+                          style:
+                              TextStyle(color: lightOrangeColor, fontSize: 20),
+                        ),
+                        width5,
+                        Container(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                          decoration: BoxDecoration(
+                            color: lightOrangeColor,
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: Text(
+                            "8",
+                            style: t12_Light,
+                            textAlign: TextAlign.center,
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
               ],
               indicatorColor: redColor,
             ),
           ),
-          body: TabBarView(
-              children: [
-                ListView.builder(
-                    scrollDirection: Axis.vertical,
-                    itemCount: _str.length,
-                    shrinkWrap: true,
-                    itemBuilder: (context, index) {
-                      return HomeCard(
-                        type: 1,
-                        str: _str,
-                        itemIndex: index,
-                      );
-                    }),
-                ListView.builder(
-                    scrollDirection: Axis.vertical,
-                    itemCount: _str.length,
+          body: TabBarView(children: [
+            ListView.builder(
+                scrollDirection: Axis.vertical,
+                itemCount: _str.length,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return HomeCard(
+                    type: 1,
+                    str: _str,
+                    itemIndex: index,
+                  );
+                }),
+            ListView.builder(
+                scrollDirection: Axis.vertical,
+                itemCount: _str.length,
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
                   return HomeCard(
@@ -163,24 +210,23 @@ class _HomeState extends State<Home> {
                     itemIndex: index,
                   );
                 }),
-              ]),
-
+          ]),
           floatingActionButton: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               TakeFloatingButton(
-                callback: (){
-                 Navigate().toQRScanner(context, {"type" : 1});
+                callback: () {
+                  Navigate().toQRScanner(context, {"type": 1});
                 },
               ),
               GaveFloatingButton(
-                callback: (){
-                  Navigate().toQRScanner(context, {"type" : 2});
+                callback: () {
+                  Navigate().toQRScanner(context, {"type": 2});
                 },
               )
             ],
           ),
-          floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
           floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
         ),
       ),

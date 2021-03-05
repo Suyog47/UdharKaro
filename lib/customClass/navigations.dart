@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class Navigate{
 
+
   void toSignUp(context, [Map data]){
     Navigator.pushReplacementNamed(context, "/signup", arguments: data);
   }
@@ -19,7 +20,7 @@ class Navigate{
   }
 
   void toVerification(context, [Map data]){
-    Navigator.pushReplacementNamed(context, "/verification", arguments: data);
+    Navigator.pushNamed(context, "/verification", arguments: data);
   }
 
   void toHome(context, [Map data]){
