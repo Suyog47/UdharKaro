@@ -59,7 +59,7 @@ class _EnterAmountState extends State<EnterAmount> {
 
                 height5,
                 SizedBox(
-                  width: 150,
+                  width: 225,
                   child: TextFormField(
                     decoration: InputDecoration(
                       fillColor: lightGreyColor,
@@ -76,7 +76,7 @@ class _EnterAmountState extends State<EnterAmount> {
                     textAlign: TextAlign.center,
                     inputFormatters: [
                       FilteringTextInputFormatter.digitsOnly,
-                      LengthLimitingTextInputFormatter(4)
+                      LengthLimitingTextInputFormatter(7)
                     ],
                     keyboardType: TextInputType.number,
                     style: h1_Dark,
