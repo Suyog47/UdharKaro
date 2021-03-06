@@ -75,7 +75,7 @@ class _UserDetailsState extends State<UserDetails> {
                           },
                           child: backIconLight),
                     ),
-                    height10,
+                    height5,
                     Center(
                         child: Avatar(
                       img: "assets/profilebg.png",

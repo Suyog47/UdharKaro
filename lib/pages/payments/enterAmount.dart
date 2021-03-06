@@ -59,8 +59,20 @@ class _EnterAmountState extends State<EnterAmount> {
 
                 height5,
                 SizedBox(
-                  width: 120,
+                  width: 150,
                   child: TextFormField(
+                    decoration: InputDecoration(
+                      fillColor: lightGreyColor,
+                      filled: true,
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: greyColor, width: 2.0),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: redColor, width: 2.0),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                    ),
                     textAlign: TextAlign.center,
                     inputFormatters: [
                       FilteringTextInputFormatter.digitsOnly,
@@ -81,16 +93,16 @@ class _EnterAmountState extends State<EnterAmount> {
                     textAlign: TextAlign.center,
                     decoration: InputDecoration(
                       hintText: "Add a Description",
-                      fillColor: lightGreyColor,
-                      filled: true,
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: greyColor, width: 2.0),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: redColor, width: 2.0),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
+//                      fillColor: lightGreyColor,
+//                      filled: true,
+//                      enabledBorder: OutlineInputBorder(
+//                        borderSide: BorderSide(color: greyColor, width: 2.0),
+//                        borderRadius: BorderRadius.circular(15),
+//                      ),
+//                      focusedBorder: OutlineInputBorder(
+//                        borderSide: BorderSide(color: redColor, width: 2.0),
+//                        borderRadius: BorderRadius.circular(15),
+//                      ),
                     ),
                   ),
                 ),

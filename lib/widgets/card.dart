@@ -56,7 +56,11 @@ class HomeCard extends StatelessWidget {
             context, {"name": str[itemIndex]["vendor"], "type": type});
       },
       child: Card(
-        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+        margin: EdgeInsets.only(
+            left: 10,
+            right: 10,
+            top: 10,
+            bottom: (itemIndex == (str.length - 1) ? 50 : 10)),
         elevation: 4,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
@@ -81,7 +85,7 @@ class HomeCard extends StatelessWidget {
                       ),
                       height5,
                       Text(
-                        ((type == 1) ? "to " : "from ") +
+                        ((type == 1) ? "from " : "to ") +
                             str[itemIndex]["vendor"],
                         style: t12_Dark,
                       )
@@ -145,11 +149,11 @@ class HomeCard extends StatelessWidget {
                             color: whiteColor,
                             borderRadius: BorderRadius.circular(15),
                             border:
-                                Border.all(color: lightGreenColor, width: 2.0),
+                                Border.all(color: lightOrangeColor, width: 2.0),
                           ),
                           child: Text(
                             "ALERT",
-                            style: TextStyle(color: lightGreenColor),
+                            style: TextStyle(color: lightOrangeColor),
                           ),
                         )
                 ],
@@ -172,38 +176,38 @@ class UserDetailCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         child: Card(
-      elevation: 0,
-      margin: EdgeInsets.symmetric(vertical: 5),
-      child: ListTile(
-        leading: Avatar(
-          img: str[itemIndex]["pic"],
-          radius: 25,
-        ),
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              (str[itemIndex]["type"] == 1) ? "Send" : "Received",
-              style: h4_Dark,
+          elevation: 0,
+          margin: EdgeInsets.only(top: 5, bottom: (itemIndex == (str.length - 1) ? 70 : 5)),
+          child: ListTile(
+            leading: Avatar(
+              img: str[itemIndex]["pic"],
+              radius: 25,
             ),
-            height5,
-          ],
-        ),
-        subtitle: Text(
-          str[itemIndex]["date"],
-          style: TextStyle(color: greyColor, fontSize: 12),
-        ),
-        trailing: (str[itemIndex]["type"] == 1)
-            ? Text(
-                "- Rs." + str[itemIndex]["price"].toString(),
-                style: minusPriceTextStyle,
-              )
-            : Text(
-                "+ Rs." + str[itemIndex]["price"].toString(),
-                style: plusPriceTextStyle,
-              ),
-      ),
-    ));
+            title: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  (str[itemIndex]["type"] == 1) ? "Send" : "Received",
+                  style: h4_Dark,
+                ),
+                height5,
+              ],
+            ),
+            subtitle: Text(
+              str[itemIndex]["date"],
+              style: TextStyle(color: greyColor, fontSize: 12),
+            ),
+            trailing: (str[itemIndex]["type"] == 1)
+                ? Text(
+              "- Rs." + str[itemIndex]["price"].toString(),
+              style: minusPriceTextStyle,
+            )
+                : Text(
+              "+ Rs." + str[itemIndex]["price"].toString(),
+              style: plusPriceTextStyle,
+            ),
+          ),
+        ));
   }
 }
 
