@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/widgets/card.dart';
 import 'package:udhaarkaroapp/widgets/headers.dart';
 
@@ -46,6 +46,7 @@ class _NotificationsState extends State<Notifications> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: whiteColor,
         body: Container(
           child: Column(
             children: [
@@ -53,7 +54,7 @@ class _NotificationsState extends State<Notifications> {
 
               Flexible(
                 child: ListView.builder(
-                    scrollDirection: Axis.vertical,
+                    physics: BouncingScrollPhysics(),
                     shrinkWrap: true,
                     itemCount: _str.length,
                     itemBuilder: (context, index){

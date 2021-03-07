@@ -3,6 +3,7 @@ import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/customClass/navigations.dart';
 import 'package:udhaarkaroapp/widgets/buttons.dart';
 import 'package:udhaarkaroapp/widgets/card.dart';
+import 'package:udhaarkaroapp/widgets/emptyscreen.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -11,6 +12,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _type = 1;
+  int data = 0;
   List _str = [
     {
       "vendor": "Agarwal Sweets",
@@ -188,7 +190,10 @@ class _HomeState extends State<Home> {
             ),
           ),
           body: TabBarView(children: [
+            (data == 0) ?
+            EmptyScreen(text: "OOPS! No Transactions found.",) :
             ListView.builder(
+                physics: BouncingScrollPhysics(),
                 scrollDirection: Axis.vertical,
                 itemCount: _str.length,
                 shrinkWrap: true,
@@ -199,7 +204,11 @@ class _HomeState extends State<Home> {
                     itemIndex: index,
                   );
                 }),
+
+            (data == 0) ?
+            EmptyScreen(text: "OOPS! No Transactions found.",) :
             ListView.builder(
+                physics: BouncingScrollPhysics(),
                 scrollDirection: Axis.vertical,
                 itemCount: _str.length,
                 shrinkWrap: true,

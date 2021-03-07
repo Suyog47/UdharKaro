@@ -6,7 +6,7 @@ class CustomPageTransitions {
     return PageTransition(
         child: page,
         type: PageTransitionType.bottomToTop,
-        duration: Duration(milliseconds: 600),
+        duration: Duration(milliseconds: 500),
         settings: settings);
   }
 
@@ -14,15 +14,7 @@ class CustomPageTransitions {
     return PageTransition(
         child: page,
         type: PageTransitionType.topToBottom,
-        duration: Duration(milliseconds: 600),
-        settings: settings);
-  }
-
-  PageTransition scaleTransition(Widget page, RouteSettings settings) {
-    return PageTransition(
-        child: page,
-        type: PageTransitionType.scale,
-        duration: Duration(milliseconds: 600),
+        duration: Duration(milliseconds: 500),
         settings: settings);
   }
 
@@ -30,8 +22,9 @@ class CustomPageTransitions {
     return PageTransition(
         child: page,
         type: PageTransitionType.size,
-        duration: Duration(milliseconds: 600),
+        duration: Duration(milliseconds: 400),
         settings: settings,
+        curve: Curves.fastOutSlowIn,
         alignment: Alignment.center);
   }
 
@@ -40,6 +33,7 @@ class CustomPageTransitions {
         child: page,
         type: PageTransitionType.fade,
         duration: Duration(milliseconds: 600),
+        reverseDuration: Duration(milliseconds: 500),
         settings: settings);
   }
 
@@ -49,6 +43,7 @@ class CustomPageTransitions {
         child: page,
         type: PageTransitionType.rightToLeftWithFade,
         duration: Duration(milliseconds: 600),
+        reverseDuration: Duration(milliseconds: 600),
         settings: settings,
         alignment: Alignment.center);
   }

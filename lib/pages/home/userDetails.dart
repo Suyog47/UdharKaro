@@ -103,6 +103,7 @@ class _UserDetailsState extends State<UserDetails> {
                 child: Container(
                   color: whiteColor,
                   child: ListView.builder(
+                      physics: BouncingScrollPhysics(),
                       scrollDirection: Axis.vertical,
                       shrinkWrap: true,
                       itemCount: str.length,

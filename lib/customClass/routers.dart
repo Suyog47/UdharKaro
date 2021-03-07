@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:udhaarkaroapp/customClass/pageTransitions.dart';
+import 'package:udhaarkaroapp/pages/confirmations/takeConfirmation.dart';
 import 'package:udhaarkaroapp/pages/pages.dart';
 
 class Routers {
   static Route<dynamic> generateRoutes(RouteSettings settings) {
     switch (settings.name) {
+
+      case '/confirmation':
+        return CustomPageTransitions()
+            .bottomToTopTransition(TakeConfirmation(), settings);
+        break;
+
       case '/signup':
         return CustomPageTransitions()
             .bottomToTopTransition(SignUp(), settings);
@@ -59,21 +66,22 @@ class Routers {
 
       case '/accountdetails':
         return CustomPageTransitions()
-            .scaleTransition(AccountDetails(), settings);
+            .rightToLeftFadeTransition(AccountDetails(), settings);
         break;
 
       case '/privacypolicy':
         return CustomPageTransitions()
-            .scaleTransition(PrivacyPolicy(), settings);
+            .rightToLeftFadeTransition(PrivacyPolicy(), settings);
         break;
 
       case '/aboutus':
-        return CustomPageTransitions().scaleTransition(AboutUs(), settings);
+        return CustomPageTransitions()
+            .rightToLeftFadeTransition(AboutUs(), settings);
         break;
 
       case '/feedbackform':
         return CustomPageTransitions()
-            .scaleTransition(FeedbackForm(), settings);
+            .rightToLeftFadeTransition(FeedbackForm(), settings);
         break;
 
       case '/feedbackform2':
@@ -82,7 +90,8 @@ class Routers {
         break;
 
       case '/userlist':
-        return CustomPageTransitions().scaleTransition(UsersList(), settings);
+        return CustomPageTransitions()
+            .rightToLeftFadeTransition(UsersList(), settings);
 
       default:
         return null;

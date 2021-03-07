@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 class Navigate{
 
 
+//  void toConfirmation(context, [Map data]){
+//    Navigator.pushReplacementNamed(context, "/confirmation", arguments: data);
+//  }
+
   void toSignUp(context, [Map data]){
     Navigator.pushReplacementNamed(context, "/signup", arguments: data);
   }
