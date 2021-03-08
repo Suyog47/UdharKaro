@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 
 class Navigate{
 
+
+//  void toConfirmation(context, [Map data]){
+//    Navigator.pushReplacementNamed(context, "/confirmation", arguments: data);
+//  }
+
   void toSignUp(context, [Map data]){
     Navigator.pushReplacementNamed(context, "/signup", arguments: data);
   }
@@ -19,7 +24,7 @@ class Navigate{
   }
 
   void toVerification(context, [Map data]){
-    Navigator.pushReplacementNamed(context, "/verification", arguments: data);
+    Navigator.pushNamed(context, "/verification", arguments: data);
   }
 
   void toHome(context, [Map data]){
@@ -42,12 +47,20 @@ class Navigate{
     Navigator.pushReplacementNamed(context, "/enteramount", arguments: data);
   }
 
-  void toGivenAmount(context, [Map data]){
-    Navigator.pushReplacementNamed(context, "/givenamountdetails", arguments: data);
+  void toTakeAmountConfirmation(context, [Map data]){
+    Navigator.pushReplacementNamed(context, "/takeamountconfirmation", arguments: data);
   }
 
-  void toPaidAmount(context, [Map data]){
+  void toGiveAmountConfirmation(context, [Map data]){
+    Navigator.pushReplacementNamed(context, "/giveamountconfirmation", arguments: data);
+  }
+
+  void toTakenAmount(context, [Map data]){
     Navigator.pushReplacementNamed(context, "/takenamountdetails", arguments: data);
+  }
+
+  void toGivenAmount(context, [Map data]){
+    Navigator.pushReplacementNamed(context, "/givenamountdetails", arguments: data);
   }
 
   void toAccountDetails(context, [Map data]){

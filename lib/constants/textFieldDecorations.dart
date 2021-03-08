@@ -12,7 +12,7 @@ const inputDecor2 = InputDecoration(
   labelStyle: t16_Dark,
   enabledBorder: OutlineInputBorder(
     borderSide:BorderSide(
-        color: lightBlueColor, width: 1
+        color: lightBlueColor, width: 2
     ),
     borderRadius:
     BorderRadius.all(Radius.circular(12),
@@ -20,7 +20,7 @@ const inputDecor2 = InputDecoration(
   ),
   focusedBorder: OutlineInputBorder(
     borderSide: BorderSide(
-      color: redColor, width: 1,
+      color: redColor, width: 2,
     ),
     borderRadius:
     BorderRadius.all(Radius.circular(12),

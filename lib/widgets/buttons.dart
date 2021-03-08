@@ -143,7 +143,7 @@ class GaveFloatingButton extends StatelessWidget {
         height: 60,
         width: 140,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(35), color: lightGreenColor),
+            borderRadius: BorderRadius.circular(35), color: lightOrangeColor),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

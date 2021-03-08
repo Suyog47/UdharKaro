@@ -1,10 +1,12 @@
-export 'package:udhaarkaroapp/pages/home/homePage.dart';
 export 'package:udhaarkaroapp/pages/mainscreen/mainScreen.dart';
-export 'package:udhaarkaroapp/pages/notification/notifications.dart';
-export 'package:udhaarkaroapp/pages/payments/enterAmount.dart';
-export 'package:udhaarkaroapp/pages/payments/paidAmountDetails.dart';
+export 'package:udhaarkaroapp/pages/home/homePage.dart';
 export 'package:udhaarkaroapp/pages/payments/qrCodeScanner.dart';
+export 'package:udhaarkaroapp/pages/payments/enterAmount.dart';
+export 'package:udhaarkaroapp/pages/confirmations/giveAmountConfirmation.dart';
+export 'package:udhaarkaroapp/pages/confirmations/takeAmountConfirmation.dart';
+export 'package:udhaarkaroapp/pages/payments/givenAmountDetails.dart';
 export 'package:udhaarkaroapp/pages/payments/takenAmountDetails.dart';
+export 'package:udhaarkaroapp/pages/notification/notifications.dart';
 export 'package:udhaarkaroapp/pages/profile_pages/aboutUs.dart';
 export 'package:udhaarkaroapp/pages/profile_pages/accountDetails.dart';
 export 'package:udhaarkaroapp/pages/profile_pages/feedbackForm.dart';

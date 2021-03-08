@@ -1,14 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/widgets/circularAvatar.dart';
 
 class TakenAmountDetails extends StatelessWidget {
+
+  Map data = {};
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
+    data = ModalRoute.of(context).settings.arguments;
+
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
           child: Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -16,7 +22,7 @@ class TakenAmountDetails extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
                   decoration: BoxDecoration(
-                    color:greenColor,
+                    color: lightBlueColor,
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(20.0),
                       bottomRight: Radius.circular(20.0),
@@ -49,7 +55,7 @@ class TakenAmountDetails extends StatelessWidget {
                       ),
                       height5,
                       Text(
-                        'Deepanshu Khanna',
+                        data["name"],
                         style: h3_Light,
                       ),
                       height10,
@@ -69,7 +75,7 @@ class TakenAmountDetails extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                              '2500',
+                              data["amount"].toString(),
                               style: h2_Dark
                           ),
                           Text(
@@ -85,7 +91,7 @@ class TakenAmountDetails extends StatelessWidget {
                           style: detailsHeadingTextStyle
                       ),
                       Text(
-                        '20/02/2021-12:30',
+                        DateFormat('d MMM y, H:m').format(DateTime.now()),
                         style: t20_Dark,
                       ),
                       height30,

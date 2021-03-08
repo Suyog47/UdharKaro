@@ -40,3 +40,81 @@ class Header extends StatelessWidget {
     );
   }
 }
+
+
+class HomePageTabBarButton extends StatelessWidget {
+
+  final Color color;
+  final Icon icon;
+  final String price;
+  final String subtitle;
+  final String buttonText;
+  final int count;
+
+  HomePageTabBarButton({this.color, this.icon, this.price, this.subtitle, this.buttonText, this.count});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          padding:
+          EdgeInsets.symmetric(horizontal: 23, vertical: 10),
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(24),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Transform.rotate(
+                  angle: 3.142 / 4, child: icon),
+              height5,
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text(
+                    "Rs.",
+                    style: h4_Light,
+                  ),
+                  width2,
+                  Text(price, style: h3_Light),
+                ],
+              ),
+              height5,
+              Text(
+                subtitle,
+                style: TextStyle(color: whiteColor),
+              ),
+            ],
+          ),
+        ),
+        height10,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              buttonText,
+              style: TextStyle(color: color, fontSize: 20),
+            ),
+            width5,
+            Container(
+              padding:
+              EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+              decoration: BoxDecoration(
+                color: color,
+                borderRadius: BorderRadius.circular(50),
+              ),
+              child: Text(
+                count.toString(),
+                style: t12_Light,
+                textAlign: TextAlign.center,
+              ),
+            )
+          ],
+        ),
+      ],
+    );
+  }
+}
+

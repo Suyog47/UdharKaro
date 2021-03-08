@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/widgets/card.dart';
+import 'package:udhaarkaroapp/widgets/emptyscreen.dart';
 import 'package:udhaarkaroapp/widgets/headers.dart';
 
 class UsersList extends StatefulWidget {
@@ -9,12 +10,13 @@ class UsersList extends StatefulWidget {
 }
 
 class _UsersListState extends State<UsersList> {
+  int data = 0;
   List _str = [
-    {"name" : "Ayush Singhal", "pic" : "assets/profilebg.png"},
-    {"name" : "Babu", "pic" : "assets/profilebg.png"},
-    {"name" : "Deepanshu Khanna", "pic" : "assets/profilebg.png"},
-    {"name" : "Raj Ranjan", "pic" : "assets/profilebg.png"},
-    {"name" : "Suyog Amin", "pic" : "assets/profilebg.png"}
+    {"name": "Ayush Singhal", "pic": "assets/profilebg.png"},
+    {"name": "Babu", "pic": "assets/profilebg.png"},
+    {"name": "Deepanshu Khanna", "pic": "assets/profilebg.png"},
+    {"name": "Raj Ranjan", "pic": "assets/profilebg.png"},
+    {"name": "Suyog Amin", "pic": "assets/profilebg.png"}
   ];
 
   @override
@@ -26,20 +28,23 @@ class _UsersListState extends State<UsersList> {
           child: Column(
             children: [
               Header(text: "User List"),
-
               Flexible(
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 10),
-                  child: ListView.builder(
-                      //scrollDirection: Axis.vertical,
-                      shrinkWrap: true,
-                      itemCount: _str.length,
-                      itemBuilder: (context, index){
-                        return UserListCard(
-                          str: _str,
-                          itemIndex: index,
-                        );
-                      }),
+                  child: (data == 0)
+                      ? EmptyScreen(
+                          text: "OOPS! No UserList found.",
+                        )
+                      : ListView.builder(
+                      physics: BouncingScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: _str.length,
+                          itemBuilder: (context, index) {
+                            return UserListCard(
+                              str: _str,
+                              itemIndex: index,
+                            );
+                          }),
                 ),
               )
             ],
@@ -49,4 +54,3 @@ class _UsersListState extends State<UsersList> {
     );
   }
 }
-

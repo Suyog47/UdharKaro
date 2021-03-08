@@ -94,7 +94,7 @@ class _ExpandableContainerState extends State<ExpandableContainer> {
                 borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(20),
                     bottomLeft: Radius.circular(20)),
-                color: greyColor),
+                color: Colors.grey[350]),
           )
         ],
       ),
