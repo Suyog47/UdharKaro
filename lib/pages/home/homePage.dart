@@ -4,6 +4,7 @@ import 'package:udhaarkaroapp/customClass/navigations.dart';
 import 'package:udhaarkaroapp/widgets/buttons.dart';
 import 'package:udhaarkaroapp/widgets/card.dart';
 import 'package:udhaarkaroapp/widgets/emptyscreen.dart';
+import 'package:udhaarkaroapp/widgets/headers.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -67,158 +68,58 @@ class _HomeState extends State<Home> {
             ),
             bottom: TabBar(
               tabs: [
-                Column(
-                  children: [
-                    Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 23, vertical: 10),
-                      decoration: BoxDecoration(
-                        color: lightBlueColor,
-                        borderRadius: BorderRadius.circular(24),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Transform.rotate(
-                              angle: 3.142 / 4, child: upArrowWhiteIcon),
-                          height5,
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Text(
-                                "Rs.",
-                                style: h4_Light,
-                              ),
-                              width2,
-                              Text("1200", style: h3_Light),
-                            ],
-                          ),
-                          height5,
-                          Text(
-                            "to send",
-                            style: TextStyle(color: whiteColor),
-                          ),
-                        ],
-                      ),
-                    ),
-                    height10,
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Taken",
-                          style: TextStyle(color: lightBlueColor, fontSize: 20),
-                        ),
-                        width5,
-                        Container(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-                          decoration: BoxDecoration(
-                            color: lightBlueColor,
-                            borderRadius: BorderRadius.circular(50),
-                          ),
-                          child: Text(
-                            "11",
-                            style: t12_Light,
-                            textAlign: TextAlign.center,
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 23, vertical: 10),
-                      decoration: BoxDecoration(
-                        color: lightOrangeColor,
-                        borderRadius: BorderRadius.circular(24),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Transform.rotate(
-                              angle: 3.142 / 4, child: downArrowWhiteIcon),
-                          height5,
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Text("Rs.", style: h4_Light),
-                              width2,
-                              Text("2500", style: h3_Light),
-                            ],
-                          ),
-                          height5,
-                          Text(
-                            "to receive",
-                            style: TextStyle(color: whiteColor),
-                          ),
-                        ],
-                      ),
-                    ),
-                    height10,
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Given",
-                          style:
-                              TextStyle(color: lightOrangeColor, fontSize: 20),
-                        ),
-                        width5,
-                        Container(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-                          decoration: BoxDecoration(
-                            color: lightOrangeColor,
-                            borderRadius: BorderRadius.circular(50),
-                          ),
-                          child: Text(
-                            "8",
-                            style: t12_Light,
-                            textAlign: TextAlign.center,
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
+                HomePageTabBarButton(
+                    color: lightBlueColor,
+                    icon: downArrowWhiteIcon,
+                    price: "2500",
+                    subtitle: "to take",
+                    buttonText: "Taken",
+                    count: 11),
+                HomePageTabBarButton(
+                  color: lightOrangeColor,
+                  icon: upArrowWhiteIcon,
+                  price: "1200",
+                  subtitle: "to gave",
+                  buttonText: "Given",
+                  count: 8,
                 ),
               ],
               indicatorColor: redColor,
             ),
           ),
           body: TabBarView(children: [
-            (data == 0) ?
-            EmptyScreen(text: "OOPS! No Transactions found.",) :
-            ListView.builder(
-                physics: BouncingScrollPhysics(),
-                scrollDirection: Axis.vertical,
-                itemCount: _str.length,
-                shrinkWrap: true,
-                itemBuilder: (context, index) {
-                  return HomeCard(
-                    type: 1,
-                    str: _str,
-                    itemIndex: index,
-                  );
-                }),
-
-            (data == 0) ?
-            EmptyScreen(text: "OOPS! No Transactions found.",) :
-            ListView.builder(
-                physics: BouncingScrollPhysics(),
-                scrollDirection: Axis.vertical,
-                itemCount: _str.length,
-                shrinkWrap: true,
-                itemBuilder: (context, index) {
-                  return HomeCard(
-                    type: 2,
-                    str: _str,
-                    itemIndex: index,
-                  );
-                }),
+            (data == 0)
+                ? EmptyScreen(
+                    text: "OOPS! No Transactions found.",
+                  )
+                : ListView.builder(
+                    physics: BouncingScrollPhysics(),
+                    scrollDirection: Axis.vertical,
+                    itemCount: _str.length,
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) {
+                      return HomeCard(
+                        type: 1,
+                        str: _str,
+                        itemIndex: index,
+                      );
+                    }),
+            (data == 0)
+                ? EmptyScreen(
+                    text: "OOPS! No Transactions found.",
+                  )
+                : ListView.builder(
+                    physics: BouncingScrollPhysics(),
+                    scrollDirection: Axis.vertical,
+                    itemCount: _str.length,
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) {
+                      return HomeCard(
+                        type: 2,
+                        str: _str,
+                        itemIndex: index,
+                      );
+                    }),
           ]),
           floatingActionButton: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -235,7 +136,8 @@ class _HomeState extends State<Home> {
               )
             ],
           ),
-          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerFloat,
           floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
         ),
       ),

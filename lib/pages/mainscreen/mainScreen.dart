@@ -10,27 +10,28 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _currentIndex = 0;
+  int _currentIndex = 1;
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: (_currentIndex == 0)
-            ? Home()
+            ? Notifications()
             : (_currentIndex == 1)
-                ? Notifications()
+                ? Home()
                 : ProfilePage(),
 
           bottomNavigationBar: CurvedNavigationBar(
-            color: whiteColor,
-            backgroundColor: lightGreyColor,
-            buttonBackgroundColor: redColor,
+            color: Colors.grey[200],
+            backgroundColor: darkBlueColor,
+            buttonBackgroundColor: lightOrangeColor,
             height: 50,
+            index: _currentIndex,
             animationDuration: Duration(milliseconds: 400),
             items: [
-              Icon(Icons.home),
               Icon(MdiIcons.bellRing),
+              Icon(Icons.home),
               Icon(Icons.account_circle)
             ],
             onTap: (index){

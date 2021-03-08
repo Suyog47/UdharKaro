@@ -13,6 +13,8 @@ class EnterAmount extends StatefulWidget {
 class _EnterAmountState extends State<EnterAmount> {
 
   Map _data = {};
+  String _name = "Suyog Amin";
+  int _amount;
 
   @override
   Widget build(BuildContext context) {
@@ -48,38 +50,26 @@ class _EnterAmountState extends State<EnterAmount> {
                   style: h4_Dark,
                 ),
                 Text(
-                  "Suyog Amin",
+                  _name,
                   style: h3_Dark,
                 ),
-                height30,
-                Text(
-                  "Rs.",
-                  style: h3_Dark,
-                ),
+                height60,
 
                 height5,
                 SizedBox(
-                  width: 150,
+                  width: 225,
                   child: TextFormField(
-                    decoration: InputDecoration(
-                      fillColor: lightGreyColor,
-                      filled: true,
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: greyColor, width: 2.0),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: redColor, width: 2.0),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                    ),
+                    decoration: inputDecor2.copyWith(labelText: "Rs.", labelStyle: t26_Dark),
                     textAlign: TextAlign.center,
                     inputFormatters: [
                       FilteringTextInputFormatter.digitsOnly,
-                      LengthLimitingTextInputFormatter(4)
+                      LengthLimitingTextInputFormatter(7)
                     ],
                     keyboardType: TextInputType.number,
                     style: h1_Dark,
+                    onChanged: (val){
+                      _amount = int.parse(val);
+                    },
                   ),
                 ),
                 height30,
@@ -93,16 +83,6 @@ class _EnterAmountState extends State<EnterAmount> {
                     textAlign: TextAlign.center,
                     decoration: InputDecoration(
                       hintText: "Add a Description",
-//                      fillColor: lightGreyColor,
-//                      filled: true,
-//                      enabledBorder: OutlineInputBorder(
-//                        borderSide: BorderSide(color: greyColor, width: 2.0),
-//                        borderRadius: BorderRadius.circular(15),
-//                      ),
-//                      focusedBorder: OutlineInputBorder(
-//                        borderSide: BorderSide(color: redColor, width: 2.0),
-//                        borderRadius: BorderRadius.circular(15),
-//                      ),
                     ),
                   ),
                 ),
@@ -111,9 +91,9 @@ class _EnterAmountState extends State<EnterAmount> {
                 InkWell(
                     onTap: () {
                       (_data["type"] == 1) ?
-                      Navigate().toPaidAmount(context)
+                      Navigate().toTakeAmountConfirmation(context, {"name" : _name, "amount" : _amount})
                       :
-                      Navigate().toGivenAmount(context);
+                      Navigate().toGiveAmountConfirmation(context, {"name" : _name, "amount" : _amount});
                     },
                     child: Container(
                       padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),

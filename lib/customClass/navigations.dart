@@ -47,12 +47,20 @@ class Navigate{
     Navigator.pushReplacementNamed(context, "/enteramount", arguments: data);
   }
 
-  void toGivenAmount(context, [Map data]){
-    Navigator.pushReplacementNamed(context, "/givenamountdetails", arguments: data);
+  void toTakeAmountConfirmation(context, [Map data]){
+    Navigator.pushReplacementNamed(context, "/takeamountconfirmation", arguments: data);
   }
 
-  void toPaidAmount(context, [Map data]){
+  void toGiveAmountConfirmation(context, [Map data]){
+    Navigator.pushReplacementNamed(context, "/giveamountconfirmation", arguments: data);
+  }
+
+  void toTakenAmount(context, [Map data]){
     Navigator.pushReplacementNamed(context, "/takenamountdetails", arguments: data);
+  }
+
+  void toGivenAmount(context, [Map data]){
+    Navigator.pushReplacementNamed(context, "/givenamountdetails", arguments: data);
   }
 
   void toAccountDetails(context, [Map data]){

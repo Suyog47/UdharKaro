@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:udhaarkaroapp/customClass/pageTransitions.dart';
-import 'package:udhaarkaroapp/pages/confirmations/takeConfirmation.dart';
+import 'package:udhaarkaroapp/pages/confirmations/giveAmountConfirmation.dart';
+import 'package:udhaarkaroapp/pages/confirmations/takeAmountConfirmation.dart';
 import 'package:udhaarkaroapp/pages/pages.dart';
 
 class Routers {
   static Route<dynamic> generateRoutes(RouteSettings settings) {
     switch (settings.name) {
-
-      case '/confirmation':
-        return CustomPageTransitions()
-            .bottomToTopTransition(TakeConfirmation(), settings);
-        break;
 
       case '/signup':
         return CustomPageTransitions()
@@ -46,9 +42,19 @@ class Routers {
             .topToBottomTransition(EnterAmount(), settings);
         break;
 
+      case '/takeamountconfirmation':
+        return CustomPageTransitions()
+            .bottomToTopTransition(TakeAmountConfirmation(), settings);
+        break;
+
+      case '/giveamountconfirmation':
+        return CustomPageTransitions()
+            .bottomToTopTransition(GiveAmountConfirmation(), settings);
+        break;
+
       case '/givenamountdetails':
         return CustomPageTransitions()
-            .rightToLeftFadeTransition(PaidAmountDetails(), settings);
+            .rightToLeftFadeTransition(GivenAmountDetails(), settings);
         break;
 
       case '/takenamountdetails':
