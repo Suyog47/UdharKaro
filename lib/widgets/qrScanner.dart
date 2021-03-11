@@ -39,7 +39,7 @@ class _QRScannerState extends State<QRScanner> {
             key: qrKey,
             overlay: QrScannerOverlayShape(
                 borderRadius: 10,
-                borderColor: lightBlueColor,
+                borderColor: lightOrangeColor,
                 borderWidth: 10,
                 borderLength: 30,
                 cutOutSize: 250),

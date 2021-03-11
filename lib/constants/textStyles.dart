@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
-
+import 'package:udhaarkaroapp/constants/size_helpers.dart';
 
 //h1_Dark
 //h1_Light
@@ -49,6 +49,7 @@ const TextStyle h2_Light =
 
 const TextStyle h3_Dark =
     TextStyle(color: blackColor, fontSize: 30, fontWeight: FontWeight.w500);
+
 const TextStyle h3_Light =
     TextStyle(color: whiteColor, fontSize: 30, fontWeight: FontWeight.w500);
 

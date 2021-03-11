@@ -15,11 +15,12 @@ class ExpandableContainer extends StatefulWidget {
 class _ExpandableContainerState extends State<ExpandableContainer> {
 
   double _animatedHeight = 0.0;
-  int index = 0;
+  int typeIndex = 0;
+  int durationIndex = 0;
 
   void animateTile() {
     setState(() {
-      _animatedHeight != 0.0 ? _animatedHeight = 0.0 : _animatedHeight = 60.0;
+      _animatedHeight != 0.0 ? _animatedHeight = 0.0 : _animatedHeight = 140.0;
     });
   }
 
@@ -48,44 +49,145 @@ class _ExpandableContainerState extends State<ExpandableContainer> {
               ),
               color: darkBlueColor,
               width: MediaQuery.of(context).size.width,
-              height: 30,
+              height: 40,
             ),
           ),
           AnimatedContainer(
             padding: EdgeInsets.symmetric(horizontal: 10),
-            duration: const Duration(milliseconds: 120),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+            duration: const Duration(milliseconds: 100),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SmallButton(
-                  text: "Sent",
-                  borderColor: (index != 0) ? greyColor : greenColor,
-                  borderWidth: 5,
-                  callback: () {
-                    setState(() => index = 0);
-                    widget.callback(index);
-                    animateTile();
-                  },
+                Text("Select Type:", style: t16_Dark,),
+                height2,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Button(
+                      text: "Sent",
+                      textStyle: t14_Dark,
+                      height: 40,
+                      color: whiteColor,
+                      borderColor: (typeIndex != 0) ? greyColor : greenColor,
+                      borderWidth: 5,
+                      borderRadius: 30,
+                      callback: () {
+                        setState(() => typeIndex = 0);
+                        widget.callback(typeIndex);
+                      },
+                    ),
+                    Button(
+                      text: "Received",
+                      textStyle: t14_Dark,
+                      height: 40,
+                      color: whiteColor,
+                      borderColor: (typeIndex != 1) ? greyColor : greenColor,
+                      borderWidth: 5,
+                      borderRadius: 30,
+                      callback: () {
+                        setState(() => typeIndex = 1);
+                        widget.callback(typeIndex);
+                      },
+                    ),
+                    Button(
+                      text: "All",
+                      textStyle: t14_Dark,
+                      height: 40,
+                      color: whiteColor,
+                      borderColor: (typeIndex != 2) ? greyColor : greenColor,
+                      borderWidth: 5,
+                      borderRadius: 30,
+                      callback: () {
+                        setState(() => typeIndex = 2);
+                        widget.callback(typeIndex);
+                      },
+                    ),
+                  ],
                 ),
-                SmallButton(
-                  text: "Received",
-                  borderColor: (index != 1) ? greyColor : greenColor,
-                  borderWidth: 5,
-                  callback: () {
-                    setState(() => index = 1);
-                    widget.callback(index);
-                    animateTile();
-                  },
-                ),
-                SmallButton(
-                  text: "All",
-                  borderColor: (index != 2) ? greyColor : greenColor,
-                  borderWidth: 5,
-                  callback: () {
-                    setState(() => index = 2);
-                    widget.callback(index);
-                    animateTile();
-                  },
+
+                height5,
+                Text("Duration:", style: t16_Dark),
+
+                height2,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Button(
+                      text: "24h",
+                      textStyle: t14_Dark,
+                      width: 50,
+                      height: 40,
+                      color: whiteColor,
+                      borderColor: (durationIndex != 0) ? greyColor : greenColor,
+                      borderWidth: 5,
+                      borderRadius: 30,
+                      callback: () {
+                        setState(() => durationIndex = 0);
+                        widget.callback(durationIndex);
+                      },
+                    ),
+
+                    Button(
+                      text: "3d",
+                      textStyle: t14_Dark,
+                      width: 50,
+                      height: 40,
+                      color: whiteColor,
+                      borderColor: (durationIndex != 1) ? greyColor : greenColor,
+                      borderWidth: 5,
+                      borderRadius: 30,
+                      callback: () {
+                        setState(() => durationIndex = 1);
+                        widget.callback(durationIndex);
+                      },
+                    ),
+
+                    Button(
+                      text: "7d",
+                      textStyle: t14_Dark,
+                      width: 50,
+                      height: 40,
+                      color: whiteColor,
+                      borderColor: (durationIndex != 2) ? greyColor : greenColor,
+                      borderWidth: 5,
+                      borderRadius: 30,
+                      callback: () {
+                        setState(() => durationIndex = 2);
+                        widget.callback(durationIndex);
+                      },
+                    ),
+
+                    Button(
+                      text: "30d",
+                      textStyle: t14_Dark,
+                      width: 50,
+                      height: 40,
+                      color: whiteColor,
+                      borderColor: (durationIndex != 3) ? greyColor : greenColor,
+                      borderWidth: 5,
+                      borderRadius: 30,
+                      callback: () {
+                        setState(() => durationIndex = 3);
+                        widget.callback(durationIndex);
+                      },
+                    ),
+
+                    Button(
+                      text: "All",
+                      textStyle: t14_Dark,
+                      width: 50,
+                      height: 40,
+                      color: whiteColor,
+                      borderColor: (durationIndex != 4) ? greyColor : greenColor,
+                      borderWidth: 5,
+                      borderRadius: 30,
+                      callback: () {
+                        setState(() => durationIndex = 4);
+                        widget.callback(durationIndex);
+                      },
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -94,7 +196,7 @@ class _ExpandableContainerState extends State<ExpandableContainer> {
                 borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(20),
                     bottomLeft: Radius.circular(20)),
-                color: Colors.grey[350]),
+                color: Colors.grey[200]),
           )
         ],
       ),

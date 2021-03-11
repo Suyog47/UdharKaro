@@ -97,7 +97,6 @@ class _UserDetailsState extends State<UserDetails> {
               ),
               ExpandableContainer(callback: (value){
                 setState(() => _index = value);
-                print(_index);
               },),
               Flexible(
                 child: Container(

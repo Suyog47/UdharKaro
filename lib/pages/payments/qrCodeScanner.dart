@@ -60,7 +60,7 @@ class _QRCodeScannerState extends State<QRCodeScanner> {
                       height5,
                       Text(
                         "Place the QR code inside Scanner Area",
-                        style: TextStyle(color: lightBlueColor),
+                        style: TextStyle(color: lightOrangeColor),
                         softWrap: true,
                         textAlign: TextAlign.center,
                       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/constants/size_helpers.dart';
 
 class Header extends StatelessWidget {
   final String text;
@@ -12,6 +13,7 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: displayHeight(context) * 0.2,
       padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
       decoration: BoxDecoration(
         color: darkBlueColor,
@@ -27,7 +29,7 @@ class Header extends StatelessWidget {
                       child: backIconLight),
                   alignment: Alignment.centerLeft,
                 )
-              : Text(""),
+              : height30,
           height10,
           Center(
             child: Text(
