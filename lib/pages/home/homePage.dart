@@ -13,7 +13,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _type = 1;
-  int data = 0;
+  int data = 1;
   List _str = [
     {
       "vendor": "Agarwal Sweets",
