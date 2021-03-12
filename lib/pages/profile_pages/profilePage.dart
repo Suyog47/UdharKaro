@@ -35,115 +35,115 @@ class ProfilePage extends StatelessWidget {
                   ],
                 ),
               ),
-              SingleChildScrollView(
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                  child: Column(
-                    children: [
-                      InkWell(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Profile Details",
-                              style: t20_Dark,
-                            ),
-                            profilePageIcon
-                          ],
-                        ),
-                        onTap: () {
-                          Navigate().toAccountDetails(context);
-                        },
-                      ),
-                      height10,
-                      height10,
-                      InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, "/privacypolicy");
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Privacy Policy",
-                              style: t20_Dark,
-                            ),
-                            profilePageIcon
-                          ],
-                        ),
-                      ),
-                      height10,
-                      height10,
-                      InkWell(
-                        onTap: () {
-                          Navigate().toFeedback(context);
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "FeedBackForm",
-                              style: t20_Dark,
-                            ),
-                            profilePageIcon
-                          ],
-                        ),
-                      ),
-                      height10,
-                      height10,
-                      InkWell(
-                        onTap: () {
-                          Navigate().toUserList(context);
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "My Users List",
-                              style: t20_Dark,
-                            ),
-                            profilePageIcon
-                          ],
-                        ),
-                      ),
-                      height10,
-                      height10,
-                      InkWell(
-                        onTap: () {
-                          Navigate().toAboutUs(context);
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "About Us",
-                              style: t20_Dark,
-                            ),
-                            profilePageIcon,
-                          ],
-                        ),
-                      ),
-                      height10,
-                      height10,
-                      divider,
-                      height10,
-                      height10,
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          InkWell(
-                            child: Text(
-                              "Logout",
-                              style: t22_Dark,
-                            ),
-                            onTap: (){
-
-                            },
+              height10,
+              height10,
+              Flexible(
+                child: SingleChildScrollView(
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: Column(
+                      children: [
+                        InkWell(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Profile Details",
+                                style: t22_Dark,
+                              ),
+                              profilePageIcon
+                            ],
                           ),
-                          Icon(MdiIcons.logout)
-                        ],
-                      )
-                    ],
+                          onTap: () {
+                            Navigate().toAccountDetails(context);
+                          },
+                        ),
+                        height30,
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, "/privacypolicy");
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Privacy Policy",
+                                style: t22_Dark,
+                              ),
+                              profilePageIcon
+                            ],
+                          ),
+                        ),
+                        height30,
+                        InkWell(
+                          onTap: () {
+                            Navigate().toFeedback(context);
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "FeedBackForm",
+                                style: t22_Dark,
+                              ),
+                              profilePageIcon
+                            ],
+                          ),
+                        ),
+                        height30,
+                        InkWell(
+                          onTap: () {
+                            Navigate().toUserList(context);
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "My Users List",
+                                style: t22_Dark,
+                              ),
+                              profilePageIcon
+                            ],
+                          ),
+                        ),
+                        height30,
+                        InkWell(
+                          onTap: () {
+                            Navigate().toAboutUs(context);
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "About Us",
+                                style: t22_Dark,
+                              ),
+                              profilePageIcon,
+                            ],
+                          ),
+                        ),
+                        height10,
+                        height5,
+                        divider,
+                        height10,
+                        height5,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            InkWell(
+                              child: Text(
+                                "Logout",
+                                style: TextStyle(fontSize: 22, color: redColor),
+                              ),
+                              onTap: (){
+
+                              },
+                            ),
+                            Icon(MdiIcons.logout)
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),

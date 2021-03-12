@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/customClass/navigations.dart';
@@ -57,110 +58,59 @@ class HomeCard extends StatelessWidget {
       },
       child: Card(
         margin: EdgeInsets.only(
-            left: 10,
-            right: 10,
+            left: 5,
+            right: 5,
             top: 10,
-            bottom: (itemIndex == (str.length - 1) ? 50 : 10)),
+            bottom: (itemIndex == (str.length - 1) ? 80 : 10)),
         elevation: 4,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(22),
         ),
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text("Rs.", style: h4_Dark),
-                          width2,
-                          Text(str[itemIndex]["price"], style: h3_Dark),
-                        ],
-                      ),
-                      height5,
-                      Text(
-                        ((type == 1) ? "from " : "to ") +
-                            str[itemIndex]["vendor"],
-                        style: t12_Dark,
-                      )
-                    ],
-                  ),
-                  Avatar(
-                    img: str[itemIndex]["pic"],
-                    radius: 25,
-                  ),
-                ],
-              ),
-              height10,
-              height10,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            str[itemIndex]["lastTransaction"],
-                            style: t14_Dark,
-                          ),
-                          height5,
-                          Text(
-                            "Last Transaction On",
-                            style: TextStyle(fontSize: 10),
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                  (type == 1)
-                      ? Container(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 10, vertical: 9),
-                          decoration: BoxDecoration(
-                            color: whiteColor,
-                            borderRadius: BorderRadius.circular(15),
-                            border:
-                                Border.all(color: lightBlueColor, width: 2.0),
-                          ),
-                          child: Row(
-                            children: [
-                              Text(
-                                "PAY",
-                                style: TextStyle(color: lightBlueColor),
-                              ),
-                              Transform.rotate(
-                                  angle: 3.142 / 4,
-                                  child: upArrowLightBlueIcon),
-                            ],
-                          ),
-                        )
-                      : Container(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 10, vertical: 10),
-                          decoration: BoxDecoration(
-                            color: whiteColor,
-                            borderRadius: BorderRadius.circular(15),
-                            border:
-                                Border.all(color: lightOrangeColor, width: 2.0),
-                          ),
-                          child: Text(
-                            "ALERT",
-                            style: TextStyle(color: lightOrangeColor),
-                          ),
-                        )
-                ],
-              )
-            ],
-          ),
-        ),
+           child: Container(
+             padding: EdgeInsets.symmetric(vertical: 15),
+             child: ListTile(
+               leading: Avatar(
+                 img: str[itemIndex]["pic"],
+                 radius: 25,
+               ),
+               title: Column(
+                 crossAxisAlignment: CrossAxisAlignment.start,
+                 children: [
+                   Text(
+                     str[itemIndex]["vendor"],
+                     style: t20_Dark,
+                   ),
+                   height10,
+                   height5,
+                   Text(
+                     "Last Transaction On",
+                     style: TextStyle(fontSize: 12, color: greyColor),
+                   ),
+                 ],
+               ),
+               //subtitle:
+               trailing: Column(
+                 crossAxisAlignment: CrossAxisAlignment.end,
+                 mainAxisAlignment: MainAxisAlignment.spaceAround,
+                 children: [
+                   width2,
+                   Row(
+                     crossAxisAlignment: CrossAxisAlignment.center,
+                     children: [
+                       Text("Rs.", style: t16_Dark),
+                       Text(str[itemIndex]["price"], style: t28_Dark,)
+                     ],
+                     mainAxisSize: MainAxisSize.min,
+                   ),
+                   height5,
+                   Text(
+                     str[itemIndex]["lastTransaction"],
+                     style: TextStyle(fontSize: 12, color: greyColor),
+                   ),
+                 ],
+               ),
+             ),
+           ),
       ),
     );
   }

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/customClass/navigations.dart';
 import 'package:udhaarkaroapp/widgets/buttons.dart';
 import 'package:udhaarkaroapp/widgets/textInputField.dart';
 
@@ -94,7 +95,7 @@ class _NewPasswordState extends State<NewPassword> {
                   formKey: _formKey,
                   callback: (){
                     if(_pass == _cpass){
-
+                      Navigate().backToLogin(context);
                     }
                     else{
                       Fluttertoast.showToast(

@@ -24,7 +24,7 @@ class _MainScreenState extends State<MainScreen> {
 
           bottomNavigationBar: CurvedNavigationBar(
             color: Colors.grey[200],
-            backgroundColor: darkBlueColor,
+            backgroundColor: Colors.transparent,
             buttonBackgroundColor: lightOrangeColor,
             height: 50,
             index: _currentIndex,

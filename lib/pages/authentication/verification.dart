@@ -95,7 +95,7 @@ class _VerificationState extends State<Verification> {
                   color: lightBlueColor,
                   elevation: 0.0,
                   callback: (){
-                    Navigate().toMainScreen(context);
+                    Navigate().toLogin(context);
                   },
                 )
               ],

@@ -61,7 +61,7 @@ class _UserDetailsState extends State<UserDetails> {
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.fromLTRB(20, 5, 20, 20),
+                padding: EdgeInsets.fromLTRB(20, 5, 20, 10),
                 decoration: BoxDecoration(
                   color: darkBlueColor,
                 ),
@@ -79,7 +79,7 @@ class _UserDetailsState extends State<UserDetails> {
                     Center(
                         child: Avatar(
                       img: "assets/profilebg.png",
-                      radius: 45,
+                      radius: 40,
                     )),
                     height10,
                     Center(
@@ -97,7 +97,6 @@ class _UserDetailsState extends State<UserDetails> {
               ),
               ExpandableContainer(callback: (value){
                 setState(() => _index = value);
-                print(_index);
               },),
               Flexible(
                 child: Container(

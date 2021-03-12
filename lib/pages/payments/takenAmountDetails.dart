@@ -107,7 +107,6 @@ class TakenAmountDetails extends StatelessWidget {
                     ],
                   ),
                 ),
-
               ],
             ),
           ),

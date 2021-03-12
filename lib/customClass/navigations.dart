@@ -2,11 +2,6 @@ import 'package:flutter/material.dart';
 
 class Navigate{
 
-
-//  void toConfirmation(context, [Map data]){
-//    Navigator.pushReplacementNamed(context, "/confirmation", arguments: data);
-//  }
-
   void toSignUp(context, [Map data]){
     Navigator.pushReplacementNamed(context, "/signup", arguments: data);
   }
@@ -24,7 +19,7 @@ class Navigate{
   }
 
   void toVerification(context, [Map data]){
-    Navigator.pushNamed(context, "/verification", arguments: data);
+    Navigator.pushReplacementNamed(context, "/verification", arguments: data);
   }
 
   void toHome(context, [Map data]){
@@ -40,7 +35,7 @@ class Navigate{
   }
 
   void toQRScanner(context, [Map data]){
-    Navigator.pushNamed(context, "/qrscanner", arguments: data);
+    Navigator.pushReplacementNamed(context, "/qrscanner", arguments: data);
   }
 
   void toEnterAmount(context, [Map data]){
@@ -85,5 +80,9 @@ class Navigate{
 
   void toUserList(context, [Map data]){
     Navigator.pushNamed(context, "/userlist", arguments: data);
+  }
+
+  void backToLogin(context){
+    Navigator.popUntil(context, ModalRoute.withName('/login'));
   }
 }
