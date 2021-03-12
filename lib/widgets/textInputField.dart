@@ -165,7 +165,7 @@ class OTPTextField extends StatelessWidget {
           : InputDecoration(labelText: label),
       inputFormatters: [
         FilteringTextInputFormatter.digitsOnly,
-        LengthLimitingTextInputFormatter(10)
+        LengthLimitingTextInputFormatter(4)
       ],
     validator: (val) {
       if (val.length == 4) {

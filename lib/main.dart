@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: "/mainscreen",
+      initialRoute: "/login",
       onGenerateRoute: (settings) => Routers.generateRoutes(settings),
       debugShowCheckedModeBanner: false, //Disable debug label
     );

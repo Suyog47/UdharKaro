@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/constants/size_helpers.dart';
 
 class QRScanner extends StatefulWidget {
   final Function callback;
@@ -33,8 +34,8 @@ class _QRScannerState extends State<QRScanner> {
     return Column(
       children: [
         Container(
-          height: 200,
-          width: 200,
+          height: 0.40 * displayHeight(context),
+          width: 0.70 * displayHeight(context),
           child: QRView(
             key: qrKey,
             overlay: QrScannerOverlayShape(

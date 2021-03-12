@@ -61,77 +61,56 @@ class HomeCard extends StatelessWidget {
             left: 5,
             right: 5,
             top: 10,
-            bottom: (itemIndex == (str.length - 1) ? 50 : 10)),
+            bottom: (itemIndex == (str.length - 1) ? 80 : 10)),
         elevation: 4,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(22),
         ),
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Avatar(
-                            img: str[itemIndex]["pic"],
-                            radius: 30,
-                          ),
-                          width10,
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                str[itemIndex]["vendor"],
-                                style: h4_Dark,
-                              ),
-                              height10,
-                              Text(
-                                "Last Transaction On",
-                                style: TextStyle(fontSize: 12,color: Colors.black38),
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Row(
-                        
-                        children: [
-                          Text("Rs.", style:TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 14,
-                           ),
-                          ),
-                          width2,
-                          Text(str[itemIndex]["price"], style:TextStyle(
-                              fontSize: 27,
-                              fontWeight: FontWeight.w500),
-                          ),
-                       ],
-                      ),
-                      height10,
-                      Text(
-                        str[itemIndex]["lastTransaction"],
-                        style: TextStyle(fontSize: 12,color: Colors.black38),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
+           child: Container(
+             padding: EdgeInsets.symmetric(vertical: 15),
+             child: ListTile(
+               leading: Avatar(
+                 img: str[itemIndex]["pic"],
+                 radius: 25,
+               ),
+               title: Column(
+                 crossAxisAlignment: CrossAxisAlignment.start,
+                 children: [
+                   Text(
+                     str[itemIndex]["vendor"],
+                     style: t20_Dark,
+                   ),
+                   height10,
+                   height5,
+                   Text(
+                     "Last Transaction On",
+                     style: TextStyle(fontSize: 12, color: greyColor),
+                   ),
+                 ],
+               ),
+               //subtitle:
+               trailing: Column(
+                 crossAxisAlignment: CrossAxisAlignment.end,
+                 mainAxisAlignment: MainAxisAlignment.spaceAround,
+                 children: [
+                   width2,
+                   Row(
+                     crossAxisAlignment: CrossAxisAlignment.center,
+                     children: [
+                       Text("Rs.", style: t16_Dark),
+                       Text(str[itemIndex]["price"], style: t28_Dark,)
+                     ],
+                     mainAxisSize: MainAxisSize.min,
+                   ),
+                   height5,
+                   Text(
+                     str[itemIndex]["lastTransaction"],
+                     style: TextStyle(fontSize: 12, color: greyColor),
+                   ),
+                 ],
+               ),
+             ),
+           ),
       ),
     );
   }

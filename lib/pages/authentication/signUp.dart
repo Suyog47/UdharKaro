@@ -101,6 +101,7 @@ class _SignUpState extends State<SignUp> {
                     color: lightBlueColor,
                     formKey: _formKey,
                     callback: (){
+
                       if(_pass == _cpass){
                        Navigate().toVerification(context);
                       }

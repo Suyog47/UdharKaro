@@ -71,7 +71,7 @@ class Button extends StatelessWidget {
     this.height = 50,
     this.elevation = 0.0,
     this.color = greyColor,
-    this.borderColor = redColor,
+    this.borderColor = whiteColor,
     this.borderRadius = 10.0,
     this.borderWidth = 1.0,
     @required this.callback});
@@ -168,35 +168,5 @@ class GaveFloatingButton extends StatelessWidget {
   }
 }
 
-//class SmallButton extends StatelessWidget {
-//  final String text;
-//  final Color borderColor;
-//  final double borderWidth;
-//  final Function callback;
-//
-//  SmallButton(
-//      {this.text = "",
-//      this.borderColor = redColor,
-//      this.borderWidth = 3,
-//      @required this.callback});
-//
-//  @override
-//  Widget build(BuildContext context) {
-//    return InkWell(
-//      onTap: () {
-//        callback();
-//      },
-//      child: Container(
-//        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-//        child: Text(text, style: t14_Dark),
-//        decoration: BoxDecoration(
-//          borderRadius: BorderRadius.circular(30),
-//          border: Border.all(color: borderColor, width: borderWidth),
-//          color: lightGreyColor,
-//        ),
-//      ),
-//    );
-//  }
-//}
 
 

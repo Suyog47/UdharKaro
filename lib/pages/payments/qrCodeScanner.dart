@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
+import 'package:udhaarkaroapp/constants/size_helpers.dart';
 import 'package:udhaarkaroapp/customClass/navigations.dart';
 import 'package:udhaarkaroapp/widgets/buttons.dart';
 import 'package:udhaarkaroapp/widgets/qrScanner.dart';
@@ -26,9 +27,11 @@ class _QRCodeScannerState extends State<QRCodeScanner> {
             child: Column(
               children: [
                 Container(
+                  height: 0.70 * displayHeight(context),
                   color: blackColor,
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Align(
                         alignment: Alignment.centerLeft,
@@ -42,33 +45,30 @@ class _QRCodeScannerState extends State<QRCodeScanner> {
                               size: 30,
                             )),
                       ),
-                      height10,
-                      height10,
                       Text("Scan any QR Code", style: h3_Light),
                       height10,
-                      height10,
-                      height10,
                       Container(
-                          height: 250,
-                          width: 300,
-                          child: Center(child: QRScanner(
-                            callback: () {
-                              Navigate().toEnterAmount(
-                                  context, {"type": _data["type"]});
-                            },
-                          ))),
-                      height5,
-                      Text(
-                        "Place the QR code inside Scanner Area",
-                        style: TextStyle(color: lightOrangeColor),
-                        softWrap: true,
-                        textAlign: TextAlign.center,
-                      ),
-                      height5,
+                          child: Column(
+                            children: [
+                              QRScanner(
+                                callback: () {
+                                  Navigate().toEnterAmount(
+                                      context, {"type": _data["type"]});
+                                },
+                              ),
+                              height10,
+                              Text(
+                                "Place the QR code inside Scanner Area",
+                                style: TextStyle(color: lightOrangeColor),
+                                softWrap: true,
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          )),
                     ],
                   ),
                 ),
-                height10,
+                height5,
                 Form(
                   key: _formKey,
                   child: Container(
@@ -76,9 +76,8 @@ class _QRCodeScannerState extends State<QRCodeScanner> {
                     child: Column(
                       children: [
                         Text("OR",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20)),
-                        height10,
+                            style: t18_Dark),
+                        height5,
                         PhoneTextField(
                           decoration: inputDecor2,
                           label: "Enter Phone Number",
@@ -87,12 +86,12 @@ class _QRCodeScannerState extends State<QRCodeScanner> {
                           },
                         ),
                         height10,
-                        height10,
+                        height5,
                         Center(
                             child: SubmitButton(
                           text: "Proceed",
                           width: 200,
-                          height: 50,
+                          height: 45,
                           color: lightBlueColor,
                           elevation: 5,
                           formKey: _formKey,

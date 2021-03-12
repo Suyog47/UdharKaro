@@ -67,13 +67,13 @@ class HomePageTabBarButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(24),
           ),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Transform.rotate(
                   angle: 3.142 / 4, child: icon),
-              height5,
+              height10,
               Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     "Rs.",
@@ -83,7 +83,7 @@ class HomePageTabBarButton extends StatelessWidget {
                   Text(price, style: h3_Light),
                 ],
               ),
-              height5,
+              height10,
               Text(
                 subtitle,
                 style: TextStyle(color: whiteColor),

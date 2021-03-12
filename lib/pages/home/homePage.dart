@@ -12,7 +12,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _type = 1;
   int data = 1;
   List _str = [
     {
@@ -43,7 +42,7 @@ class _HomeState extends State<Home> {
         child: Scaffold(
           backgroundColor: lightGreyColor,
           appBar: AppBar(
-            toolbarHeight: 210,
+            toolbarHeight: 220,
             flexibleSpace: Container(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
               decoration: BoxDecoration(
