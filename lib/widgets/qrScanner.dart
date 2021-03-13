@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
-import 'package:udhaarkaroapp/constants/size_helpers.dart';
 
 class QRScanner extends StatefulWidget {
   final Function callback;

@@ -6,3 +6,4 @@ export 'package:udhaarkaroapp/constants/icons.dart';
 export 'package:udhaarkaroapp/constants/textStyles.dart';
 export 'package:udhaarkaroapp/constants/textFieldDecorations.dart';
 export 'package:udhaarkaroapp/constants/containerStyles.dart';
+export 'package:udhaarkaroapp/constants/size_helpers.dart';
