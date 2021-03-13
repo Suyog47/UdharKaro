@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:udhaarkaroapp/customClass/pageTransitions.dart';
+import 'package:udhaarkaroapp/pages/authentication/signUp2.dart';
 import 'package:udhaarkaroapp/pages/confirmations/giveAmountConfirmation.dart';
 import 'package:udhaarkaroapp/pages/confirmations/takeAmountConfirmation.dart';
 import 'package:udhaarkaroapp/pages/pages.dart';
@@ -11,6 +12,11 @@ class Routers {
       case '/signup':
         return CustomPageTransitions()
             .bottomToTopTransition(SignUp(), settings);
+        break;
+
+      case '/signup2':
+        return CustomPageTransitions()
+            .bottomToTopTransition(SignUp2(), settings);
         break;
 
       case '/login':

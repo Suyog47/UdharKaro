@@ -6,6 +6,10 @@ class Navigate{
     Navigator.pushReplacementNamed(context, "/signup", arguments: data);
   }
 
+  void toSignUp2(context, [Map data]){
+    Navigator.pushReplacementNamed(context, "/signup2", arguments: data);
+  }
+
   void toLogin(context, [Map data]){
     Navigator.pushReplacementNamed(context, "/login", arguments: data);
   }

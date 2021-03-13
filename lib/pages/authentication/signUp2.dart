@@ -4,18 +4,17 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:udhaarkaroapp/constants/constants.dart';
 import 'package:udhaarkaroapp/customClass/navigations.dart';
 import 'package:udhaarkaroapp/widgets/buttons.dart';
-import 'package:udhaarkaroapp/widgets/circularAvatar.dart';
 import 'package:udhaarkaroapp/widgets/textInputField.dart';
 
-class SignUp extends StatefulWidget {
+class SignUp2 extends StatefulWidget {
   @override
   _SignUpState createState() => _SignUpState();
 }
 
-class _SignUpState extends State<SignUp> {
+class _SignUpState extends State<SignUp2> {
 
   final _formKey = GlobalKey<FormState>();
-  String _name, _email;
+  String _num, _pass, _cpass;
 
   @override
   Widget build(BuildContext context) {
@@ -27,17 +26,19 @@ class _SignUpState extends State<SignUp> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+
                 Text(
                   'Create Account,',
                   style: TextStyle(fontWeight: FontWeight.w500, fontSize: 35),
                 ),
-
+                // height5,
                 Text(
                   'Sign Up to get started!',
                   style: h4_Dark,
                 ),
-                height60,
-                Text('Enter your personal details' ,style: TextStyle(fontSize: 17),),
+
+               height60,
+                Text('Set-up your authentication' ,style: TextStyle(fontSize: 17),),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                   decoration: rectDecoration,
@@ -46,44 +47,65 @@ class _SignUpState extends State<SignUp> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Avatar(
-                          img: "assets/profilebg.png",
-                          radius: 50,
-                        ),
-                        height10,
-                        NameTextField(
+
+                        PhoneTextField(
                           decoration: inputDecor2,
-                          label: "Full Name",
+                          label: "Phone Number",
                           callback: (value){
-                            setState(() => _name = value);
+                            setState(() => _num = value);
                           },
                         ),
 
                         height10,
-                        EmailTextField(
+                        PasswordTextField(
                           decoration: inputDecor2,
-                          label: "Email",
+                          label: "Password",
                           callback: (value){
-                            setState(() => _email = value);
+                            setState(() => _pass = value);
                           },
                         ),
+
                         height10,
+
+                        PasswordTextField(
+                          decoration: inputDecor2,
+                          label: "Confirm Password",
+                          callback: (value){
+                            setState(() => _cpass = value);
+                          },
+                        ),
                       ],
                     ),
                   ),
                 ),
                 height30,
-               Center(
-                 child: SubmitButton(formKey: _formKey,
-                     callback: (){
-                   Navigate().toSignUp2(context);
-                 },
-                   text: "Next",
-                   width: 100,
-                   height: 40,
-                   color: lightBlueColor,
-                 ),
-               ),
+                Center(
+                  child: SubmitButton(
+                    text: "Sign Up",
+                    width: 200,
+                    height: 50,
+                    elevation: 0,
+                    color: lightBlueColor,
+                    formKey: _formKey,
+                    callback: (){
+
+                      if(_pass == _cpass){
+                        Navigate().toVerification(context);
+                      }
+                      else{
+                        Fluttertoast.showToast(
+                            msg: "Confirm Password dont match with Password field",
+                            toastLength: Toast.LENGTH_LONG,
+                            gravity: ToastGravity.BOTTOM,
+                            timeInSecForIosWeb: 1,
+                            backgroundColor: Colors.red,
+                            textColor: Colors.white,
+                            fontSize: 16.0
+                        );
+                      }
+                    },
+                  ),
+                ),
                 height30,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -93,7 +115,10 @@ class _SignUpState extends State<SignUp> {
                         onTap: (){
                           Navigate().toLogin(context);
                         },
-                        child: Text(" Login", style: TextStyle(fontSize: 18, color: redColor),)),
+                        child: Text(" Login", style: TextStyle(fontSize: 18,
+                            color: redColor,),
+                          ),
+                      ),
                   ],
                 ),
               ],

@@ -96,7 +96,9 @@ class _LoginState extends State<Login> {
                         onTap: (){
                            Navigate().toSignUp(context);
                         },
-                        child: Text(" Sign-Up", style: TextStyle(fontSize: 19, color: blueColor),)),
+                        child: Text(" Sign-Up", style: TextStyle(fontSize: 19, color: blueColor),
+                        ),
+                    ),
                   ],
                 ),
               ],
